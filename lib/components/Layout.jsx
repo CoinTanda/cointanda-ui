@@ -18,7 +18,6 @@ export const Layout = (props) => {
   return <>
     <Meta />
 
-
     <div
       className='flex flex-col w-full'
       style={{
@@ -59,7 +58,7 @@ export const Layout = (props) => {
                 <div
                   className='text-default title text-xl sm:text-3xl'
                 >
-                  PoolTogether - Reference Frontend
+                  Coin Tanda - Reference Frontend
                 </div>
                 <div
                   className='text-primary-soft title text-base sm:text-2xl'
@@ -70,13 +69,12 @@ export const Layout = (props) => {
               </div>
 
               <a
-                href='https://docs.pooltogether.com'
+                href='https://docs.cointanda.com'
                 className='trans text-xs sm:text-base'
               >
                 View documentation
               </a>
             </div>
-
             <div
               className='px-4 sm:px-8 lg:px-12 my-4'
             >
@@ -95,7 +93,6 @@ export const Layout = (props) => {
 
       </div>
     </div>
-
     <ToastContainer
       className='pool-toast'
       position='top-center'

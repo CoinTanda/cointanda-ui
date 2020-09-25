@@ -30,12 +30,12 @@ if (process.env.NEXT_JS_DOMAIN_NAME) {
 
 const WALLETS_CONFIG = [
   { walletName: 'metamask', preferred: true },
-  { walletName: 'coinbase', preferred: true },
-  { walletName: 'trust', preferred: true, rpcUrl: RPC_URL },
+  // { walletName: 'coinbase', preferred: true },
+  // { walletName: 'trust', preferred: true, rpcUrl: RPC_URL },
   {
     walletName: 'trezor',
-    appUrl: 'https://app.pooltogether.com',
-    email: 'hello@pooltogether.com',
+    appUrl: 'https://app.cointanda.com',
+    email: 'hello@cointanda.com',
     rpcUrl: RPC_URL,
     preferred: true
   },
@@ -44,38 +44,38 @@ const WALLETS_CONFIG = [
     rpcUrl: RPC_URL,
     preferred: true
   },
-  {
-    walletName: 'fortmatic',
-    apiKey: FORTMATIC_KEY,
-    preferred: true
-  },
+  // {
+  //   walletName: 'fortmatic',
+  //   apiKey: FORTMATIC_KEY,
+  //   preferred: true
+  // },
   {
     walletName: 'walletConnect',
     infuraKey: INFURA_KEY,
     preferred: true
   },
-  {
-    walletName: 'walletLink',
-    rpcUrl: RPC_URL,
-    preferred: true
-  },
-  {
-    walletName: 'imToken',
-    rpcUrl: RPC_URL,
-    preferred: true
-  },
-  {
-    walletName: 'huobiwallet',
-    rpcUrl: RPC_URL
-  },
-  {
-    walletName: 'portis',
-    apiKey: PORTIS_KEY,
-  },
-  { walletName: 'authereum' },
-  { walletName: 'dapper' },
-  { walletName: 'status' },
-  { walletName: 'torus' },
+  // {
+  //   walletName: 'walletLink',
+  //   rpcUrl: RPC_URL,
+  //   preferred: true
+  // },
+  // {
+  //   walletName: 'imToken',
+  //   rpcUrl: RPC_URL,
+  //   preferred: true
+  // },
+  // {
+  //   walletName: 'huobiwallet',
+  //   rpcUrl: RPC_URL
+  // },
+  // {
+  //   walletName: 'portis',
+  //   apiKey: PORTIS_KEY,
+  // },
+  // { walletName: 'authereum' },
+  // { walletName: 'dapper' },
+  // { walletName: 'status' },
+  // { walletName: 'torus' },
 ]
 
 export const WalletContext = React.createContext()

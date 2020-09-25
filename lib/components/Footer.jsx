@@ -7,8 +7,8 @@ import DiscordLogo from 'assets/images/discord-footer.svg'
 import TwitterFooterLogo from 'assets/images/twitter-footer.svg'
 
 export const Footer = () => {
-  let mailHref = 'mailto:hello@pooltogether.com'
-  let twitterHref = 'https://twitter.com/PoolTogether_'
+  let mailHref = 'mailto:hello@cointanda.com'
+  let twitterHref = 'https://twitter.com/CoinTanda'
   
   return <footer
     className='footer w-full text-default text-sm'
@@ -19,22 +19,22 @@ export const Footer = () => {
       >
         <div className=''>
           <span className='mb-2 sm:mb-0 invisible sm:visible block sm:inline'>
-            &copy; {new Date().getFullYear()} <a href='https://www.pooltogether.com'>
-              PoolTogether Inc.
+            &copy; {new Date().getFullYear()} <a href='https://www.cointanda.com'>
+              Coin Tanda.
             </a>
           </span>
 
           <a
             title='faq'
             className='trans mr-4 sm:ml-8'
-            href='https://www.pooltogether.com/faq'
+            href='https://www.cointanda.com/faq'
           >
             faq
           </a>
           {/* <a
           title='readTheFAQ'
           className='trans mr-4'
-          href='https://www.pooltogether.com/faq'
+          href='https://www.cointanda.com/faq'
         >
           faq
         </a>
@@ -42,21 +42,21 @@ export const Footer = () => {
         <a
           title='seeStats'
           className='trans mr-4'
-          href='https://www.pooltogether.com/#stats'
+          href='https://www.cointanda.com/#stats'
         >
           stats
         </a> */}
           <a
             title='readTerms'
             className='trans mr-4'
-            href='https://www.pooltogether.com/terms'
+            href='https://www.cointanda.com/terms'
           >
             terms
           </a>
           <a
             title='auditAndSecurityInfo'
             className='trans mr-4'
-            href='https://www.pooltogether.com/audits'
+            href='https://www.cointanda.com/audits'
           >
             audits
           </a>

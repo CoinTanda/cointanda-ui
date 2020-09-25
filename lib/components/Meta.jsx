@@ -1,13 +1,13 @@
 import Head from 'next/head'
 
 export const Meta = ({ title }) => {
-  const defaultTitle = 'PoolTogether - V3 Reference Pool Frontend'
+  const defaultTitle = 'CoinTanda - Reference Pool Frontend'
   title = title ? `${title} - ${defaultTitle}` : defaultTitle
 
-  const url = `https://reference-app.pooltogether.com`
-  const description = `Deposit and withdraw to V3 Pools`
+  const url = `https://reference.cointanda.com`
+  const description = `Deposit and withdraw to Pools with this UI`
   const keywords = 'ethereum'
-  const twitterHandle = '@PoolTogether_'
+  const twitterHandle = '@CoinTanda_'
 
   return (
     <>
@@ -24,7 +24,7 @@ export const Meta = ({ title }) => {
         <meta name='theme-color' content='#1a083a' />
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
-        <meta name='author' content='PoolTogether LLC' />
+        <meta name='author' content='CoinTanda LLC' />
         <meta name='copyright' content={`Copyright ${new Date().getFullYear()}`} />
 
         <meta property='og:title' content={title} />
