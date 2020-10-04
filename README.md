@@ -21,8 +21,10 @@ $ cp .envrc.example .envrc
 Fill in your own values for `.envrc`, then run:
 
 ```bash
-$ direnv allow
+$ direnv allow .
 ```
+
+If this does not work for you try adding a hook to bash https://direnv.net/docs/hook.html for mac add the entire path to direnv executable file
 
 To run the local server, run:
 
