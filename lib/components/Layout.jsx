@@ -92,6 +92,9 @@ export const Layout = (props) => {
         </div>
 
       </div>
+      <script src="/__/firebase/7.22.1/firebase-app.js"></script>
+      <script src="/__/firebase/7.22.1/firebase-analytics.js"></script>
+      <script src="/__/firebase/init.js"></script>
     </div>
     <ToastContainer
       className='pool-toast'
