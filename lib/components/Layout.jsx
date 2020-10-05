@@ -69,7 +69,7 @@ export const Layout = (props) => {
               </div>
 
               <a
-                href='https://docs.cointanda.com'
+                href='https://docs.pooltogether.com'
                 className='trans text-xs sm:text-base'
               >
                 View documentation

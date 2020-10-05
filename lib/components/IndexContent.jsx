@@ -34,7 +34,7 @@ export const IndexContent = (
   const walletContext = useContext(WalletContext)
   const walletNetwork = walletContext._onboard.getState().network
 
-  const [network, setNetwork] = useState('kovan')
+  const [network, setNetwork] = useState('rinkeby')
   const [contractAddress, setContractAddress] = useState('')
 
   const demoNetworkName = findKey(demoPools, {chainId: walletNetwork})

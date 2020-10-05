@@ -15,7 +15,7 @@ const PORTIS_KEY = process.env.NEXT_JS_PORTIS_API_KEY
 const SELECTED_WALLET_COOKIE_KEY = 'selectedWallet'
 
 // let networkName = 'mainnet'
-let networkName = 'kovan'
+let networkName = 'rinkeby'
 const RPC_URL = (networkName && INFURA_KEY) ?
   `https://${networkName}.infura.io/v3/${INFURA_KEY}` :
   'http://localhost:8545'
@@ -30,52 +30,52 @@ if (process.env.NEXT_JS_DOMAIN_NAME) {
 
 const WALLETS_CONFIG = [
   { walletName: 'metamask', preferred: true },
-  // { walletName: 'coinbase', preferred: true },
-  // { walletName: 'trust', preferred: true, rpcUrl: RPC_URL },
-  {
-    walletName: 'trezor',
-    appUrl: 'https://app.cointanda.com',
-    email: 'hello@cointanda.com',
-    rpcUrl: RPC_URL,
-    preferred: true
-  },
-  {
-    walletName: 'ledger',
-    rpcUrl: RPC_URL,
-    preferred: true
-  },
+  // // { walletName: 'coinbase', preferred: true },
+  // // { walletName: 'trust', preferred: true, rpcUrl: RPC_URL },
   // {
-  //   walletName: 'fortmatic',
-  //   apiKey: FORTMATIC_KEY,
-  //   preferred: true
-  // },
-  {
-    walletName: 'walletConnect',
-    infuraKey: INFURA_KEY,
-    preferred: true
-  },
-  // {
-  //   walletName: 'walletLink',
+  //   walletName: 'trezor',
+  //   appUrl: 'https://app.cointanda.com',
+  //   email: 'hello@cointanda.com',
   //   rpcUrl: RPC_URL,
   //   preferred: true
   // },
   // {
-  //   walletName: 'imToken',
+  //   walletName: 'ledger',
   //   rpcUrl: RPC_URL,
   //   preferred: true
   // },
+  // // {
+  // //   walletName: 'fortmatic',
+  // //   apiKey: FORTMATIC_KEY,
+  // //   preferred: true
+  // // },
   // {
-  //   walletName: 'huobiwallet',
-  //   rpcUrl: RPC_URL
+  //   walletName: 'walletConnect',
+  //   infuraKey: INFURA_KEY,
+  //   preferred: true
   // },
-  // {
-  //   walletName: 'portis',
-  //   apiKey: PORTIS_KEY,
-  // },
-  // { walletName: 'authereum' },
-  // { walletName: 'dapper' },
-  // { walletName: 'status' },
-  // { walletName: 'torus' },
+  // // {
+  // //   walletName: 'walletLink',
+  // //   rpcUrl: RPC_URL,
+  // //   preferred: true
+  // // },
+  // // {
+  // //   walletName: 'imToken',
+  // //   rpcUrl: RPC_URL,
+  // //   preferred: true
+  // // },
+  // // {
+  // //   walletName: 'huobiwallet',
+  // //   rpcUrl: RPC_URL
+  // // },
+  // // {
+  // //   walletName: 'portis',
+  // //   apiKey: PORTIS_KEY,
+  // // },
+  // // { walletName: 'authereum' },
+  // // { walletName: 'dapper' },
+  // // { walletName: 'status' },
+  // // { walletName: 'torus' },
 ]
 
 export const WalletContext = React.createContext()
