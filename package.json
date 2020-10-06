@@ -10,7 +10,8 @@
     "build": "next build && next export && yarn postexport",
     "start": "next start",
     "postexport": "node post-export.js",
-    "distrelease": "yarn build"
+    "distrelease": "yarn build",
+    "prettier": "prettier --write \"**/*.{ts,tsx}\""
   },
   "jest": {
     "collectCoverageFrom": [
