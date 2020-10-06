@@ -1,10 +1,14 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
+import { ThemeProvider } from 'styled-components';
 
 import { Layout } from 'lib/components/Layout'
 
 import 'react-toastify/dist/ReactToastify.css'
 import '@reach/tooltip/styles.css'
+import { GlobalStyles } from 'themes/GlobalStyles/GlobalStyles';
+import { defaultTheme } from 'themes/defaultTheme';
+import 'themes/GlobalStyles/fonts-loading.css';
 
 import 'assets/styles/index.css'
 import 'assets/styles/layout.css'
@@ -27,11 +31,14 @@ const DynamicWalletContextProvider = dynamic(() =>
 function MyApp({ Component, pageProps }) {
   return <>
     <DynamicWalletContextProvider>
-      <Layout>
-        <Component
-          {...pageProps}
-        />
-      </Layout>
+      <ThemeProvider theme={defaultTheme}>
+        <GlobalStyles />
+        <Layout>
+          <Component
+            {...pageProps}
+          />
+        </Layout>
+      </ThemeProvider>
     </DynamicWalletContextProvider>
   </>
 }
