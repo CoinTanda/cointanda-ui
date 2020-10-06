@@ -1,7 +1,5 @@
 import { IndexContent } from 'lib/components/IndexContent'
 
-export default function IndexPage() {
-  return <>
-    <IndexContent />
-  </>
+export default function Index() {
+  return <IndexContent />
 }
