@@ -4,12 +4,7 @@
     [
       "module-resolver",
       {
-        "root": ["./"],
-        "alias": {
-          "lib": "./lib",
-          "assets": "./assets",
-          "pages": "./pages"
-        }
+        "root": ["./"]
       }
     ]
   ],
