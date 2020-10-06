@@ -1,19 +1,27 @@
 {
+  "plugins": [
+    ["styled-components", { "ssr": true }],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "lib": "./lib",
+          "assets": "./assets",
+          "pages": "./pages"
+        }
+      }
+    ]
+  ],
   "env": {
     "production": {
-      "presets": [
-        "next/babel"
-      ]
+      "presets": ["next/babel"]
     },
     "development": {
-      "presets": [
-        "next/babel"
-      ]
+      "presets": ["next/babel"]
     },
     "test": {
-      "plugins": [
-        "@babel/plugin-transform-runtime"
-      ],
+      "plugins": ["@babel/plugin-transform-runtime"],
       "presets": [
         [
           "@babel/env",
