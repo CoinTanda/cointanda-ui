@@ -12,6 +12,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfig = {
   inlineImageLimit: 48, // make it tiny so that it doesn't inline,
+  devIndicators: {
+    autoPrerender: false, // If you need to know the page is correctly pre rendering enable this
+  }
 }
 
 const allConfig =

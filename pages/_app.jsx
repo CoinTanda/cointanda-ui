@@ -2,14 +2,15 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import { ThemeProvider } from 'styled-components';
 
-import { Layout } from 'lib/components/Layout'
+import { Layout } from 'components/ui/Layout/Layout'
 
 import 'react-toastify/dist/ReactToastify.css'
 import '@reach/tooltip/styles.css'
-import { GlobalStyles } from 'themes/GlobalStyles/GlobalStyles';
-import { defaultTheme } from 'themes/defaultTheme';
 import 'themes/GlobalStyles/fonts-loading.css';
+import { defaultTheme } from 'themes/defaultTheme';
+import { GlobalStyles } from 'themes/GlobalStyles/GlobalStyles';
 
+import { Meta } from 'components/ui/Meta/Meta';
 import 'assets/styles/index.css'
 import 'assets/styles/layout.css'
 import 'assets/styles/loader.css'
@@ -34,6 +35,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
         <Layout>
+          <Meta />
           <Component
             {...pageProps}
           />

@@ -1,5 +1,5 @@
-import { Pool } from 'components/pages/Pool/Pool'
+import { PoolUI } from 'lib/components/PoolUI'
 
 export default function Index() {
-  return <Pool />
+  return <PoolUI />
 }
