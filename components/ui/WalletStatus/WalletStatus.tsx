@@ -6,6 +6,7 @@ import { WalletContext } from 'lib/components/WalletContextProvider';
 import { networkColorClassname } from 'lib/utils/networkColorClassname';
 import { chainIdToName } from 'lib/utils/chainIdToName';
 import { shorten } from 'lib/utils/shorten';
+import { ButtonWalletStatus } from './styles.WalletStatus';
 
 export const WalletStatus = () => {
   const walletContext = useContext(WalletContext);
@@ -22,7 +23,6 @@ export const WalletStatus = () => {
     chainId = currentState.appNetworkId;
   }
 
-  let innerContent = null;
   let networkName = null;
 
   if (chainId && chainId !== 1) {
@@ -40,7 +40,7 @@ export const WalletStatus = () => {
   };
 
   if (address && walletName) {
-    innerContent = (
+    return (
       <>
         <div className="leading-snug text-highlight-3 trans">
           <span className="text-highlight-3 hover:text-highlight-1 overflow-ellipsis block w-full no-underline">
@@ -66,19 +66,6 @@ export const WalletStatus = () => {
       </>
     );
   } else {
-    innerContent = (
-      <button
-        className="font-bold rounded-full text-green border-2 sm:border-4 border-green-300 hover:text-white hover:bg-lightPurple-1000 text-xxs sm:text-base pt-2 pb-2 px-3 sm:px-6 trans"
-        onClick={handleConnect}
-      >
-        Connect Wallet
-      </button>
-    );
+    return <ButtonWalletStatus onClick={handleConnect}>Sign in</ButtonWalletStatus>;
   }
-
-  return (
-    <>
-      <div className="relative flex justify-end items-center">{innerContent}</div>
-    </>
-  );
 };

@@ -2,8 +2,17 @@ import { Theme } from './typings/Theme';
 
 export const defaultTheme: Theme = {
   colors: {
+    general1: '#3433CD',
     background1: '#FFFFFF',
     text1: '#A8A8A8',
+    text2: '#9899FE',
+    buttonText1: 'white',
+    buttonText2: '#5654D4',
+    buttonBackground1: 'white',
+    buttonBackground2: '#3433CD',
+    buttonBackground3: '#FF9934',
+    buttonBackground4: '#9A99FF',
+    buttonBackgroundDisabled: '#9A99FF',
     scrollbar: '#FFFFFF',
     scrollbarThumb: '#565656',
   },
