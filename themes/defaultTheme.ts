@@ -6,6 +6,8 @@ export const defaultTheme: Theme = {
     background1: '#FFFFFF',
     text1: '#A8A8A8',
     text2: '#9899FE',
+    text3: '#5d5d5d',
+    text4: 'black',
     buttonText1: 'white',
     buttonText2: '#5654D4',
     buttonBackground1: 'white',

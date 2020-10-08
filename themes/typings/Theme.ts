@@ -10,6 +10,8 @@ interface ThemeColors {
   background1: string;
   text1: string;
   text2: string;
+  text3: string;
+  text4: string;
   buttonText1: string;
   buttonText2: string;
   buttonBackground1: string;

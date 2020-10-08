@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { Button } from '../Button/Button';
 
 export const LayoutContainer = styled('div')`
+  padding: 26px 17px;
+`;
+
+export const NavAndContentContainer = styled('div')`
   padding-left: 45px;
 `;
 
