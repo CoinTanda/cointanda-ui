@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { WalletContext } from 'lib/components/WalletContextProvider';
 import {
   ButtonConnectWallet,
   HomeContainer,
@@ -10,11 +11,13 @@ import videoMock from '../../../assets/video_mock.png';
 import { Row } from 'components/ui/Row/Row';
 import { IconStar } from 'components/ui/IconStar/IconStar';
 import { Column } from 'components/ui/Column/Column';
-import { Button } from 'components/ui/Button/Button';
 import { IconTriangle } from 'components/ui/IconTriangle/IconTriangle';
 import { LinkedText } from 'components/ui/LinkedText/LinkedText';
+import { useContext } from 'react';
 
 export const Home: FC = () => {
+  const walletContext = useContext(WalletContext);
+
   return (
     <HomeContainer>
       <Row>
@@ -53,7 +56,9 @@ export const Home: FC = () => {
             <IconTriangle />
             <LinkedText>More info</LinkedText>
           </MoreInfoContainer>
-          <ButtonConnectWallet>Connect wallet</ButtonConnectWallet>
+          <ButtonConnectWallet onClick={() => walletContext.handleConnectWallet()}>
+            Connect wallet
+          </ButtonConnectWallet>
         </Column>
       </Row>
     </HomeContainer>
