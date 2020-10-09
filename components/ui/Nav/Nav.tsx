@@ -6,7 +6,7 @@ export const Nav: FC = () => {
     <NavContainer>
       <ButtonNav variant="outlined">About</ButtonNav>
       <ButtonNav variant="outlined">Tandas</ButtonNav>
-      <ButtonNav variant="outlined">Out Token</ButtonNav>
+      <ButtonNav variant="outlined">Our Token</ButtonNav>
       <ButtonNav variant="outlined">FAQ</ButtonNav>
       <ButtonNav variant="outlined">Contact us</ButtonNav>
     </NavContainer>

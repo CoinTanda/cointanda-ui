@@ -22,8 +22,6 @@ export const MoreInfoContainer = styled(Row)`
 export const TextInfoItem = styled('div')`
   margin-left: 10px;
   font-size: 21px;
-  position: relative;
-  top: -6px;
   margin-bottom: 15px;
   letter-spacing: -0.014em;
   line-height: 27px;
