@@ -9,21 +9,29 @@ export const HeaderContainer = styled(Row)`
 `;
 
 export const BrandingContainer = styled(Row)`
-  align-items: center;
+  align-items: flex-end;
 `;
 
 export const HeaderContentContainer = styled(Row)`
   align-items: baseline;
   padding-top: 6px;
+
+  @media ${props => props.theme.queries.laptopL} {
+    padding-top: 0;
+  }
 `;
 
-export const HeaderChildrenContainer = styled(Row)`
+export const HeaderChildrenContainerDesktop = styled(Row)`
   padding-bottom: 15px;
   align-items: center;
+
+  @media ${props => props.theme.queries.laptopL} {
+    display: none;
+  }
 `;
 
-export const LogoIconImg = styled('img')`
-  height: 95px;
+export const LogoImg = styled('img')`
+  width: 100%;
 `;
 
 export const LogoTextImg = styled('img')`
@@ -32,10 +40,15 @@ export const LogoTextImg = styled('img')`
 `;
 
 export const TextBusinessDescription = styled('div')`
-  margin-left: 26px;
+  margin: 12px 26px;
   font-style: italic;
   font-size: 37px;
   letter-spacing: -0.028em;
   word-spacing: 0.1em;
+  white-space: nowrap;
   color: ${props => props.theme.colors.text2};
+
+  @media ${props => props.theme.queries.laptopL} {
+    display: none;
+  }
 `;

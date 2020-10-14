@@ -1,3 +1,4 @@
+import { screenSizes } from './tools/screenSizes';
 import { Theme } from './typings/Theme';
 
 export const defaultTheme: Theme = {
@@ -30,5 +31,15 @@ export const defaultTheme: Theme = {
   },
   borders: {
     borderRadius1: '20px',
+  },
+  screenSizes,
+  queries: {
+    mobileS: `(max-width: ${screenSizes.mobileS}px)`,
+    mobileM: `(max-width: ${screenSizes.mobileM}px)`,
+    mobileL: `(max-width: ${screenSizes.mobileL}px)`,
+    tablet: `(max-width: ${screenSizes.tablet}px)`,
+    laptop: `(max-width: ${screenSizes.laptop}px)`,
+    laptopL: `(max-width: ${screenSizes.laptopL}px)`,
+    desktop: `(max-width: ${screenSizes.desktop}px)`,
   },
 };

@@ -1,13 +1,11 @@
 import React, { FC } from 'react';
-import LogoIcon from 'assets/CT_icon_hi.png';
-import LogoText from 'assets/CT_logotype.png';
+import Logo from 'assets/full_logo.png';
 import {
   BrandingContainer,
-  HeaderChildrenContainer,
+  HeaderChildrenContainerDesktop,
   HeaderContainer,
   HeaderContentContainer,
-  LogoIconImg,
-  LogoTextImg,
+  LogoImg,
   TextBusinessDescription,
 } from './styles.Header';
 
@@ -15,13 +13,12 @@ export const Header: FC = ({ children }) => {
   return (
     <HeaderContainer>
       <BrandingContainer>
-        <LogoIconImg src={LogoIcon} />
+        <LogoImg src={Logo} />
         <HeaderContentContainer>
-          <LogoTextImg src={LogoText} />
           <TextBusinessDescription>Risk-free Crypto Raffles</TextBusinessDescription>
         </HeaderContentContainer>
       </BrandingContainer>
-      <HeaderChildrenContainer>{children}</HeaderChildrenContainer>
+      <HeaderChildrenContainerDesktop>{children}</HeaderChildrenContainerDesktop>
     </HeaderContainer>
   );
 };

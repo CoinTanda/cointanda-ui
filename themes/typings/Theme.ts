@@ -1,8 +1,12 @@
+import { ScreenSizes } from 'themes/tools/screenSizes';
+
 export interface Theme {
   colors: ThemeColors;
   shadows: ThemeShadows;
   fonts: ThemeFonts;
   borders: ThemeBorders;
+  screenSizes: ScreenSizes;
+  queries: MediaQueries;
 }
 
 interface ThemeColors {
@@ -37,4 +41,14 @@ interface ThemeFonts {
 
 interface ThemeBorders {
   borderRadius1: string;
+}
+
+interface MediaQueries {
+  mobileS: string;
+  mobileM: string;
+  mobileL: string;
+  tablet: string;
+  laptop: string;
+  laptopL: string;
+  desktop: string;
 }
