@@ -1,3 +1,4 @@
+import { screenSizes } from './tools/screenSizes';
 import { Theme } from './typings/Theme';
 
 export const defaultTheme: Theme = {
@@ -8,6 +9,7 @@ export const defaultTheme: Theme = {
     text2: '#9899FE',
     text3: '#5d5d5d',
     text4: 'black',
+    textMobileTitle: 'black',
     buttonText1: 'white',
     buttonText2: '#5654D4',
     buttonBackground1: 'white',
@@ -29,6 +31,16 @@ export const defaultTheme: Theme = {
     lineHeight1: '21px',
   },
   borders: {
-    borderRadius1: '20px',
+    borderRadius1: '6.3px',
+  },
+  screenSizes,
+  queries: {
+    mobileS: `(max-width: ${screenSizes.mobileS}px)`,
+    mobileM: `(max-width: ${screenSizes.mobileM}px)`,
+    mobileL: `(max-width: ${screenSizes.mobileL}px)`,
+    tablet: `(max-width: ${screenSizes.tablet}px)`,
+    tabletL: `(max-width: ${screenSizes.tabletL}px)`,
+    tabletXL: `(max-width: ${screenSizes.tabletXL}px)`,
+    desktop: `(max-width: ${screenSizes.desktop}px)`,
   },
 };

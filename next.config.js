@@ -14,7 +14,14 @@ const nextConfig = {
   inlineImageLimit: 48, // make it tiny so that it doesn't inline,
   devIndicators: {
     autoPrerender: false, // If you need to know the page is correctly pre rendering enable this
-  }
+  },
+  typescript: {
+    /**
+     * This is temporary, until all JS code is ported to TS we 
+     * need to ignore typescript errors on building
+     */
+    ignoreBuildErrors: true,
+  },
 }
 
 const allConfig =

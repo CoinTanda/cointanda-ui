@@ -7,7 +7,7 @@ export const ButtonStyled = styled(Button)`
   &.MuiButton-root {
     min-width: unset;
     min-height: unset;
-    border-radius: 6.3px;
+    border-radius: ${props => props.theme.borders.borderRadius1};
     padding: 0 32px;
 
     .MuiButton-label {
