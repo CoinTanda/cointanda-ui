@@ -4,10 +4,6 @@ import { Row } from '../Row/Row';
 
 export const NavContainerDesktop = styled(Row)`
   margin-bottom: 49px;
-
-  @media ${props => props.theme.queries.laptopL} {
-    display: none;
-  }
 `;
 
 export const ButtonNavDesktop = styled(Button)`

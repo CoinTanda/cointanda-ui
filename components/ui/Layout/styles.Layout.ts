@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Button } from '../Button/Button';
 import { Column } from '../Column/Column';
+import { Row } from '../Row/Row';
 
 export const LayoutContainer = styled('div')`
   width: 100vw;

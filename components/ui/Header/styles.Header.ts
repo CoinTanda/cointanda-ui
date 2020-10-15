@@ -16,7 +16,7 @@ export const HeaderContentContainer = styled(Row)`
   align-items: baseline;
   padding-top: 6px;
 
-  @media ${props => props.theme.queries.laptopL} {
+  @media ${props => props.theme.queries.tabletXL} {
     padding-top: 0;
   }
 `;
@@ -24,14 +24,14 @@ export const HeaderContentContainer = styled(Row)`
 export const HeaderChildrenContainerDesktop = styled(Row)`
   padding-bottom: 15px;
   align-items: center;
-
-  @media ${props => props.theme.queries.laptopL} {
-    display: none;
-  }
 `;
 
 export const LogoImg = styled('img')`
   width: 100%;
+
+  @media ${props => props.theme.queries.tabletXL} {
+    width: 77%;
+  }
 `;
 
 export const LogoTextImg = styled('img')`
@@ -48,7 +48,7 @@ export const TextBusinessDescription = styled('div')`
   white-space: nowrap;
   color: ${props => props.theme.colors.text2};
 
-  @media ${props => props.theme.queries.laptopL} {
+  @media ${props => props.theme.queries.tabletXL} {
     display: none;
   }
 `;

@@ -1,7 +1,13 @@
 import React, { FC } from 'react';
-import icon from '../../../assets/Bullet_Point.png';
+import icon from '../../../assets/bullet_point.png';
+import iconWhite from '../../../assets/bullet_point_white.png';
 import { IconStarStyled } from './styles.IconStar';
 
-export const IconStar: FC = () => {
-  return <IconStarStyled src={icon} />;
+interface PropsIconStar {
+  whiteVersion?: boolean;
+  className?: string;
+}
+
+export const IconStar: FC<PropsIconStar> = ({ whiteVersion, className }) => {
+  return <IconStarStyled src={whiteVersion ? iconWhite : icon} className={className} />;
 };

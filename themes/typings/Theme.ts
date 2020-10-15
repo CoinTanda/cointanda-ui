@@ -16,6 +16,7 @@ interface ThemeColors {
   text2: string;
   text3: string;
   text4: string;
+  textMobileTitle: string;
   buttonText1: string;
   buttonText2: string;
   buttonBackground1: string;
@@ -48,7 +49,7 @@ interface MediaQueries {
   mobileM: string;
   mobileL: string;
   tablet: string;
-  laptop: string;
-  laptopL: string;
+  tabletL: string;
+  tabletXL: string;
   desktop: string;
 }

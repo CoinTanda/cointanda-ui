@@ -3,8 +3,8 @@ export const screenSizes: ScreenSizes = {
   mobileM: 375,
   mobileL: 425,
   tablet: 768,
-  laptop: 1024,
-  laptopL: 1100,
+  tabletL: 1024,
+  tabletXL: 1100,
   desktop: 2560,
 };
 
@@ -13,7 +13,7 @@ export interface ScreenSizes {
   mobileM: number;
   mobileL: number;
   tablet: number;
-  laptop: number;
-  laptopL: number;
+  tabletL: number;
+  tabletXL: number;
   desktop: number;
 }

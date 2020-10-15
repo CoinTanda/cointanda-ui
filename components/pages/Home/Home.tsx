@@ -15,12 +15,14 @@ import { Column } from 'components/ui/Column/Column';
 import { IconTriangle } from 'components/ui/IconTriangle/IconTriangle';
 import { LinkedText } from 'components/ui/LinkedText/LinkedText';
 import { useContext } from 'react';
+import { TitleMobile } from 'components/ui/TitleMobile/styles.TitleMobile';
 
 export const Home: FC = () => {
   const walletContext = useContext(WalletContext);
 
   return (
     <HomeContainer>
+      <TitleMobile>What is CoinTanda?</TitleMobile>
       <VideoContainer>
         <VideoImg src={videoMock} />
       </VideoContainer>
