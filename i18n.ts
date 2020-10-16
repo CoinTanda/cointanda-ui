@@ -16,6 +16,7 @@ const NextI18NextInstance = new NextI18Next({
   localePath: 'translations',
   localeSubpaths: availableLanguages,
   otherLanguages: ['es'],
+  strictMode: false,
 });
 
 export const { appWithTranslation, useTranslation } = NextI18NextInstance;
