@@ -24,7 +24,7 @@ export const Home: FC = () => {
 
   return (
     <HomeContainer>
-      <TitleMobile>What is CoinTanda?</TitleMobile>
+      <TitleMobile>{t('What is CoinTanda?')}</TitleMobile>
       <VideoContainer>
         <VideoImg src={videoMock} />
       </VideoContainer>
@@ -32,36 +32,36 @@ export const Home: FC = () => {
         <Row>
           <IconStar />
           <TextInfoItem>
-            {t('Test')} CoinTanda is a risk-free way to multiply your cryptocoins by forming groups
-            called <span>Tandas</span>.
+            {t('CoinTanda is a risk-free way to multiply your cryptocoins by forming groups called')}{' '}
+            <span>{t('Tandas')}</span>.
           </TextInfoItem>
         </Row>
         <Row>
           <IconStar />
           <TextInfoItem>
-            Members deposit cryptocoins which <span>gain interest</span>.
+            {t('Members deposit cryptocoins which')} <span>{t('gain interest')}</span>.
           </TextInfoItem>
         </Row>
         <Row>
           <IconStar />
           <TextInfoItem>
-            Every week you may win the cumulated interest of all Tanda members in a{' '}
-            <span>provably fair raffle</span>.
+            {t('Every week you may win the cumulated interest of all Tanda members in a')}{' '}
+            <span>{t('provably fair raffle')}</span>.
           </TextInfoItem>
         </Row>
         <Row>
           <IconStar />
           <TextInfoItem>
-            Win new coins <span>without risking anything</span> - you get your coins back whenever you
-            want.
+            {t('Win new coins')} <span>{t('without risking anything')}</span> -{' '}
+            {t('you get your coins back whenever you want')}.
           </TextInfoItem>
         </Row>
         <MoreInfoContainer>
           <IconTriangle />
-          <LinkedText>More info</LinkedText>
+          <LinkedText>{t('More info')}</LinkedText>
         </MoreInfoContainer>
         <ButtonConnectWallet onClick={() => walletContext.handleConnectWallet()}>
-          Connect wallet
+          {t('Connect wallet')}
         </ButtonConnectWallet>
       </Column>
     </HomeContainer>

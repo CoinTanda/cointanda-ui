@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from '../Button/Button';
 import { Column } from '../Column/Column';
 import { Row } from '../Row/Row';
 
@@ -21,4 +20,8 @@ export const NavAndContentContainer = styled(Column)`
   @media ${props => props.theme.queries.mobileL} {
     padding-left: 0;
   }
+`;
+
+export const DesktopButtonsContainer = styled(Row)`
+  align-items: center;
 `;

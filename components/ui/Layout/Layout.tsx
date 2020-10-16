@@ -7,8 +7,7 @@ import { NavDesktop } from '../NavDesktop/NavDesktop';
 import { NavMobile } from '../NavMobile/NavMobile';
 import { ResponsiveContainer } from '../ResponsiveContainer/ResponsiveContainer';
 import { WalletStatus } from '../WalletStatus/WalletStatus';
-import { NavAndContentContainer, LayoutContainer } from './styles.Layout';
-import { Row } from '../Row/Row';
+import { NavAndContentContainer, LayoutContainer, DesktopButtonsContainer } from './styles.Layout';
 // import { SupportedWalletIndicator } from '../SupportedWalletIndicator/SupportedWalletIndicator';
 import { LanguageMenu } from '../LanguageMenu/LanguageMenu';
 
@@ -21,10 +20,10 @@ export const Layout: FC = ({ children }) => {
         {/* <SupportedWalletIndicator /> */}
         <Header>
           <ResponsiveContainer hideIn={theme.screenSizes.tabletXL}>
-            <Row>
+            <DesktopButtonsContainer>
               <WalletStatus />
               <LanguageMenu />
-            </Row>
+            </DesktopButtonsContainer>
           </ResponsiveContainer>
           <ResponsiveContainer showIn={theme.screenSizes.tabletXL}>
             <NavMobile />

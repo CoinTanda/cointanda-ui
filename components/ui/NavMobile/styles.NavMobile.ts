@@ -36,8 +36,18 @@ export const CloseButton = styled(IconButton)`
 
 export const LanguageMenuStyled = styled(LanguageMenu)`
   position: absolute;
-  right: 9px;
-  top: 25px;
+  right: 17px;
+  top: 41px;
+  transform: scale(0.85);
+
+  button.MuiButton-root {
+    border: ${props => props.theme.borders.border1} ${props => props.theme.colors.borderColor1};
+    background-color: ${props => props.theme.colors.buttonBackground4};
+
+    span.MuiButton-label {
+      font-weight: 400;
+    }
+  }
 `;
 
 export const ButtonsContainer = styled(Column)`
