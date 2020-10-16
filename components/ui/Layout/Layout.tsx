@@ -7,9 +7,10 @@ import { NavDesktop } from '../NavDesktop/NavDesktop';
 import { NavMobile } from '../NavMobile/NavMobile';
 import { ResponsiveContainer } from '../ResponsiveContainer/ResponsiveContainer';
 import { WalletStatus } from '../WalletStatus/WalletStatus';
-import { ButtonLanguage, NavAndContentContainer, LayoutContainer } from './styles.Layout';
+import { NavAndContentContainer, LayoutContainer } from './styles.Layout';
 import { Row } from '../Row/Row';
 // import { SupportedWalletIndicator } from '../SupportedWalletIndicator/SupportedWalletIndicator';
+import { LanguageMenu } from '../LanguageMenu/LanguageMenu';
 
 export const Layout: FC = ({ children }) => {
   const theme = useTheme();
@@ -22,7 +23,7 @@ export const Layout: FC = ({ children }) => {
           <ResponsiveContainer hideIn={theme.screenSizes.tabletXL}>
             <Row>
               <WalletStatus />
-              <ButtonLanguage disabled>EN</ButtonLanguage>
+              <LanguageMenu />
             </Row>
           </ResponsiveContainer>
           <ResponsiveContainer showIn={theme.screenSizes.tabletXL}>

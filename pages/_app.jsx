@@ -1,5 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
+import App from 'next/app'
+import { appWithTranslation } from '../i18n'
 
 import 'assets/styles/index.css'
 import 'assets/styles/layout.css'
@@ -47,4 +49,9 @@ function MyApp({ Component, pageProps }) {
   </>
 }
 
-export default MyApp
+MyApp.getInitialProps = async (appContext) => {
+  const appProps = await App.getInitialProps(appContext)
+  return { ...appProps }
+}
+
+export default appWithTranslation(MyApp)

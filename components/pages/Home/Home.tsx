@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
+import { useTranslation } from '../../../i18n';
 import { WalletContext } from 'lib/components/WalletContextProvider';
 import {
   ButtonConnectWallet,
@@ -14,11 +15,12 @@ import { IconStar } from 'components/ui/IconStar/IconStar';
 import { Column } from 'components/ui/Column/Column';
 import { IconTriangle } from 'components/ui/IconTriangle/IconTriangle';
 import { LinkedText } from 'components/ui/LinkedText/LinkedText';
-import { useContext } from 'react';
+
 import { TitleMobile } from 'components/ui/TitleMobile/styles.TitleMobile';
 
 export const Home: FC = () => {
   const walletContext = useContext(WalletContext);
+  const { t } = useTranslation();
 
   return (
     <HomeContainer>
@@ -30,8 +32,8 @@ export const Home: FC = () => {
         <Row>
           <IconStar />
           <TextInfoItem>
-            CoinTanda is a risk-free way to multiply your cryptocoins by forming groups called{' '}
-            <span>Tandas</span>.
+            {t('Test')} CoinTanda is a risk-free way to multiply your cryptocoins by forming groups
+            called <span>Tandas</span>.
           </TextInfoItem>
         </Row>
         <Row>

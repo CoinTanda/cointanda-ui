@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { Row } from '../Row/Row';
 import { IconButton } from '../IconButton/IconButton';
-import { ButtonLanguage } from '../Layout/styles.Layout';
 import { Column } from '../Column/Column';
 import { IconStar } from '../IconStar/IconStar';
+import { LanguageMenu } from '../LanguageMenu/LanguageMenu';
 
 export const MenuContainer = styled('div')`
   position: fixed;
@@ -34,7 +34,7 @@ export const CloseButton = styled(IconButton)`
   z-index: 1;
 `;
 
-export const ButtonLanguageMobile = styled(ButtonLanguage)`
+export const LanguageMenuStyled = styled(LanguageMenu)`
   position: absolute;
   right: 9px;
   top: 25px;

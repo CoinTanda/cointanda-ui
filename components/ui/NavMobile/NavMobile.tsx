@@ -3,7 +3,6 @@ import {
   MenuContainer,
   BurgerButton,
   CloseButton,
-  ButtonLanguageMobile,
   ButtonsContainer,
   TextButton,
   ButtonSection,
@@ -11,6 +10,7 @@ import {
 } from './styles.NavMobile';
 import burgerImage from '../../../assets/menu_icon.png';
 import closeButtonImage from '../../../assets/close_button.png';
+import { LanguageMenuStyled } from './styles.NavMobile';
 
 export const NavMobile: FC = () => {
   const [enabled, setEnabled] = useState(false);
@@ -21,7 +21,7 @@ export const NavMobile: FC = () => {
       {enabled && (
         <MenuContainer>
           <CloseButton src={closeButtonImage} onClick={() => setEnabled(!enabled)} />
-          <ButtonLanguageMobile disabled>EN</ButtonLanguageMobile>
+          <LanguageMenuStyled />
           <ButtonsContainer>
             <ButtonSection>
               <IconItem whiteVersion />
