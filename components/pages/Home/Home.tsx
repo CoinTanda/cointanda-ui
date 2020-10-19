@@ -32,7 +32,7 @@ export const Home: FC = () => {
         <Row>
           <IconStar />
           <TextInfoItem>
-            {t('CoinTanda is a risk-free way to multiply your cryptocoins by forming groups called')}{' '}
+            {t('CoinTanda Description')}{' '}
             <span>{t('Tandas')}</span>.
           </TextInfoItem>
         </Row>
