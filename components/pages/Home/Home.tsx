@@ -45,7 +45,7 @@ export const Home: FC = () => {
         <Row>
           <IconStar />
           <TextInfoItem>
-            {t('Every week you may win the cumulated interest of all Tanda members in a')}{' '}
+            {t('Every week you may win')}{' '}
             <span>{t('provably fair raffle')}</span>.
           </TextInfoItem>
         </Row>
