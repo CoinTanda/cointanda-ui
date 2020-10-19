@@ -7,7 +7,7 @@ import { LanguageMenu } from '../LanguageMenu/LanguageMenu';
 
 export const MenuContainer = styled('div')`
   position: fixed;
-  width: 189px;
+  width: 219px;
   padding-bottom: 15px;
   right: 0;
   top: 0;

@@ -56,6 +56,8 @@ export const ButtonConnectWallet = styled(Button)`
   height: 45px;
 
   &.MuiButton-root {
+    padding: 0 48px;
+
     @media ${props => props.theme.queries.tabletXL} {
       padding: 0 3px;
     }

@@ -16,10 +16,16 @@ export const ButtonStyled = styled(Button)`
       font-weight: 600;
       letter-spacing: 0.01em;
     }
+
+    .MuiTouchRipple-child {
+      background-color: ${props => props.theme.colors.background1};
+      opacity: 1;
+    }
   }
 
   &.MuiButton-root:hover {
     background-color: ${props => props.theme.colors.buttonBackground2};
+    border-color: transparent;
 
     .MuiButton-label {
       color: ${props => props.theme.colors.buttonText1};
