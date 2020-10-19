@@ -52,7 +52,7 @@ export const TextInfoItem = styled('div')`
 `;
 
 export const ButtonConnectWallet = styled(Button)`
-  width: 317px;
+  min-width: 317px;
   height: 45px;
 
   &.MuiButton-root {
