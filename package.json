@@ -29,12 +29,12 @@
     "verbose": true
   },
   "dependencies": {
+    "@material-ui/core": "latest",
     "@pooltogether/bnc-onboard": "1.13.1-a",
     "@pooltogether/current-pool-data": "3.0.0-alpha.40",
     "@pooltogether/etherplex": "^0.2.3",
     "@pooltogether/pooltogether-contracts": "3.0.0-alpha.40",
     "@reach/tooltip": "0.10.5",
-    "@material-ui/core": "latest",
     "autoprefixer": "^9.8.1",
     "babel-jest": "^26.3.0",
     "babel-plugin-module-resolver": "^4.0.0",
@@ -44,7 +44,8 @@
     "feather-icons-react": "^0.4.1",
     "jest": "^26.4.2",
     "js-cookie": "^2.2.1",
-    "next": "9.4.4",
+    "next": "^9.5.5",
+    "next-i18next": "^6.0.3",
     "next-images": "^1.4.0",
     "postcss-easy-import": "^3.0.0",
     "react": "16.13.1",

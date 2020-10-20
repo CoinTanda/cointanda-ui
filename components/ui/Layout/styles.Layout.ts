@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from '../Button/Button';
 import { Column } from '../Column/Column';
 import { Row } from '../Row/Row';
 
@@ -23,13 +22,6 @@ export const NavAndContentContainer = styled(Column)`
   }
 `;
 
-export const ButtonLanguage = styled(Button)`
-  &.MuiButton-root {
-    border-radius: 0px;
-    padding: 0 16px;
-  }
-
-  height: 31px;
-  width: 40px;
-  border-radius: 0px;
+export const DesktopButtonsContainer = styled(Row)`
+  align-items: center;
 `;

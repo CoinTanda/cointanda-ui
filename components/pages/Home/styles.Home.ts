@@ -52,10 +52,12 @@ export const TextInfoItem = styled('div')`
 `;
 
 export const ButtonConnectWallet = styled(Button)`
-  width: 317px;
+  min-width: 317px;
   height: 45px;
 
   &.MuiButton-root {
+    padding: 0 48px;
+
     @media ${props => props.theme.queries.tabletXL} {
       padding: 0 3px;
     }

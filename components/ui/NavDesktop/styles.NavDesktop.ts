@@ -7,6 +7,5 @@ export const NavContainerDesktop = styled(Row)`
 `;
 
 export const ButtonNavDesktop = styled(Button)`
-  width: 172px;
   margin-right: 7.2px;
 `;

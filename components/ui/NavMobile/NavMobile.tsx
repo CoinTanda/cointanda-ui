@@ -3,7 +3,6 @@ import {
   MenuContainer,
   BurgerButton,
   CloseButton,
-  ButtonLanguageMobile,
   ButtonsContainer,
   TextButton,
   ButtonSection,
@@ -11,9 +10,12 @@ import {
 } from './styles.NavMobile';
 import burgerImage from '../../../assets/menu_icon.png';
 import closeButtonImage from '../../../assets/close_button.png';
+import { LanguageMenuStyled } from './styles.NavMobile';
+import { useTranslation } from 'i18n';
 
 export const NavMobile: FC = () => {
   const [enabled, setEnabled] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -21,35 +23,35 @@ export const NavMobile: FC = () => {
       {enabled && (
         <MenuContainer>
           <CloseButton src={closeButtonImage} onClick={() => setEnabled(!enabled)} />
-          <ButtonLanguageMobile disabled>EN</ButtonLanguageMobile>
+          <LanguageMenuStyled />
           <ButtonsContainer>
             <ButtonSection>
               <IconItem whiteVersion />
-              <TextButton>About</TextButton>
+              <TextButton>{t('About')}</TextButton>
             </ButtonSection>
             <ButtonSection>
               <IconItem whiteVersion />
-              <TextButton>Tandas</TextButton>
+              <TextButton>{t('Tandas')}</TextButton>
             </ButtonSection>
             <ButtonSection>
               <IconItem whiteVersion />
-              <TextButton>Our Token</TextButton>
+              <TextButton>{t('Our Token')}</TextButton>
             </ButtonSection>
             <ButtonSection>
               <IconItem whiteVersion />
-              <TextButton>FAQ</TextButton>
+              <TextButton>{t('FAQ')}</TextButton>
             </ButtonSection>
             <ButtonSection>
               <IconItem whiteVersion />
-              <TextButton>Contact us</TextButton>
+              <TextButton>{t('Contact us')}</TextButton>
             </ButtonSection>
             <ButtonSection>
               <IconItem whiteVersion />
-              <TextButton>My Profile</TextButton>
+              <TextButton>{t('My Profile')}</TextButton>
             </ButtonSection>
             <ButtonSection>
               <IconItem whiteVersion />
-              <TextButton>Log out</TextButton>
+              <TextButton>{t('Log out')}</TextButton>
             </ButtonSection>
           </ButtonsContainer>
         </MenuContainer>

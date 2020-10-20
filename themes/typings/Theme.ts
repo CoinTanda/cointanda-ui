@@ -23,9 +23,11 @@ interface ThemeColors {
   buttonBackground2: string;
   buttonBackground3: string;
   buttonBackground4: string;
+  buttonBackground5: string;
   buttonBackgroundDisabled: string;
   scrollbar: string;
   scrollbarThumb: string;
+  borderColor1: string;
 }
 
 interface ThemeShadows {
@@ -41,6 +43,7 @@ interface ThemeFonts {
 }
 
 interface ThemeBorders {
+  border1: string;
   borderRadius1: string;
 }
 

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { Row } from '../Row/Row';
 import { IconButton } from '../IconButton/IconButton';
-import { ButtonLanguage } from '../Layout/styles.Layout';
 import { Column } from '../Column/Column';
 import { IconStar } from '../IconStar/IconStar';
+import { LanguageMenu } from '../LanguageMenu/LanguageMenu';
 
 export const MenuContainer = styled('div')`
   position: fixed;
-  width: 189px;
+  width: 219px;
   padding-bottom: 15px;
   right: 0;
   top: 0;
@@ -34,10 +34,20 @@ export const CloseButton = styled(IconButton)`
   z-index: 1;
 `;
 
-export const ButtonLanguageMobile = styled(ButtonLanguage)`
+export const LanguageMenuStyled = styled(LanguageMenu)`
   position: absolute;
-  right: 9px;
-  top: 25px;
+  right: 17px;
+  top: 41px;
+  transform: scale(0.85);
+
+  button.MuiButton-root {
+    border: ${props => props.theme.borders.border1} ${props => props.theme.colors.borderColor1};
+    background-color: ${props => props.theme.colors.buttonBackground4};
+
+    span.MuiButton-label {
+      font-weight: 400;
+    }
+  }
 `;
 
 export const ButtonsContainer = styled(Column)`

@@ -7,11 +7,13 @@ import { networkColorClassname } from 'lib/utils/networkColorClassname';
 import { chainIdToName } from 'lib/utils/chainIdToName';
 import { shorten } from 'lib/utils/shorten';
 import { ButtonWalletStatus } from './styles.WalletStatus';
+import { useTranslation } from 'i18n';
 
 export const WalletStatus = () => {
   const walletContext = useContext(WalletContext);
   const { _onboard } = walletContext || {};
   const currentState = _onboard.getState();
+  const { t } = useTranslation();
 
   let address;
   let walletName;
@@ -66,6 +68,6 @@ export const WalletStatus = () => {
       </>
     );
   } else {
-    return <ButtonWalletStatus onClick={handleConnect}>Sign in</ButtonWalletStatus>;
+    return <ButtonWalletStatus onClick={handleConnect}>{t('Sign in')}</ButtonWalletStatus>;
   }
 };

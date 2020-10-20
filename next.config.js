@@ -10,6 +10,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
+const { nextI18NextRewrites } = require('next-i18next/rewrites')
+
+const localeSubpaths = {es: "es", en: "en"};
+
 const nextConfig = {
   inlineImageLimit: 48, // make it tiny so that it doesn't inline,
   devIndicators: {
@@ -21,6 +25,10 @@ const nextConfig = {
      * need to ignore typescript errors on building
      */
     ignoreBuildErrors: true,
+  },
+  rewrites: async () => nextI18NextRewrites(localeSubpaths),
+  publicRuntimeConfig: {
+    localeSubpaths,
   },
 }
 

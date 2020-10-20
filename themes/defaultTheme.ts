@@ -16,9 +16,11 @@ export const defaultTheme: Theme = {
     buttonBackground2: '#3433CD',
     buttonBackground3: '#FF9934',
     buttonBackground4: '#9A99FF',
+    buttonBackground5: '#7776ca',
     buttonBackgroundDisabled: '#9A99FF',
     scrollbar: '#FFFFFF',
     scrollbarThumb: '#565656',
+    borderColor1: '#FFFFFF',
   },
   shadows: {
     elevation1: '1px 10px 0px 0px #00000024;',
@@ -31,6 +33,7 @@ export const defaultTheme: Theme = {
     lineHeight1: '21px',
   },
   borders: {
+    border1: 'solid 1px',
     borderRadius1: '6.3px',
   },
   screenSizes,
