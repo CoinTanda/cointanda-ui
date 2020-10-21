@@ -19,7 +19,7 @@ const NextI18NextInstance = new NextI18Next({
   strictMode: false,
 });
 
-export const { appWithTranslation, useTranslation, i18n } = NextI18NextInstance;
+export const { appWithTranslation, useTranslation, i18n, Link, Router } = NextI18NextInstance;
 export { availableLanguages };
 
 export default NextI18NextInstance;

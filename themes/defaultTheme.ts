@@ -5,10 +5,13 @@ export const defaultTheme: Theme = {
   colors: {
     general1: '#3433CD',
     background1: '#FFFFFF',
+    background2: '#EEF0F1',
     text1: '#A8A8A8',
     text2: '#9899FE',
     text3: '#5d5d5d',
     text4: 'black',
+    text5: '#343434',
+    text6: '#434B9C',
     textMobileTitle: 'black',
     buttonText1: 'white',
     buttonText2: '#5654D4',
@@ -33,7 +36,7 @@ export const defaultTheme: Theme = {
     lineHeight1: '21px',
   },
   borders: {
-    border1: 'solid 1px',
+    border1: 'solid 1px #c5c5c5',
     borderRadius1: '6.3px',
   },
   screenSizes,

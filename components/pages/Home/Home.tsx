@@ -1,4 +1,5 @@
 import React, { FC, useContext } from 'react';
+import { useTheme } from 'styled-components';
 import { useTranslation } from '../../../i18n';
 import { WalletContext } from 'lib/components/WalletContextProvider';
 import {
@@ -15,16 +16,16 @@ import { IconStar } from 'components/ui/IconStar/IconStar';
 import { Column } from 'components/ui/Column/Column';
 import { IconTriangle } from 'components/ui/IconTriangle/IconTriangle';
 import { LinkedText } from 'components/ui/LinkedText/LinkedText';
-
-import { TitleMobile } from 'components/ui/TitleMobile/styles.TitleMobile';
+import { TitleText } from 'components/ui/TitleText/TitleText';
 
 export const Home: FC = () => {
   const walletContext = useContext(WalletContext);
   const { t } = useTranslation();
+  const theme = useTheme();
 
   return (
     <HomeContainer>
-      <TitleMobile>{t('What is CoinTanda?')}</TitleMobile>
+      <TitleText showIn={theme.screenSizes.tabletXL}>{t('What is CoinTanda?')}</TitleText>
       <VideoContainer>
         <VideoImg src={videoMock} />
       </VideoContainer>
@@ -32,8 +33,7 @@ export const Home: FC = () => {
         <Row>
           <IconStar />
           <TextInfoItem>
-            {t('CoinTanda Description')}{' '}
-            <span>{t('Tandas')}</span>.
+            {t('CoinTanda Description')} <span>{t('Tandas')}</span>.
           </TextInfoItem>
         </Row>
         <Row>
@@ -45,8 +45,7 @@ export const Home: FC = () => {
         <Row>
           <IconStar />
           <TextInfoItem>
-            {t('Every week you may win')}{' '}
-            <span>{t('provably fair raffle')}</span>.
+            {t('Every week you may win')} <span>{t('provably fair raffle')}</span>.
           </TextInfoItem>
         </Row>
         <Row>

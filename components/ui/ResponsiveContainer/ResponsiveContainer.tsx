@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ResponsiveContainerStyled } from './styles.ResponsiveContainer';
 
-interface PropsResponsiveContainer {
+export interface PropsResponsiveContainer {
   hideIn?: number;
   showIn?: number;
 }
