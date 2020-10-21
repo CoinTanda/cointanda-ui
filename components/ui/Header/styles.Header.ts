@@ -4,8 +4,7 @@ import { Row } from '../Row/Row';
 export const HeaderContainer = styled(Row)`
   align-items: flex-end;
   justify-content: space-between;
-  padding-right: 7px;
-  margin-bottom: 24px;
+  margin-bottom: 34px;
 `;
 
 export const BrandingContainer = styled(Row)`

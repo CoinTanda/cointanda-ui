@@ -12,10 +12,13 @@ export interface Theme {
 interface ThemeColors {
   general1: string;
   background1: string;
+  background2: string;
   text1: string;
   text2: string;
   text3: string;
   text4: string;
+  text5: string;
+  text6: string;
   textMobileTitle: string;
   buttonText1: string;
   buttonText2: string;

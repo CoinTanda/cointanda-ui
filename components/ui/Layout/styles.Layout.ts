@@ -4,7 +4,7 @@ import { Row } from '../Row/Row';
 
 export const LayoutContainer = styled('div')`
   width: 100vw;
-  max-width: 1600px;
+  max-width: 1300px;
   padding: 26px 17px;
   padding-right: 45px;
 

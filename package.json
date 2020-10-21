@@ -29,7 +29,7 @@
     "verbose": true
   },
   "dependencies": {
-    "@material-ui/core": "latest",
+    "@material-ui/core": "^4.11.0",
     "@pooltogether/bnc-onboard": "1.13.1-a",
     "@pooltogether/current-pool-data": "3.0.0-alpha.40",
     "@pooltogether/etherplex": "^0.2.3",

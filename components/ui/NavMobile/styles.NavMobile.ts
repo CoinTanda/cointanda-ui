@@ -11,6 +11,7 @@ export const MenuContainer = styled('div')`
   padding-bottom: 15px;
   right: 0;
   top: 0;
+  z-index: 2;
 
   background-color: ${props => props.theme.colors.general1};
   border-radius: ${props => props.theme.borders.borderRadius1} 0 0

@@ -17,5 +17,21 @@
   "without risking anything": "sin arriesgar nada",
   "you get your coins back whenever you want": "puedes obtener tus monedas de nuevo cuando quieras",
   "More info": "Mas info",
-  "Connect wallet": "Conectar la billetera"
+  "Connect wallet": "Conectar la billetera",
+
+  "New Tanda": "Nueva Tanda",
+  "Welcome to CoinTanda!": "Bienvenido a CoinTanda!",
+  "You may join any of these Tandas": "Puedes unirte a cualquiera de estas tandas",
+  "Next raffle": "Nueva rifa:",
+  "Cryptocoin": "Crypto moneda:",
+  "Deposit per ticket": "Deposito por ticket:",
+  "Sold tickets": "Tickets vendidos:",
+  "Total deposit": "Total depositado:",
+  "Prize last week": "Ultimo premio:",
+  "Estimated prize": "Premio estimado:",
+  "Name": "Nombre",
+  "Prize": "Premio",
+  "Coin": "Moneda",
+  "Next Raffle": "Nueva Rifa",
+
 }
