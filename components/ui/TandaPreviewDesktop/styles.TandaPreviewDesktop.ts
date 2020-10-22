@@ -23,7 +23,6 @@ export const DataRowContainer = styled(Row)`
 `;
 
 export const TandaTitle = styled(TitleText)`
-  margin-left: 56px;
   margin-bottom: 6px;
 `;
 
