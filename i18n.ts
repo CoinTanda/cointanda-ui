@@ -1,4 +1,5 @@
 import NextI18Next from 'next-i18next';
+import path from 'path';
 
 /**
  * To add a new language you need to add it here but also in the localeSubpaths const inside
@@ -13,8 +14,9 @@ const availableLanguages: Record<string, string> = {
 const NextI18NextInstance = new NextI18Next({
   defaultLanguage: 'en',
   defaultNS: 'translations',
-  localePath: 'translations',
+  localePath: path.resolve('./public/static/locales'),
   localeSubpaths: availableLanguages,
+  ignoreRoutes: ['/_next/', '/assets/'],
   otherLanguages: ['es'],
   strictMode: false,
 });
