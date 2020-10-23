@@ -26,10 +26,16 @@ const nextConfig = {
      */
     ignoreBuildErrors: true,
   },
+  /**
+   * locale subpath feature is not compatible with "next export" command so we disable the feature for the moment, see:
+   * https://github.com/isaachinman/next-i18next/issues/780
+   */
+  /*
   rewrites: async () => nextI18NextRewrites(localeSubpaths),
   publicRuntimeConfig: {
     localeSubpaths,
   },
+  */
 }
 
 const allConfig =

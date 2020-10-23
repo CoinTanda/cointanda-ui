@@ -15,7 +15,11 @@ const NextI18NextInstance = new NextI18Next({
   defaultLanguage: 'en',
   defaultNS: 'translations',
   localePath: path.resolve('./public/static/locales'),
-  localeSubpaths: availableLanguages,
+  /**
+   * locale subpath feature is not compatible with "next export" command so we disable the feature for the moment, see:
+   * https://github.com/isaachinman/next-i18next/issues/780
+   */
+  // localeSubpaths: availableLanguages,
   ignoreRoutes: ['/_next/', '/assets/'],
   otherLanguages: ['es'],
   strictMode: false,
