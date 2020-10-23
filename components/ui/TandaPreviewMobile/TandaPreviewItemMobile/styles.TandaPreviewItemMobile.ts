@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import TableRow from '@material-ui/core/TableRow';
 import { TableCell } from '@material-ui/core';
 
-export const ContainerTandaItemMobile = styled(TableRow)<{ darkBackground?: boolean }>`
+export const ContainerTandaItemMobile = styled(TableRow).withConfig({
+  shouldForwardProp: prop => !['darkBackground'].includes(prop),
+})<{ darkBackground?: boolean }>`
   .MuiTableCell-root {
     border: none;
     font-family: ${props => props.theme.fonts.font1};

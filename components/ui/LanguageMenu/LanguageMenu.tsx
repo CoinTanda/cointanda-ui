@@ -34,7 +34,7 @@ export const LanguageMenu: FC<PropsLanguageMenu> = ({ className }) => {
           {Object.values(availableLanguages).map(
             l =>
               l !== language && (
-                <OtherLanguageButton onClick={() => handleOtherLanguageClick(l)}>
+                <OtherLanguageButton onClick={() => handleOtherLanguageClick(l)} key={l}>
                   {l.toUpperCase()}
                 </OtherLanguageButton>
               )
