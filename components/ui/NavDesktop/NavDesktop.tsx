@@ -11,7 +11,9 @@ export const NavDesktop: FC = () => {
   return (
     <ResponsiveContainer hideIn={theme.screenSizes.tabletXL}>
       <NavContainerDesktop>
-        <ButtonNavDesktop variant="outlined">{t('About')} </ButtonNavDesktop>
+        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/about')}>
+          {t('About')}{' '}
+        </ButtonNavDesktop>
         <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/tandas')}>
           {t('Tandas')}
         </ButtonNavDesktop>

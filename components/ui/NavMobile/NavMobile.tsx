@@ -11,7 +11,7 @@ import {
 import burgerImage from '../../../assets/menu_icon.png';
 import closeButtonImage from '../../../assets/close_button.png';
 import { LanguageMenuStyled } from './styles.NavMobile';
-import { useTranslation } from 'i18n';
+import { Router, useTranslation } from 'i18n';
 
 export const NavMobile: FC = () => {
   const [enabled, setEnabled] = useState(false);
@@ -25,11 +25,11 @@ export const NavMobile: FC = () => {
           <CloseButton src={closeButtonImage} onClick={() => setEnabled(!enabled)} />
           <LanguageMenuStyled />
           <ButtonsContainer>
-            <ButtonSection>
+            <ButtonSection onClick={() => Router.push('/about')}>
               <IconItem whiteVersion />
               <TextButton>{t('About')}</TextButton>
             </ButtonSection>
-            <ButtonSection>
+            <ButtonSection onClick={() => Router.push('/tandas')}>
               <IconItem whiteVersion />
               <TextButton>{t('Tandas')}</TextButton>
             </ButtonSection>
