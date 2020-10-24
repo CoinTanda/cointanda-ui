@@ -8,8 +8,8 @@ import {
   ProjectDescriptionContainer,
   TandaType,
   TandaTypesContainer,
-  TextBlock,
 } from './styles.About';
+import { TextBlock } from 'components/ui/TextBlock/styles.TextBlock';
 import { useTranslation } from 'i18n';
 import { WalletContext } from 'lib/components/WalletContextProvider';
 import tandaIconSilver from '../../../assets/Silver_Tanda_80.png';
