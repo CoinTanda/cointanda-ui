@@ -11,7 +11,7 @@ export const FaqContainer = styled('div')`
 `;
 
 export const LeftColumnContainer = styled(Column)`
-  max-width: 50%;
+  width: 100%;
   margin-right: 57px;
 
   @media ${props => props.theme.queries.tabletXL} {
@@ -21,7 +21,7 @@ export const LeftColumnContainer = styled(Column)`
 `;
 
 export const RightColumnContainer = styled(Column)`
-  max-width: 50%;
+  width: 100%;
 
   @media ${props => props.theme.queries.tabletXL} {
     max-width: unset;
@@ -29,3 +29,9 @@ export const RightColumnContainer = styled(Column)`
 `;
 
 export const FaqItem = styled(Column)``;
+
+export const IsolatedAreaContainer = styled('div')`
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+`;
