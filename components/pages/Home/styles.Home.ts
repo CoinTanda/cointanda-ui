@@ -1,4 +1,5 @@
 import { Button } from 'components/ui/Button/Button';
+import { Link } from 'components/ui/Link/styles.Link';
 import { Row } from 'components/ui/Row/Row';
 import styled from 'styled-components';
 
@@ -81,4 +82,8 @@ export const VideoImg = styled('img')`
   @media ${props => props.theme.queries.tabletXL} {
     width: 100%;
   }
+`;
+
+export const LinkStyled = styled(Link)`
+  margin-left: 5px;
 `;
