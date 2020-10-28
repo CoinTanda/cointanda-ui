@@ -30,8 +30,8 @@ export const About: FC = () => {
         </TextBlock>
         <TextBlock>
           {t('A Tanda is a group people who')} <span>{t('jointly deposit')}</span>{' '}
-          {t('their cryptocoins. They are lent to')}
-          {t('traders who use them for leveraged')} <span>{t('interest')}</span> {t('for that')}.
+          {t('their cryptocoins')} {t('traders who use them for leveraged')} <span>{t('interest')}</span>{' '}
+          {t('for that')}.
         </TextBlock>
         <TextBlock>
           {t('This is done in a totally decentralized way using')} <span>{t('smart contracts')}</span>.{' '}
@@ -46,7 +46,7 @@ export const About: FC = () => {
           {t('you invested')}. {t('And you can withdraw it')} <span>{t('at any time')}</span>.
         </TextBlock>
         <TextBlock>
-          {t('You can buy as many')} <span>{t('tickets')}</span> {t('as you like per Tanda')}
+          {t('You can buy as many')} <span>{t('tickets')}</span> {t('as you like per Tanda')}{' '}
           <span>{t('chances')}</span> {t('to win the raffle')}.
         </TextBlock>
         <ButtonConnectWallet onClick={() => walletContext.handleConnectWallet()}>
