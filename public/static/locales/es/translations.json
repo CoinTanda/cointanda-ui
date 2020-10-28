@@ -170,5 +170,25 @@
   "We recommend to use": "We recommend to use",
   "Coinswitch": "Coinswitch",
   "as you do not need to register there": "as you do not need to register there. You choose the pair BTC / RBTC, fill in the address of your wallet and change as many Bitcoins as you like",
-  "Remember, by using CoinTanda": "Remember, by using CoinTanda, your Bitcoins will not get lost. You can get them back at any time"
+  "Remember, by using CoinTanda": "Remember, by using CoinTanda, your Bitcoins will not get lost. You can get them back at any time",
+
+  "Your message": "Your message",
+  "SEND": "SEND",
+
+  "The Tanda Token (Tanto)": "The Tanda Token (Tanto)",
+  "In the near future, we will sell our": "In the near future, we will sell our",
+  "Tanda Token": "Tanda Token",
+  "short": "short",
+  "Tanto": "Tanto",
+  "It is an": "It is an",
+  "ERC 20 governance token": "ERC 20 governance token",
+  "which will give you voting": "which will give you voting rights on the future development of CoinTanda",
+  "Currently you can only gain": "Currently you can only gain this token if you are already a member and successfully",
+  "invite new members": "invite new members",
+  "to join": "to join",
+  "As an early owner": "As an early owner of our token you can benefit from its future growth in value",
+  "If you want to be informed": "If you want to be informed about our Token Sale, please leave your name and email here. We will not use this for spam or advertising",
+  "Your name": "Your name",
+  "Your e-mail": "Your e-mail",
+  "OK": "OK"
 }

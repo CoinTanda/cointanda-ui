@@ -20,19 +20,13 @@ export const OurToken: FC = () => {
       <TextBlock>
         {t('In the near future, we will sell our')} <span>{t('Tanda Token')}</span>, {t('short')}:{' '}
         <span>{t('Tanto')}</span>. {t('It is an')} <span>{t('ERC 20 governance token')}</span>{' '}
-        {t('which will give you voting rights on the future development of CoinTanda')}.
+        {t('which will give you voting')}.
       </TextBlock>
       <TextBlock>
-        {t('Currently you can only gain this token if you are already a member and successfully')}{' '}
-        <span>{t('invite new members')}</span> {t('to join')}.{' '}
-        {t('As an early owner of our token you can benefit from its future growth in value')}.
+        {t('Currently you can only gain')} <span>{t('invite new members')}</span> {t('to join')}.{' '}
+        {t('As an early owner')}.
       </TextBlock>
-      <TextBlock>
-        {t(
-          'If you want to be informed about our Token Sale, please leave your name and email here. We will not use this for spam or advertising'
-        )}
-        .
-      </TextBlock>
+      <TextBlock>{t('If you want to be informed')}.</TextBlock>
       <FormContainer>
         <InputContainer>
           <TitleText medium>{t('Your name')}</TitleText>
