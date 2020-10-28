@@ -33,15 +33,15 @@ export const NavMobile: FC = () => {
               <IconItem whiteVersion />
               <TextButton>{t('Tandas')}</TextButton>
             </ButtonSection>
-            <ButtonSection>
+            <ButtonSection onClick={() => Router.push('/ourtoken')}>
               <IconItem whiteVersion />
               <TextButton>{t('Our Token')}</TextButton>
             </ButtonSection>
-            <ButtonSection>
+            <ButtonSection onClick={() => Router.push('/faq')}>
               <IconItem whiteVersion />
               <TextButton>{t('FAQ')}</TextButton>
             </ButtonSection>
-            <ButtonSection>
+            <ButtonSection onClick={() => Router.push('/contact')}>
               <IconItem whiteVersion />
               <TextButton>{t('Contact us')}</TextButton>
             </ButtonSection>

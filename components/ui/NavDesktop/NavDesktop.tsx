@@ -17,9 +17,15 @@ export const NavDesktop: FC = () => {
         <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/tandas')}>
           {t('Tandas')}
         </ButtonNavDesktop>
-        <ButtonNavDesktop variant="outlined">{t('Our Token')}</ButtonNavDesktop>
-        <ButtonNavDesktop variant="outlined">{t('FAQ')}</ButtonNavDesktop>
-        <ButtonNavDesktop variant="outlined">{t('Contact us')}</ButtonNavDesktop>
+        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/ourtoken')}>
+          {t('Our Token')}
+        </ButtonNavDesktop>
+        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/faq')}>
+          {t('FAQ')}
+        </ButtonNavDesktop>
+        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/contact')}>
+          {t('Contact us')}
+        </ButtonNavDesktop>
       </NavContainerDesktop>
     </ResponsiveContainer>
   );
