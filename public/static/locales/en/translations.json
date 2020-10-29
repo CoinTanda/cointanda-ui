@@ -6,6 +6,7 @@
   "Our Token": "Our Token", 
   "FAQ": "FAQ", 
   "Contact us": "Contact us",
+  "My Profile": "My Profile",
 
   "What is CoinTanda?": "What is CoinTanda?",
   "CoinTanda Description": "CoinTanda is a risk-free way to multiply your cryptocoins by forming groups called",
@@ -190,5 +191,14 @@
   "If you want to be informed": "If you want to be informed about our Token Sale, please leave your name and email here. We will not use this for spam or advertising",
   "Your name": "Your name",
   "Your e-mail": "Your e-mail",
-  "OK": "OK"
+  "OK": "OK",
+
+  "My Tandas": "My Tandas",
+  "I have": "I have",
+  "Invite Friends": "Invite Friends",
+  "ADD TANDA": "ADD TANDA",
+  "My E-Mail Address": "My E-Mail Address",
+  "SAVE": "SAVE",
+  "I want to be informed": "I want to be informed by email if I win",
+  "LEAVE": "LEAVE"
 }

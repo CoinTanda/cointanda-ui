@@ -26,6 +26,9 @@ export const NavDesktop: FC = () => {
         <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/contact')}>
           {t('Contact us')}
         </ButtonNavDesktop>
+        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/profile')}>
+          {t('My Profile')}
+        </ButtonNavDesktop>
       </NavContainerDesktop>
     </ResponsiveContainer>
   );

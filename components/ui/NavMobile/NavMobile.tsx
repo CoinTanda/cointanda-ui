@@ -45,7 +45,7 @@ export const NavMobile: FC = () => {
               <IconItem whiteVersion />
               <TextButton>{t('Contact us')}</TextButton>
             </ButtonSection>
-            <ButtonSection>
+            <ButtonSection onClick={() => Router.push('/profile')}>
               <IconItem whiteVersion />
               <TextButton>{t('My Profile')}</TextButton>
             </ButtonSection>

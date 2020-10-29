@@ -84,6 +84,4 @@ export const VideoImg = styled('img')`
   }
 `;
 
-export const LinkStyled = styled(Link)`
-  margin-left: 5px;
-`;
+export const LinkStyled = styled(Link)``;
