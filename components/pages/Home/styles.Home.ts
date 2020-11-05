@@ -1,4 +1,5 @@
 import { Button } from 'components/ui/Button/Button';
+import { Link } from 'components/ui/Link/styles.Link';
 import { Row } from 'components/ui/Row/Row';
 import styled from 'styled-components';
 
@@ -82,3 +83,5 @@ export const VideoImg = styled('img')`
     width: 100%;
   }
 `;
+
+export const LinkStyled = styled(Link)``;

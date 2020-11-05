@@ -49,6 +49,7 @@ export const ButtonTanda = styled(Button)`
 `;
 
 export const ThumbImage = styled('img')`
+  padding-top: 4px;
   height: 200px;
 `;
 
