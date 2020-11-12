@@ -1,5 +1,5 @@
-import { Tandas } from '../../../components/pages/Tandas/Tandas';
+import { Tanda } from '../../../components/pages/Tanda/Tanda';
 
 export default function Index() {
-  return <Tandas />;
+  return <Tanda />;
 }
