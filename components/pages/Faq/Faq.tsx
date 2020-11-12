@@ -2,6 +2,7 @@ import { TextBlock } from 'components/ui/TextBlock/styles.TextBlock';
 import { TitleText } from 'components/ui/TitleText/TitleText';
 import { useTranslation } from 'i18n';
 import React, { FC } from 'react';
+import { Link } from '../../ui/Link/Link';
 import {
   FaqContainer,
   FaqItem,
@@ -9,7 +10,6 @@ import {
   IsolatedAreaContainer,
   RightColumnContainer,
 } from './styles.Faq';
-import { Link } from '../../ui/Link/styles.Link';
 
 export const Faq: FC = () => {
   const { t } = useTranslation();

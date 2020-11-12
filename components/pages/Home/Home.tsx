@@ -5,7 +5,6 @@ import { WalletContext } from 'lib/components/WalletContextProvider';
 import {
   ButtonConnectWallet,
   HomeContainer,
-  LinkStyled,
   MoreInfoContainer,
   TextInfoItem,
   VideoContainer,
@@ -17,6 +16,7 @@ import { IconStar } from 'components/ui/IconStar/IconStar';
 import { Column } from 'components/ui/Column/Column';
 import { IconTriangle } from 'components/ui/IconTriangle/IconTriangle';
 import { TitleText } from 'components/ui/TitleText/TitleText';
+import { Link } from '../../ui/Link/Link';
 
 export const Home: FC = () => {
   const walletContext = useContext(WalletContext);
@@ -57,7 +57,7 @@ export const Home: FC = () => {
         </Row>
         <MoreInfoContainer>
           <IconTriangle />
-          <LinkStyled>{t('More info')}</LinkStyled>
+          <Link href={''}>{t('More info')}</Link>
         </MoreInfoContainer>
         <ButtonConnectWallet onClick={() => walletContext.handleConnectWallet()}>
           {t('Connect wallet')}
