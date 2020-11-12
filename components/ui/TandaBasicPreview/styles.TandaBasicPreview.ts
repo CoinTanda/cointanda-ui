@@ -28,3 +28,11 @@ export const TableCellStyled = styled(TableCell)`
     font-weight: 800;
   }
 `;
+
+export const TableCellDesktopOnly = styled(TableCellStyled)`
+  &.MuiTableCell-root {
+    @media ${props => props.theme.queries.tabletXL} {
+      display: none;
+    }
+  }
+`;

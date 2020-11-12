@@ -1,6 +1,10 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'i18n';
-import { ContainerTandaBasicPreview, TableCellStyled } from './styles.TandaBasicPreview';
+import {
+  ContainerTandaBasicPreview,
+  TableCellDesktopOnly,
+  TableCellStyled,
+} from './styles.TandaBasicPreview';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -19,6 +23,7 @@ export const TandaBasicPreview: FC = ({ children }) => {
             <TableCellStyled>{t('Name')}</TableCellStyled>
             <TableCellStyled align="right">{t('Coin')}</TableCellStyled>
             <TableCellStyled align="right">{t('Prize')}</TableCellStyled>
+            <TableCellDesktopOnly align="right">{t('Deposit')}</TableCellDesktopOnly>
             <TableCellStyled align="right">{t('Next Raffle')}</TableCellStyled>
           </TableRow>
         </TableHead>

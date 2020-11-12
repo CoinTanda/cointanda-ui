@@ -25,3 +25,11 @@ export const TandaIcon = styled('img')`
   margin: 0px 2px;
   margin-top: 5px;
 `;
+
+export const TableCellDesktopOnly = styled(TableCell)`
+  &.MuiTableCell-body {
+    @media ${props => props.theme.queries.tabletXL} {
+      display: none;
+    }
+  }
+`;

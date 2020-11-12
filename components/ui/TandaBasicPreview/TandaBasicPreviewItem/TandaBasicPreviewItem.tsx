@@ -1,6 +1,11 @@
 import React, { FC } from 'react';
 import TableCell from '@material-ui/core/TableCell';
-import { ContainerTandaBasicPreviewItem, NameCell, TandaIcon } from './styles.TandaBasicPreviewItem';
+import {
+  ContainerTandaBasicPreviewItem,
+  NameCell,
+  TandaIcon,
+  TableCellDesktopOnly,
+} from './styles.TandaBasicPreviewItem';
 import tandaIconSilver from '../../../../assets/tanda_silver_40.png';
 import tandaIconGold from '../../../../assets/tanda_gold_40.png';
 import { useTandaInfo } from '../../../../hooks/useTandaInfo';
@@ -21,6 +26,7 @@ export const TandaBasicPreviewItem: FC<PropsTandaPreviewItem> = ({
   const {
     ticketName,
     prizeEstimate,
+    ticketTotalSupply,
     tokenDecimals,
     tokenSymbol,
     sponsorshipName,
@@ -41,6 +47,13 @@ export const TandaBasicPreviewItem: FC<PropsTandaPreviewItem> = ({
       <TableCell align="right">
         {displayAmountInEther(prizeEstimate, { precision: 2, decimals: tokenDecimals })} {tokenSymbol}
       </TableCell>
+      <TableCellDesktopOnly align="right">
+        {displayAmountInEther(ticketTotalSupply, {
+          precision: 2,
+          decimals: tokenDecimals,
+        })}{' '}
+        {tokenSymbol}
+      </TableCellDesktopOnly>
       <TableCell align="right">
         {prizePeriodRemainingSeconds != null ? prizePeriodRemainingSeconds.toString() : ''}
       </TableCell>
