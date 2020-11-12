@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useTranslation, Router } from 'i18n';
 import {
@@ -53,7 +53,21 @@ export const Tanda: FC = () => {
   } = useTandaInfo(address);
 
   // This is temporary until the logic is implemented:
-  const mode: Mode = Mode.Joined as Mode;
+  let [mode, setMode] = useState(Mode.Normal);
+  const handleSetMode = () => {
+    if (mode === Mode.Normal) {
+      setMode(Mode.Joined);
+      return;
+    }
+    if (mode === Mode.Joined) {
+      setMode(Mode.Won);
+      return;
+    }
+    if (mode === Mode.Won) {
+      setMode(Mode.Normal);
+      return;
+    }
+  };
 
   return (
     <TandaContainer>
@@ -110,7 +124,9 @@ export const Tanda: FC = () => {
             </DataContainer>
           </Row>
           <BottomButtonsContainer>
-            <ButtonRed onClick={() => Router.push(`/tandas/${address}/withdraw`)}>
+            <ButtonRed
+              /*onClick={() => Router.push(`/tandas/${address}/withdraw`)}*/ onClick={handleSetMode}
+            >
               {t('LEAVE')}
             </ButtonRed>
             <Button onClick={() => Router.push(`/win-members`)}>{t('INVITE')}</Button>
