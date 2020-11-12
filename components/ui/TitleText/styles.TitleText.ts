@@ -10,5 +10,6 @@ export const TitleTextStyled = styled('div')<PropsTitleText>`
 
   @media ${props => props.theme.queries.tabletXL} {
     font-size: ${props => (props.small ? '18px' : props.medium ? '21.3px' : '25px')};
+    margin-bottom: ${props => (props.small ? '15px' : props.medium ? '15px' : '15px')};
   }
 `;
