@@ -20,8 +20,8 @@ export const TandaContainer = styled('div')`
     border: unset;
   }
 
-  @media ${props => props.theme.queries.mobileM} {
-    padding: 0;
+  @media ${props => props.theme.queries.mobileS} {
+    padding: 5px;
     border: unset;
   }
 `;
