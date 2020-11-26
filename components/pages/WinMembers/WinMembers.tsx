@@ -13,6 +13,7 @@ export const WinMembers: FC = () => {
   const { t } = useTranslation();
   const walletContext = useContext(WalletContext);
   const usersAddress = walletContext._onboard.getState().address;
+  const finalUrl = `${window.location.origin}/${usersAddress}`;
 
   if (!usersAddress) {
     return <TextBlock>Login to see this page</TextBlock>;
@@ -35,8 +36,8 @@ export const WinMembers: FC = () => {
             {t('and send it to your friends by email or')}
           </TextBlock>
           <InputContainer>
-            <Input variant="outlined" value={usersAddress} contentEditable={false} />
-            <ButtonCopy onClick={() => copy(usersAddress)}>{t('COPY')}</ButtonCopy>
+            <Input variant="outlined" value={finalUrl} contentEditable={false} />
+            <ButtonCopy onClick={() => copy(finalUrl)}>{t('COPY')}</ButtonCopy>
           </InputContainer>
         </Content>
       </WinMembersContainer>

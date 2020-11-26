@@ -1,5 +1,6 @@
 import React, { FC, useContext } from 'react';
 import { useTheme } from 'styled-components';
+import { useRouter } from 'next/router';
 import { useTranslation } from '../../../i18n';
 import { WalletContext } from 'lib/components/WalletContextProvider';
 import {
@@ -21,6 +22,10 @@ export const Home: FC = () => {
   const walletContext = useContext(WalletContext);
   const { t } = useTranslation();
   const theme = useTheme();
+  const router = useRouter();
+  const referralId = router.query['referralId'] as string;
+  // referralId is here to be used in a backend server in the future
+  console.log(referralId);
 
   return (
     <HomeContainer>
@@ -32,9 +37,9 @@ export const Home: FC = () => {
             width="100%"
             height="100%"
             // @ts-ignore
-            frameborder="0"
+            frameBorder="0"
             allow="autoplay; fullscreen"
-            allowfullscreen
+            allowFullScreen
           />
         </VideoResponsiveWrapper>
       </VideoContainer>
