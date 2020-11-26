@@ -23,7 +23,7 @@ export const TandasList: FC = () => {
             <TandaBasicPreviewItem
               address={tanda.address}
               darkBackground={i % 2 === 0}
-              iconColor={'gold'}
+              iconColor={tanda.type}
               key={tanda.address}
             />
           ))}

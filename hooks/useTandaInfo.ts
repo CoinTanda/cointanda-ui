@@ -9,12 +9,15 @@ import { useCurrentNetworkInfo } from './useCurrentNetworkInfo';
 import { Web3Provider } from 'ethers/providers';
 import { poolToast } from 'lib/utils/poolToast';
 import { BigNumber } from 'ethers/utils';
+import { TandaType, useTandasBasicInfo } from './useTandasBasicInfo';
 
 export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
   const walletContext = useContext(WalletContext);
   const usersAddress = walletContext._onboard.getState().address;
   const provider = walletContext.state.provider as Web3Provider;
   const [demoNetworkName] = useCurrentNetworkInfo();
+  const { assetType, type, pricePerTicket, networkName } =
+    useTandasBasicInfo().find(t => t.address === prizePoolAddress) ?? {};
 
   const [poolAddresses, setPoolAddresses] = useState<RequestStatus & { prizePool: string }>({
     prizePool: prizePoolAddress,
@@ -170,6 +173,10 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
     poolAddresses,
     depositsUnlocked,
     isRngRequested,
+    assetType,
+    type,
+    pricePerTicket,
+    networkName,
   } as unknown) as TandaInfo;
 }
 
@@ -196,6 +203,10 @@ export interface TandaInfo extends RequestStatus {
   isRngRequested: boolean;
   depositsUnlocked: boolean;
   poolAddresses: any;
+  assetType: string;
+  pricePerTicket: number;
+  type: TandaType;
+  networkName: string;
 }
 
 export interface UsersChainValues extends RequestStatus {

@@ -19,7 +19,9 @@ import {
   WonContainer,
   ResponsiveContainer,
 } from './styles.Tanda';
-import tandaThumb from 'assets/tanda_big_green.png';
+import tandaThumbSilver from 'assets/Silver_Tanda_200.png';
+import tandaThumbGold from 'assets/Gold_Tanda_200.png';
+import tandaThumbBlack from 'assets/Black_Tanda_200.png';
 import { displayAmountInEther } from 'lib/utils/displayAmountInEther';
 import { Row } from 'components/ui/Row/Row';
 import { useTandaInfo } from 'hooks/useTandaInfo';
@@ -30,6 +32,7 @@ import { ButtonRed } from 'components/ui/ButtonRed/styles.ButtonRed';
 import { Button } from 'components/ui/Button/Button';
 import { TitleText } from 'components/ui/TitleText/TitleText';
 import { TextBlock } from 'components/ui/TextBlock/styles.TextBlock';
+import { TandaType } from 'hooks/useTandasBasicInfo';
 
 enum Mode {
   Normal,
@@ -53,6 +56,8 @@ export const Tanda: FC = () => {
     prizeEstimate,
     soldTickets,
     usersChainValues,
+    pricePerTicket,
+    type,
   } = useTandaInfo(address);
 
   const { usersTimelockBalance, usersTimelockBalanceAvailableAt, usersTicketBalance } =
@@ -92,7 +97,15 @@ export const Tanda: FC = () => {
       <ResponsiveContainer>
         <SectionLeftColumn>
           <Row>
-            <ThumbImage src={tandaThumb} />
+            <ThumbImage
+              src={
+                type === TandaType.Black
+                  ? tandaThumbBlack
+                  : type === TandaType.Gold
+                  ? tandaThumbGold
+                  : tandaThumbSilver
+              }
+            />
             <DataContainer>
               <DataRowContainer>
                 <TextKey>{t('Next raffle')}:</TextKey>
@@ -106,7 +119,9 @@ export const Tanda: FC = () => {
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Deposit per ticket')}:</TextKey>
-                <TextValue>0.01 BTC</TextValue>
+                <TextValue>
+                  {pricePerTicket} {tokenSymbol}
+                </TextValue>
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Sold tickets')}:</TextKey>
@@ -155,7 +170,12 @@ export const Tanda: FC = () => {
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Chance of winning')}:</TextKey>
-                <TextValue>1.44%</TextValue>
+                <TextValue>
+                  {usersTicketBalance &&
+                    ticketTotalSupply &&
+                    usersTicketBalance?.div(ticketTotalSupply).mul('100').toString()}
+                  {'% '}
+                </TextValue>
               </DataRowContainer>
               <DataRowContainer>
                 <Column>
@@ -188,7 +208,7 @@ export const Tanda: FC = () => {
               <WinDataRowContainer>
                 <TextBlock>{t('Your prize money is')}</TextBlock>
                 <span>
-                  <TextValue>0.0399 BTC</TextValue>
+                  <TextValue>0.0399 {tokenSymbol}</TextValue>
                 </span>
               </WinDataRowContainer>
               <TextBlock>
