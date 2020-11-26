@@ -8,7 +8,7 @@ import {
   MoreInfoContainer,
   TextInfoItem,
   VideoContainer,
-  VideoImg,
+  VideoWrapper,
 } from './styles.Home';
 import videoMock from '../../../assets/video_mock.png';
 import { Row } from 'components/ui/Row/Row';
@@ -27,7 +27,17 @@ export const Home: FC = () => {
     <HomeContainer>
       <TitleText showIn={theme.screenSizes.tabletXL}>{t('What is CoinTanda?')}</TitleText>
       <VideoContainer>
-        <VideoImg src={videoMock} />
+        <VideoWrapper>
+          <iframe
+            src="https://player.vimeo.com/video/482209941"
+            width="100%"
+            height="100%"
+            // @ts-ignore
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          />
+        </VideoWrapper>
       </VideoContainer>
       <Column>
         <Row>

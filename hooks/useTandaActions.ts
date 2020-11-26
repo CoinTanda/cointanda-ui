@@ -21,8 +21,7 @@ export function useTandaActions(tandaInfo: Partial<TandaInfo>): TandaActions {
   const usersAddress: string = walletContext._onboard.getState().address;
   const [tx, setTx] = useState<TandaActionResponse>({});
 
-  // @ts-ignore
-  const txInFlight: boolean = tx.inWallet && tx.sent && !tx.completed;
+  const txInFlight: boolean = (tx.inWallet && tx.sent && !tx.completed) ?? false;
 
   const unlock = () => {
     tokenDecimals != null &&

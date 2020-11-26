@@ -3,6 +3,7 @@
     "IERC",
     "Timelock",
     "Timelocked",
+    "allowfullscreen",
     "pooltogether"
   ]
 }
