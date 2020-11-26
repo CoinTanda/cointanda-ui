@@ -77,7 +77,7 @@ export const ButtonConnectWallet = styled(Button)`
   }
 `;
 
-export const VideoWrapper = styled('div')`
+export const VideoResponsiveWrapper = styled('div')`
   position: relative;
   padding-bottom: 56.125%;
   width: 606px;

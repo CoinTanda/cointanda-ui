@@ -8,7 +8,7 @@ import {
   MoreInfoContainer,
   TextInfoItem,
   VideoContainer,
-  VideoWrapper,
+  VideoResponsiveWrapper,
 } from './styles.Home';
 import { Row } from 'components/ui/Row/Row';
 import { IconStar } from 'components/ui/IconStar/IconStar';
@@ -26,7 +26,7 @@ export const Home: FC = () => {
     <HomeContainer>
       <TitleText showIn={theme.screenSizes.tabletXL}>{t('What is CoinTanda?')}</TitleText>
       <VideoContainer>
-        <VideoWrapper>
+        <VideoResponsiveWrapper>
           <iframe
             src="https://player.vimeo.com/video/482209941"
             width="100%"
@@ -36,7 +36,7 @@ export const Home: FC = () => {
             allow="autoplay; fullscreen"
             allowfullscreen
           />
-        </VideoWrapper>
+        </VideoResponsiveWrapper>
       </VideoContainer>
       <Column>
         <Row>
