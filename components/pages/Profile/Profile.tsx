@@ -65,7 +65,7 @@ export const Profile: FC = () => {
               </Invite>
             </Tanda>
           ))}
-          <ButtonAddTanda>{t('ADD TANDA')}</ButtonAddTanda>
+          {/* <ButtonAddTanda>{t('ADD TANDA')}</ButtonAddTanda> */}
         </TandasColumn>
         <FormColumn>
           <TitleText medium>{t('My E-Mail Address')}</TitleText>
