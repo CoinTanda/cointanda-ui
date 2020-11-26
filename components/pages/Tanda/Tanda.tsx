@@ -39,9 +39,11 @@ enum Mode {
 
 export const Tanda: FC = () => {
   const { t } = useTranslation();
+  let [uiMode, setUiMode] = useState(Mode.Normal);
   const router = useRouter();
   const address = router.query['networkName'] as string;
   const {
+    loading,
     prizePeriodRemainingSeconds,
     ticketTotalSupply,
     ticketName,
@@ -50,29 +52,39 @@ export const Tanda: FC = () => {
     tokenSymbol,
     prizeEstimate,
     soldTickets,
+    usersChainValues,
   } = useTandaInfo(address);
 
+  const { usersTimelockBalance, usersTimelockBalanceAvailableAt, usersTicketBalance } =
+    usersChainValues || {};
+  const userHasFunds = usersTicketBalance && usersTicketBalance.gt(0);
+  const userHasTimelockedFunds = usersTimelockBalance && usersTimelockBalance.gt(0);
+
   // This is temporary until the logic is implemented:
-  let [mode, setMode] = useState(Mode.Normal);
+
   const handleSetMode = () => {
-    if (mode === Mode.Normal) {
-      setMode(Mode.Joined);
+    if (uiMode === Mode.Normal) {
+      setUiMode(Mode.Joined);
       return;
     }
-    if (mode === Mode.Joined) {
-      setMode(Mode.Won);
+    if (uiMode === Mode.Joined) {
+      setUiMode(Mode.Won);
       return;
     }
-    if (mode === Mode.Won) {
-      setMode(Mode.Normal);
+    if (uiMode === Mode.Won) {
+      setUiMode(Mode.Normal);
       return;
     }
   };
 
+  if (loading) {
+    return <>Loading...</>;
+  }
+
   return (
     <TandaContainer>
       <TandaTitle>{ticketName}</TandaTitle>
-      {mode === Mode.Normal && (
+      {!userHasFunds && (
         <ButtonTanda onClick={() => Router.push(`/tandas/${address}/buy-tickets`)}>
           {t('Join!')}
         </ButtonTanda>
@@ -132,12 +144,14 @@ export const Tanda: FC = () => {
             <Button onClick={() => Router.push(`/win-members`)}>{t('INVITE')}</Button>
           </BottomButtonsContainer>
         </SectionLeftColumn>
-        {mode === Mode.Joined && (
+        {userHasFunds && (
           <SectionRightColumn>
             <DepositedContainer>
               <DataRowContainer>
                 <TextKey>{t('My deposit')}:</TextKey>
-                <TextValue>1.2 BTC</TextValue>
+                <TextValue>
+                  {displayAmountInEther(usersTicketBalance, { decimals: tokenDecimals })} {tokenSymbol}
+                </TextValue>
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Chance of winning')}:</TextKey>
@@ -166,7 +180,7 @@ export const Tanda: FC = () => {
             </DepositedContainer>
           </SectionRightColumn>
         )}
-        {mode === Mode.Won && (
+        {uiMode === Mode.Won && (
           <SectionRightColumn>
             <WonContainer>
               <TitleText>{t('CONGRATULATIONS!')}</TitleText>

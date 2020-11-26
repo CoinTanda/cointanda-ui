@@ -10,14 +10,14 @@ import { Web3Provider } from 'ethers/providers';
 import { poolToast } from 'lib/utils/poolToast';
 import { BigNumber } from 'ethers/utils';
 
-export function useTandaInfo(address: string): Partial<TandaInfo> {
+export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
   const walletContext = useContext(WalletContext);
   const usersAddress = walletContext._onboard.getState().address;
   const provider = walletContext.state.provider as Web3Provider;
   const [demoNetworkName] = useCurrentNetworkInfo();
 
   const [poolAddresses, setPoolAddresses] = useState<RequestStatus & { prizePool: string }>({
-    prizePool: address,
+    prizePool: prizePoolAddress,
   });
 
   const [genericChainValues, setGenericChainValues] = useState<Partial<TandaInfo>>({
@@ -64,6 +64,7 @@ export function useTandaInfo(address: string): Partial<TandaInfo> {
     maxExitFeeMantissa,
     tokenDecimals,
     tokenSymbol,
+    isRngRequested,
   } = (genericChainValues as unknown) as Partial<TandaInfo>;
 
   tokenDecimals = tokenDecimals || DEFAULT_TOKEN_PRECISION;
@@ -97,11 +98,13 @@ export function useTandaInfo(address: string): Partial<TandaInfo> {
     setPrizeEstimate(estimatedPoolPrize);
   }, [poolTotalSupply, supplyRatePerBlock, prizePeriodRemainingSeconds, awardBalance]);
 
+  /*
   useInterval(() => {
     const diffInSeconds = parseInt(String(Date.now() / 1000), 10) - mountedAt;
     const remaining = secondsToPrizeAtMount - diffInSeconds;
     setSecondsRemainingNow(String(remaining <= 0 ? 0 : remaining));
   }, 1000);
+*/
 
   let soldTickets = '--';
 
@@ -118,15 +121,15 @@ export function useTandaInfo(address: string): Partial<TandaInfo> {
 
   if (poolAddresses.error || genericChainValues.error || usersChainValues.error) {
     if (poolAddresses.error) {
-      renderErrorMessage(address, 'pool addresses', poolAddresses.errorMessage);
+      renderErrorMessage(prizePoolAddress, 'pool addresses', poolAddresses.errorMessage);
     }
 
     if (genericChainValues.error) {
-      renderErrorMessage(address, 'generic chain values', genericChainValues.errorMessage);
+      renderErrorMessage(prizePoolAddress, 'generic chain values', genericChainValues.errorMessage);
     }
 
     if (usersChainValues.error) {
-      renderErrorMessage(address, `user's chain values`, usersChainValues.errorMessage);
+      renderErrorMessage(prizePoolAddress, `user's chain values`, usersChainValues.errorMessage);
     }
 
     // router.push(
@@ -142,7 +145,10 @@ export function useTandaInfo(address: string): Partial<TandaInfo> {
     };
   }
 
+  const depositsUnlocked: boolean = usersChainValues?.usersTokenAllowance?.gt(0) ?? false;
+
   return ({
+    loading: genericChainValues.loading || usersChainValues.loading,
     awardBalance,
     prizePeriodRemainingSeconds,
     canCompleteAward,
@@ -160,10 +166,15 @@ export function useTandaInfo(address: string): Partial<TandaInfo> {
     soldTickets,
     tokenSymbol,
     prizeEstimate,
+    usersChainValues,
+    poolAddresses,
+    depositsUnlocked,
+    isRngRequested,
   } as unknown) as TandaInfo;
 }
 
 export interface TandaInfo extends RequestStatus {
+  loading: boolean;
   awardBalance: string;
   prizePeriodRemainingSeconds: number;
   canCompleteAward: boolean;
@@ -181,12 +192,18 @@ export interface TandaInfo extends RequestStatus {
   soldTickets: string;
   tokenSymbol: string;
   prizeEstimate: BigNumber;
+  usersChainValues: UsersChainValues;
+  isRngRequested: boolean;
+  depositsUnlocked: boolean;
+  poolAddresses: any;
 }
 
 export interface UsersChainValues extends RequestStatus {
-  usersTicketBalance: BigNumber;
-  usersTokenAllowance: BigNumber;
-  usersTokenBalance: BigNumber;
+  usersTicketBalance?: BigNumber;
+  usersTokenAllowance?: BigNumber;
+  usersTokenBalance?: BigNumber;
+  usersTimelockBalance?: BigNumber;
+  usersTimelockBalanceAvailableAt?: BigNumber;
 }
 
 export interface RequestStatus {
