@@ -10,7 +10,6 @@ import {
   VideoContainer,
   VideoWrapper,
 } from './styles.Home';
-import videoMock from '../../../assets/video_mock.png';
 import { Row } from 'components/ui/Row/Row';
 import { IconStar } from 'components/ui/IconStar/IconStar';
 import { Column } from 'components/ui/Column/Column';
