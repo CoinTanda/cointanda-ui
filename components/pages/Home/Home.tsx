@@ -1,33 +1,47 @@
 import React, { FC, useContext } from 'react';
 import { useTheme } from 'styled-components';
+import { useRouter } from 'next/router';
 import { useTranslation } from '../../../i18n';
 import { WalletContext } from 'lib/components/WalletContextProvider';
 import {
   ButtonConnectWallet,
   HomeContainer,
-  LinkStyled,
   MoreInfoContainer,
   TextInfoItem,
   VideoContainer,
-  VideoImg,
+  VideoResponsiveWrapper,
 } from './styles.Home';
-import videoMock from '../../../assets/video_mock.png';
 import { Row } from 'components/ui/Row/Row';
 import { IconStar } from 'components/ui/IconStar/IconStar';
 import { Column } from 'components/ui/Column/Column';
 import { IconTriangle } from 'components/ui/IconTriangle/IconTriangle';
 import { TitleText } from 'components/ui/TitleText/TitleText';
+import { Link } from '../../ui/Link/Link';
 
 export const Home: FC = () => {
   const walletContext = useContext(WalletContext);
   const { t } = useTranslation();
   const theme = useTheme();
+  const router = useRouter();
+  const referralId = router.query['referralId'] as string;
+  // referralId is here to be used in a backend server in the future
+  console.log(referralId);
 
   return (
     <HomeContainer>
       <TitleText showIn={theme.screenSizes.tabletXL}>{t('What is CoinTanda?')}</TitleText>
       <VideoContainer>
-        <VideoImg src={videoMock} />
+        <VideoResponsiveWrapper>
+          <iframe
+            src="https://player.vimeo.com/video/482209941"
+            width="100%"
+            height="100%"
+            // @ts-ignore
+            frameBorder="0"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+          />
+        </VideoResponsiveWrapper>
       </VideoContainer>
       <Column>
         <Row>
@@ -57,7 +71,7 @@ export const Home: FC = () => {
         </Row>
         <MoreInfoContainer>
           <IconTriangle />
-          <LinkStyled>{t('More info')}</LinkStyled>
+          <Link href={''}>{t('More info')}</Link>
         </MoreInfoContainer>
         <ButtonConnectWallet onClick={() => walletContext.handleConnectWallet()}>
           {t('Connect wallet')}

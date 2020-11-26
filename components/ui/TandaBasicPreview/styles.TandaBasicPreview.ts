@@ -1,7 +1,7 @@
 import { TableCell } from '@material-ui/core';
 import styled from 'styled-components';
 
-export const ContainerTandaPreviewMobile = styled('div')`
+export const ContainerTandaBasicPreview = styled('div')`
   position: relative;
   width: 100%;
   min-height: 198px;
@@ -26,5 +26,13 @@ export const ContainerTandaPreviewMobile = styled('div')`
 export const TableCellStyled = styled(TableCell)`
   &.MuiTableCell-root {
     font-weight: 800;
+  }
+`;
+
+export const TableCellDesktopOnly = styled(TableCellStyled)`
+  &.MuiTableCell-root {
+    @media ${props => props.theme.queries.tabletXL} {
+      display: none;
+    }
   }
 `;

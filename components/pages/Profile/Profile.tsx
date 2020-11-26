@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'i18n';
 import { TitleText } from 'components/ui/TitleText/TitleText';
-import { Link } from 'components/ui/Link/styles.Link';
 import {
   ButtonAddTanda,
   ButtonLeave,
@@ -23,6 +22,7 @@ import tandaIconGold from '../../../assets/Gold_Tanda_80.png';
 import tandaIconBlack from '../../../assets/Black_Tanda_80.png';
 import { IconTriangle } from 'components/ui/IconTriangle/IconTriangle';
 import { Input } from 'components/ui/Input/styles.Input';
+import { Link } from 'components/ui/Link/Link';
 
 export const Profile: FC = () => {
   const { t } = useTranslation();
@@ -54,14 +54,14 @@ export const Profile: FC = () => {
             <Tanda>
               <IconTanda src={tandaInfo.icon} />
               <TandaData>
-                <Link>{tandaInfo.name}</Link>
+                <Link href={''}>{tandaInfo.name}</Link>
                 <TandaInfoText>
                   {t('I have')} {tandaInfo.tickets} {t('tickets')}
                 </TandaInfoText>
               </TandaData>
               <Invite>
                 <IconTriangle />
-                <Link>{t('Invite Friends')}</Link>
+                <Link href={'/win-members'}>{t('Invite Friends')}</Link>
               </Invite>
             </Tanda>
           ))}

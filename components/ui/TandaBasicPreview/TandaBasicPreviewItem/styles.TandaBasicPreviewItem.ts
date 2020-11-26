@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import TableRow from '@material-ui/core/TableRow';
 import { TableCell } from '@material-ui/core';
 
-export const ContainerTandaItemMobile = styled(TableRow).withConfig({
+export const ContainerTandaBasicPreviewItem = styled(TableRow).withConfig({
   shouldForwardProp: prop => !['darkBackground'].includes(prop),
 })<{ darkBackground?: boolean }>`
   .MuiTableCell-root {
@@ -24,4 +24,12 @@ export const TandaIcon = styled('img')`
   height: 16px;
   margin: 0px 2px;
   margin-top: 5px;
+`;
+
+export const TableCellDesktopOnly = styled(TableCell)`
+  &.MuiTableCell-body {
+    @media ${props => props.theme.queries.tabletXL} {
+      display: none;
+    }
+  }
 `;

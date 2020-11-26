@@ -1,17 +1,21 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'i18n';
-import { ContainerTandaPreviewMobile, TableCellStyled } from './styles.TandaPreviewMobile';
+import {
+  ContainerTandaBasicPreview,
+  TableCellDesktopOnly,
+  TableCellStyled,
+} from './styles.TandaBasicPreview';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-export const TandaPreviewMobile: FC = ({ children }) => {
+export const TandaBasicPreview: FC = ({ children }) => {
   const { t } = useTranslation();
 
   return (
-    <ContainerTandaPreviewMobile>
+    <ContainerTandaBasicPreview>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -19,11 +23,12 @@ export const TandaPreviewMobile: FC = ({ children }) => {
             <TableCellStyled>{t('Name')}</TableCellStyled>
             <TableCellStyled align="right">{t('Coin')}</TableCellStyled>
             <TableCellStyled align="right">{t('Prize')}</TableCellStyled>
+            <TableCellDesktopOnly align="right">{t('Deposit')}</TableCellDesktopOnly>
             <TableCellStyled align="right">{t('Next Raffle')}</TableCellStyled>
           </TableRow>
         </TableHead>
         <TableBody>{children}</TableBody>
       </Table>
-    </ContainerTandaPreviewMobile>
+    </ContainerTandaBasicPreview>
   );
 };

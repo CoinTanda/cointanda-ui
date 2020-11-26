@@ -13,6 +13,8 @@ interface ThemeColors {
   general1: string;
   background1: string;
   background2: string;
+  background3: string;
+  background4: string;
   text1: string;
   text2: string;
   text3: string;
@@ -27,6 +29,7 @@ interface ThemeColors {
   buttonBackground3: string;
   buttonBackground4: string;
   buttonBackground5: string;
+  buttonBackground6: string;
   buttonBackgroundDisabled: string;
   scrollbar: string;
   scrollbarThumb: string;
@@ -54,6 +57,7 @@ interface MediaQueries {
   mobileS: string;
   mobileM: string;
   mobileL: string;
+  mobileXl: string;
   tablet: string;
   tabletL: string;
   tabletXL: string;

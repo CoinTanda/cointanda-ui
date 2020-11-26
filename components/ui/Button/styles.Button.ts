@@ -15,6 +15,7 @@ export const ButtonStyled = styled(Button)`
       font-size: 20px;
       font-weight: 600;
       letter-spacing: 0.01em;
+      white-space: nowrap;
     }
 
     .MuiTouchRipple-child {

@@ -111,7 +111,7 @@ export const ButtonLeave = styled(Button)`
 
   .MuiButtonBase-root {
     padding: 0 48px;
-    background-color: red;
+    background-color: ${props => props.theme.colors.buttonBackground6};
   }
 
   @media ${props => props.theme.queries.tabletXL} {

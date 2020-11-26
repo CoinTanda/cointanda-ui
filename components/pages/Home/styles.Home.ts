@@ -1,5 +1,4 @@
 import { Button } from 'components/ui/Button/Button';
-import { Link } from 'components/ui/Link/styles.Link';
 import { Row } from 'components/ui/Row/Row';
 import styled from 'styled-components';
 
@@ -78,10 +77,21 @@ export const ButtonConnectWallet = styled(Button)`
   }
 `;
 
-export const VideoImg = styled('img')`
+export const VideoResponsiveWrapper = styled('div')`
+  position: relative;
+  padding-bottom: 56.125%;
+  width: 606px;
+  border: ${props => props.theme.borders.border1};
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   @media ${props => props.theme.queries.tabletXL} {
     width: 100%;
   }
 `;
-
-export const LinkStyled = styled(Link)``;
