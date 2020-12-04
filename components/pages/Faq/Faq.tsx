@@ -14,12 +14,6 @@ import {
 export const Faq: FC = () => {
   const { t } = useTranslation();
 
-  // TODO: Cuando lleguen las traducciones cambiar las keys con simbolos que bugean:
-  // "No. We never" => "No We never"
-  // "(short: RBTC). You can always" => "short RBTC"
-  // "Network Name: RSK Mainnet" => "Network Name RSK Mainnet"
-  // "Symbol: RBTC" => "Symbol RBTC"
-
   return (
     <>
       <TitleText>{t('Frequently Asked Questions')}</TitleText>
@@ -37,7 +31,7 @@ export const Faq: FC = () => {
             <TextBlock>
               {t('You need some')} <span>{t('cryptocoins')}</span>, {t('for this first version')}:{' '}
               <span>{t('Bitcoins')}</span>. {t('You also need a')} <span>{t('DeFi wallet')}</span>{' '}
-              {t('such as Nifty')}. {t('You also need this wallet')}, {t('Under')} <span>9</span>{' '}
+              {t('such as Nifty')}. {t('You will need this wallet')}, {t('Under')} <span>9</span>{' '}
               {t('and')} <span>10</span> {t('we will explain')}.
             </TextBlock>
           </FaqItem>
@@ -130,12 +124,19 @@ export const Faq: FC = () => {
               <br />
               <IsolatedAreaContainer>
                 <ul>
-                  <li>{t('Network Name RSK Mainnet')}</li>
+                  <li>
+                    {t('Network Name')}: <span>{t('RSK Mainnet')}</span>
+                  </li>
                   <li>
                     {t('New RPC URL')}:{' '}
                     <Link href="https://public-node.rsk.co">https://public-node.rsk.co</Link>{' '}
                   </li>
-                  <li>{t('Symbol RBTC')}</li>
+                  <li>
+                    {t('Chain ID')}: <span>30</span>
+                  </li>
+                  <li>
+                    {t('Symbol')}: <span>{t('RBTC')}</span>
+                  </li>
                   <li>
                     {t('Block Explorer URL')}:{' '}
                     <Link href="https://explorer.rsk.co">https://explorer.rsk.co</Link>{' '}
@@ -147,7 +148,7 @@ export const Faq: FC = () => {
             </TextBlock>
           </FaqItem>
           <FaqItem>
-            <TitleText medium>{t('How do I get Smart Bitcoins?')}</TitleText>
+            <TitleText medium>{t('How do I get')}</TitleText>
             <TextBlock>
               {t('To get Smart Bitcoins (RBTC)')} <span>{t('2-way peg')}</span>.
               <br />
