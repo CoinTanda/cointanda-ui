@@ -1,7 +1,7 @@
 import { getDemoPoolContractAddress } from 'lib/utils/getDemoPoolContractAddress';
 import { useCurrentNetworkInfo } from './useCurrentNetworkInfo';
 
-export function useTandasBasicInfo(): TandaBasicInfo[] {
+export function useTandasList(): TandaBasicInfo[] {
   const [demoNetworkName, demoPool] = useCurrentNetworkInfo();
   let networkDemoPools: TandaBasicInfo[] = [];
 

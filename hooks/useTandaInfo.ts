@@ -9,7 +9,7 @@ import { useCurrentNetworkInfo } from './useCurrentNetworkInfo';
 import { Web3Provider } from 'ethers/providers';
 import { poolToast } from 'lib/utils/poolToast';
 import { BigNumber } from 'ethers/utils';
-import { TandaType, useTandasBasicInfo } from './useTandasBasicInfo';
+import { TandaType, useTandasList } from './useTandasList';
 
 export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
   const walletContext = useContext(WalletContext);
@@ -17,7 +17,7 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
   const provider = walletContext.state.provider as Web3Provider;
   const [demoNetworkName] = useCurrentNetworkInfo();
   const { assetType, type, pricePerTicket, networkName } =
-    useTandasBasicInfo().find(t => t.address === prizePoolAddress) ?? {};
+    useTandasList().find(t => t.address === prizePoolAddress) ?? {};
 
   const [poolAddresses, setPoolAddresses] = useState<RequestStatus & { prizePool: string }>({
     prizePool: prizePoolAddress,
@@ -149,6 +149,10 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
   }
 
   const depositsUnlocked: boolean = usersChainValues?.usersTokenAllowance?.gt(0) ?? false;
+  const userHasFunds: boolean | undefined =
+    usersChainValues?.usersTicketBalance && usersChainValues.usersTicketBalance.gt(0);
+  const userHasTimelockedFunds: boolean | undefined =
+    usersChainValues?.usersTimelockBalance && usersChainValues.usersTimelockBalance.gt(0);
 
   return ({
     loading: genericChainValues.loading || usersChainValues.loading,
@@ -177,6 +181,8 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
     type,
     pricePerTicket,
     networkName,
+    userHasFunds,
+    userHasTimelockedFunds,
   } as unknown) as TandaInfo;
 }
 
@@ -207,6 +213,8 @@ export interface TandaInfo extends RequestStatus {
   pricePerTicket: number;
   type: TandaType;
   networkName: string;
+  userHasFunds?: boolean;
+  userHasTimelockedFunds?: boolean;
 }
 
 export interface UsersChainValues extends RequestStatus {

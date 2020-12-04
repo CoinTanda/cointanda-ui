@@ -27,34 +27,9 @@ export const TandasColumn = styled(Column)`
     margin-bottom: 50px;
   }
 `;
+
 export const FormColumn = styled(Column)`
   width: 100%;
-`;
-
-export const Tanda = styled(Row)`
-  flex-wrap: wrap;
-  align-items: center;
-  min-width: 260px;
-  margin-bottom: 20px;
-`;
-
-export const TandaData = styled(Column)`
-  width: 180px;
-`;
-
-export const TandaInfoText = styled(Column)`
-  font-weight: 600;
-  font-size: 17px;
-  color: ${props => props.theme.colors.text3};
-`;
-
-export const Invite = styled('div')`
-  height: 100%;
-`;
-
-export const IconTanda = styled('img')`
-  height: 43px;
-  margin-right: 15px;
 `;
 
 export const ButtonAddTanda = styled(Button)`

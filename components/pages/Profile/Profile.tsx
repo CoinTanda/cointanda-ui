@@ -1,69 +1,43 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback, useState } from 'react';
 import { useTranslation } from 'i18n';
 import { TitleText } from 'components/ui/TitleText/TitleText';
 import {
-  ButtonAddTanda,
   ButtonLeave,
   ButtonSave,
   FormColumn,
   FormContainer,
-  IconTanda,
   InputContainer,
-  Invite,
   ProfileContainer,
-  Tanda,
-  TandaData,
-  TandaInfoText,
   TandasColumn,
   TextInformed,
 } from './styles.Profile';
-import tandaIconSilver from '../../../assets/Silver_Tanda_80.png';
-import tandaIconGold from '../../../assets/Gold_Tanda_80.png';
-import tandaIconBlack from '../../../assets/Black_Tanda_80.png';
-import { IconTriangle } from 'components/ui/IconTriangle/IconTriangle';
 import { Input } from 'components/ui/Input/styles.Input';
-import { Link } from 'components/ui/Link/Link';
+import { useTandasList } from 'hooks/useTandasList';
+import { TandaInProfile } from './TandaInProfile/TandaInProfile';
 
 export const Profile: FC = () => {
+  const tandas = useTandasList();
   const { t } = useTranslation();
-  const tandas = [
-    {
-      name: 'Alice',
-      tickets: 120,
-      icon: tandaIconSilver,
-    },
-    {
-      name: 'Cindy',
-      tickets: 7,
-      icon: tandaIconGold,
-    },
-    {
-      name: 'Daisy',
-      tickets: 1,
-      icon: tandaIconBlack,
-    },
-  ];
+  const [tandaListEmpty, setTandaListEmpty] = useState(true);
+
+  const handleTandaInfo = useCallback((userHasFounds: boolean) => {
+    if (userHasFounds) {
+      setTandaListEmpty(false);
+    }
+  }, []);
 
   return (
     <ProfileContainer>
       <TitleText>{t('My Profile')}</TitleText>
       <FormContainer>
-        <TandasColumn>
-          <TitleText medium>{t('My Tandas')}</TitleText>
+        <TandasColumn style={{ width: tandaListEmpty ? 0 : '100%' }}>
+          {!tandaListEmpty && <TitleText medium>{t('My Tandas')}</TitleText>}
           {tandas.map(tandaInfo => (
-            <Tanda>
-              <IconTanda src={tandaInfo.icon} />
-              <TandaData>
-                <Link href={''}>{tandaInfo.name}</Link>
-                <TandaInfoText>
-                  {t('I have')} {tandaInfo.tickets} {t('tickets')}
-                </TandaInfoText>
-              </TandaData>
-              <Invite>
-                <IconTriangle />
-                <Link href={'/win-members'}>{t('Invite Friends')}</Link>
-              </Invite>
-            </Tanda>
+            <TandaInProfile
+              prizePoolAddress={tandaInfo.address}
+              onTandaInfo={handleTandaInfo}
+              key={tandaInfo.address}
+            />
           ))}
           {/* <ButtonAddTanda>{t('ADD TANDA')}</ButtonAddTanda> */}
         </TandasColumn>

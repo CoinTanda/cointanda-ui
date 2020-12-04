@@ -12,7 +12,7 @@ import tandaIconBlack from '../../../../assets/Black_Tanda_40.png';
 import { useTandaInfo } from '../../../../hooks/useTandaInfo';
 import { Link } from '../../Link/Link';
 import { displayAmountInEther } from 'lib/utils/displayAmountInEther';
-import { TandaType } from 'hooks/useTandasBasicInfo';
+import { TandaType } from 'hooks/useTandasList';
 
 interface PropsTandaPreviewItem {
   address: string;
