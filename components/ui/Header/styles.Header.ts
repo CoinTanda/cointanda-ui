@@ -25,14 +25,6 @@ export const HeaderChildrenContainerDesktop = styled(Row)`
   align-items: center;
 `;
 
-export const LogoImg = styled('img')`
-  width: 100%;
-
-  @media ${props => props.theme.queries.tabletXL} {
-    width: 77%;
-  }
-`;
-
 export const LogoTextImg = styled('img')`
   height: 64px;
   margin-left: 10px;

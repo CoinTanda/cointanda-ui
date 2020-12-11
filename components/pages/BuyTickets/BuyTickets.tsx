@@ -27,7 +27,15 @@ export const BuyTickets: FC = () => {
 
   const tandaInfo = useTandaInfo(address);
   const { actionStatus, unlock, submit, complete } = useTandaActions(tandaInfo);
-  const { loading, ticketName, isRngRequested, canCompleteAward, depositsUnlocked } = tandaInfo;
+  const {
+    loading,
+    ticketName,
+    isRngRequested,
+    canCompleteAward,
+    depositsUnlocked,
+    tokenSymbol,
+    pricePerTicket,
+  } = tandaInfo;
 
   if (loading || actionStatus.operationPending) {
     return <>{t('Loading...')}</>;
@@ -89,12 +97,15 @@ export const BuyTickets: FC = () => {
                 </FormRow>
                 <FormRow>
                   <LabelForm>
-                    {t('Price per ticket')}: <span>0.01 BTC</span>
+                    {t('Price per ticket')}:{' '}
+                    <span>
+                      {pricePerTicket} {tokenSymbol}
+                    </span>
                   </LabelForm>
                 </FormRow>
                 <FormRow>
                   <LabelForm>
-                    {t('Total price')}: <span>0.03 BTC</span>
+                    {t('Total price')}: <span>0.03 {tokenSymbol}</span>
                   </LabelForm>
                 </FormRow>
               </FormColumn>

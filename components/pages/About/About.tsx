@@ -61,20 +61,18 @@ export const About: FC = () => {
             <span>{t('Silver')}:</span> {t('each ticket is')} <span>0.01 {t('Bitcoin')}</span>
           </TextBlock>
         </TandaType>
-        <Opacity>
-          <TandaType>
-            <IconTanda src={tandaIconGold} />
-            <TextBlock>
-              <span>{t('Gold')}:</span> {t('each ticket is')} <span>0.1 {t('Bitcoin')}</span>
-            </TextBlock>
-          </TandaType>
-          <TandaType>
-            <IconTanda src={tandaIconBlack} />
-            <TextBlock>
-              <span>{t('Black')}:</span> {t('each ticket is')} <span>1 {t('Bitcoin')}</span>
-            </TextBlock>
-          </TandaType>
-        </Opacity>
+        <TandaType>
+          <IconTanda src={tandaIconGold} />
+          <TextBlock>
+            <span>{t('Gold')}:</span> {t('each ticket is')} <span>0.1 {t('Bitcoin')}</span>
+          </TextBlock>
+        </TandaType>
+        <TandaType>
+          <IconTanda src={tandaIconBlack} />
+          <TextBlock>
+            <span>{t('Black')}:</span> {t('each ticket is')} <span>1 {t('Bitcoin')}</span>
+          </TextBlock>
+        </TandaType>
         <TextBlock>{t('The bigger the Tanda')}</TextBlock>
         <TextBlock>{t('For each new member you get one Tanda Token')}.</TextBlock>
       </TandaTypesContainer>

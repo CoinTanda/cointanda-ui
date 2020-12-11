@@ -5,11 +5,11 @@ import { Column } from '../../ui/Column/Column';
 import { TitleText } from '../../ui/TitleText/TitleText';
 import { TandaBasicPreview } from 'components/ui/TandaBasicPreview/TandaBasicPreview';
 import { TandaBasicPreviewItem } from '../../ui/TandaBasicPreview/TandaBasicPreviewItem/TandaBasicPreviewItem';
-import { useTandasBasicInfo } from 'hooks/useTandasBasicInfo';
+import { useTandasList } from 'hooks/useTandasList';
 
 export const TandasList: FC = () => {
   const { t } = useTranslation();
-  const tandas = useTandasBasicInfo();
+  const tandas = useTandasList();
 
   return (
     <TandasListContainer>
@@ -23,7 +23,7 @@ export const TandasList: FC = () => {
             <TandaBasicPreviewItem
               address={tanda.address}
               darkBackground={i % 2 === 0}
-              iconColor={'gold'}
+              iconColor={tanda.type}
               key={tanda.address}
             />
           ))}

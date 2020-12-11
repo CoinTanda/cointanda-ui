@@ -8,13 +8,15 @@ import {
 } from './styles.TandaBasicPreviewItem';
 import tandaIconSilver from '../../../../assets/tanda_silver_40.png';
 import tandaIconGold from '../../../../assets/tanda_gold_40.png';
+import tandaIconBlack from '../../../../assets/Black_Tanda_40.png';
 import { useTandaInfo } from '../../../../hooks/useTandaInfo';
 import { Link } from '../../Link/Link';
 import { displayAmountInEther } from 'lib/utils/displayAmountInEther';
+import { TandaType } from 'hooks/useTandasList';
 
 interface PropsTandaPreviewItem {
   address: string;
-  iconColor?: 'silver' | 'gold';
+  iconColor?: TandaType;
   darkBackground?: boolean;
 }
 
@@ -36,7 +38,15 @@ export const TandaBasicPreviewItem: FC<PropsTandaPreviewItem> = ({
   return (
     <ContainerTandaBasicPreviewItem darkBackground={darkBackground}>
       <TableCell align="center">
-        <TandaIcon src={iconColor === 'gold' ? tandaIconGold : tandaIconSilver} />
+        <TandaIcon
+          src={
+            iconColor === TandaType.Gold
+              ? tandaIconGold
+              : iconColor === TandaType.Black
+              ? tandaIconBlack
+              : tandaIconSilver
+          }
+        />
       </TableCell>
       <NameCell component="th" scope="row">
         <Link href="/tandas/[prizePoolAddress]" as={`/tandas/${address}`}>

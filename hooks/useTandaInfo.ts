@@ -9,12 +9,15 @@ import { useCurrentNetworkInfo } from './useCurrentNetworkInfo';
 import { Web3Provider } from 'ethers/providers';
 import { poolToast } from 'lib/utils/poolToast';
 import { BigNumber } from 'ethers/utils';
+import { TandaType, useTandasList } from './useTandasList';
 
 export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
   const walletContext = useContext(WalletContext);
   const usersAddress = walletContext._onboard.getState().address;
   const provider = walletContext.state.provider as Web3Provider;
   const [demoNetworkName] = useCurrentNetworkInfo();
+  const { assetType, type, pricePerTicket, networkName } =
+    useTandasList().find(t => t.address === prizePoolAddress) ?? {};
 
   const [poolAddresses, setPoolAddresses] = useState<RequestStatus & { prizePool: string }>({
     prizePool: prizePoolAddress,
@@ -146,6 +149,10 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
   }
 
   const depositsUnlocked: boolean = usersChainValues?.usersTokenAllowance?.gt(0) ?? false;
+  const userHasFunds: boolean | undefined =
+    usersChainValues?.usersTicketBalance && usersChainValues.usersTicketBalance.gt(0);
+  const userHasTimelockedFunds: boolean | undefined =
+    usersChainValues?.usersTimelockBalance && usersChainValues.usersTimelockBalance.gt(0);
 
   return ({
     loading: genericChainValues.loading || usersChainValues.loading,
@@ -170,6 +177,12 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
     poolAddresses,
     depositsUnlocked,
     isRngRequested,
+    assetType,
+    type,
+    pricePerTicket,
+    networkName,
+    userHasFunds,
+    userHasTimelockedFunds,
   } as unknown) as TandaInfo;
 }
 
@@ -196,6 +209,12 @@ export interface TandaInfo extends RequestStatus {
   isRngRequested: boolean;
   depositsUnlocked: boolean;
   poolAddresses: any;
+  assetType: string;
+  pricePerTicket: number;
+  type: TandaType;
+  networkName: string;
+  userHasFunds?: boolean;
+  userHasTimelockedFunds?: boolean;
 }
 
 export interface UsersChainValues extends RequestStatus {

@@ -25,7 +25,7 @@ export const Withdraw: FC = () => {
 
   const tandaInfo = useTandaInfo(address);
   const { actionStatus, withdraw } = useTandaActions(tandaInfo);
-  const { loading, ticketName } = tandaInfo;
+  const { loading, ticketName, tokenSymbol } = tandaInfo;
   const { exitFees } = useMaxExitFee(amount, tandaInfo);
 
   if (loading || actionStatus.operationPending) {
@@ -42,7 +42,7 @@ export const Withdraw: FC = () => {
           <TextBlockWithdraw>{t('I want to withdraw')}</TextBlockWithdraw>{' '}
           <RowCentered>
             <Input variant="outlined" value={amount} onChange={e => setAmount(e.target.value)} />{' '}
-            <TextBlockCoin>BTC</TextBlockCoin>{' '}
+            <TextBlockCoin>{tokenSymbol}</TextBlockCoin>{' '}
           </RowCentered>{' '}
           <ButtonOk onClick={() => withdraw(amount, exitFees, 'instant')}>{t('OK')}</ButtonOk>
         </Content>

@@ -1,12 +1,11 @@
 import { useTranslation } from '../../../i18n';
 import React, { FC } from 'react';
-import Logo from 'assets/full_logo.png';
+import { Logo } from './Logo/Logo';
 import {
   BrandingContainer,
   HeaderChildrenContainerDesktop,
   HeaderContainer,
   HeaderContentContainer,
-  LogoImg,
   TextBusinessDescription,
 } from './styles.Header';
 
@@ -16,7 +15,7 @@ export const Header: FC = ({ children }) => {
   return (
     <HeaderContainer>
       <BrandingContainer>
-        <LogoImg src={Logo} />
+        <Logo />
         <HeaderContentContainer>
           <TextBusinessDescription>{t('Risk-free Crypto Raffles')}</TextBusinessDescription>
         </HeaderContentContainer>

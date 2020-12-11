@@ -11,6 +11,10 @@ export const ButtonStyled = styled(Button)`
     padding: 0 32px;
 
     .MuiButton-label {
+      z-index: 1;
+    }
+
+    .MuiButton-label {
       font-family: ${props => props.theme.fonts.font1};
       font-size: 20px;
       font-weight: 600;
@@ -18,18 +22,32 @@ export const ButtonStyled = styled(Button)`
       white-space: nowrap;
     }
 
-    .MuiTouchRipple-child {
-      background-color: ${props => props.theme.colors.background1};
-      opacity: 1;
+    @keyframes MuiTouchRipple-keyframes-enter {
+      0% {
+        opacity: 0.1;
+        transform: scale(0);
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
     }
-  }
+    @keyframes MuiTouchRipple-keyframes-exit {
+      100% {
+        opacity: 0;
+      }
+    }
 
-  &.MuiButton-root:hover {
-    background-color: ${props => props.theme.colors.buttonBackground2};
-    border-color: transparent;
+    .MuiTouchRipple-root {
+      .MuiTouchRipple-ripple {
+        background-color: ${props => props.theme.colors.buttonBackground3};
 
-    .MuiButton-label {
-      color: ${props => props.theme.colors.buttonText1};
+        .MuiTouchRipple-child {
+          background-color: ${props => props.theme.colors.buttonBackground3};
+        }
+      }
     }
   }
 
@@ -44,13 +62,18 @@ export const ButtonStyled = styled(Button)`
     background-color: ${props => props.theme.colors.buttonBackgroundDisabled};
   }
 
-  &.MuiButton-contained:hover {
-    background-color: ${props => props.theme.colors.buttonBackground3};
+  &.MuiButton-root:hover {
+    background-color: ${props => props.theme.colors.buttonBackground2};
     box-shadow: none;
+
+    .MuiButton-label {
+      color: ${props => props.theme.colors.buttonText1};
+    }
   }
 
-  &.MuiButton-contained:active {
+  &.MuiButton-root:active {
     box-shadow: none;
+    background-color: ${props => props.theme.colors.buttonBackground3};
   }
 
   &.MuiButton-outlined {

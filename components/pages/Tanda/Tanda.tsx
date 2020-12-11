@@ -19,7 +19,9 @@ import {
   WonContainer,
   ResponsiveContainer,
 } from './styles.Tanda';
-import tandaThumb from 'assets/tanda_big_green.png';
+import tandaThumbSilver from 'assets/Silver_Tanda_200.png';
+import tandaThumbGold from 'assets/Gold_Tanda_200.png';
+import tandaThumbBlack from 'assets/Black_Tanda_200.png';
 import { displayAmountInEther } from 'lib/utils/displayAmountInEther';
 import { Row } from 'components/ui/Row/Row';
 import { useTandaInfo } from 'hooks/useTandaInfo';
@@ -30,16 +32,11 @@ import { ButtonRed } from 'components/ui/ButtonRed/styles.ButtonRed';
 import { Button } from 'components/ui/Button/Button';
 import { TitleText } from 'components/ui/TitleText/TitleText';
 import { TextBlock } from 'components/ui/TextBlock/styles.TextBlock';
-
-enum Mode {
-  Normal,
-  Joined,
-  Won,
-}
+import { TandaType } from 'hooks/useTandasList';
 
 export const Tanda: FC = () => {
   const { t } = useTranslation();
-  let [uiMode, setUiMode] = useState(Mode.Normal);
+  // let [wonMode, setWonMode] = useState(false);
   const router = useRouter();
   const address = router.query['networkName'] as string;
   const {
@@ -53,29 +50,13 @@ export const Tanda: FC = () => {
     prizeEstimate,
     soldTickets,
     usersChainValues,
+    pricePerTicket,
+    type,
+    userHasFunds,
+    // userHasTimelockedFunds,
   } = useTandaInfo(address);
 
-  const { usersTimelockBalance, usersTimelockBalanceAvailableAt, usersTicketBalance } =
-    usersChainValues || {};
-  const userHasFunds = usersTicketBalance && usersTicketBalance.gt(0);
-  const userHasTimelockedFunds = usersTimelockBalance && usersTimelockBalance.gt(0);
-
-  // This is temporary until the logic is implemented:
-
-  const handleSetMode = () => {
-    if (uiMode === Mode.Normal) {
-      setUiMode(Mode.Joined);
-      return;
-    }
-    if (uiMode === Mode.Joined) {
-      setUiMode(Mode.Won);
-      return;
-    }
-    if (uiMode === Mode.Won) {
-      setUiMode(Mode.Normal);
-      return;
-    }
-  };
+  const { usersTicketBalance } = usersChainValues || {};
 
   if (loading) {
     return <>Loading...</>;
@@ -92,7 +73,15 @@ export const Tanda: FC = () => {
       <ResponsiveContainer>
         <SectionLeftColumn>
           <Row>
-            <ThumbImage src={tandaThumb} />
+            <ThumbImage
+              src={
+                type === TandaType.Black
+                  ? tandaThumbBlack
+                  : type === TandaType.Gold
+                  ? tandaThumbGold
+                  : tandaThumbSilver
+              }
+            />
             <DataContainer>
               <DataRowContainer>
                 <TextKey>{t('Next raffle')}:</TextKey>
@@ -106,7 +95,9 @@ export const Tanda: FC = () => {
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Deposit per ticket')}:</TextKey>
-                <TextValue>0.01 BTC</TextValue>
+                <TextValue>
+                  {pricePerTicket} {tokenSymbol}
+                </TextValue>
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Sold tickets')}:</TextKey>
@@ -136,9 +127,7 @@ export const Tanda: FC = () => {
             </DataContainer>
           </Row>
           <BottomButtonsContainer>
-            <ButtonRed
-              /*onClick={() => Router.push(`/tandas/${address}/withdraw`)}*/ onClick={handleSetMode}
-            >
+            <ButtonRed onClick={() => Router.push(`/tandas/${address}/withdraw`)}>
               {t('LEAVE')}
             </ButtonRed>
             <Button onClick={() => Router.push(`/win-members`)}>{t('INVITE')}</Button>
@@ -155,7 +144,12 @@ export const Tanda: FC = () => {
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Chance of winning')}:</TextKey>
-                <TextValue>1.44%</TextValue>
+                <TextValue>
+                  {usersTicketBalance &&
+                    ticketTotalSupply &&
+                    usersTicketBalance?.div(ticketTotalSupply).mul('100').toString()}
+                  {'% '}
+                </TextValue>
               </DataRowContainer>
               <DataRowContainer>
                 <Column>
@@ -180,7 +174,7 @@ export const Tanda: FC = () => {
             </DepositedContainer>
           </SectionRightColumn>
         )}
-        {uiMode === Mode.Won && (
+        {/* {wonMode && (
           <SectionRightColumn>
             <WonContainer>
               <TitleText>{t('CONGRATULATIONS!')}</TitleText>
@@ -188,7 +182,7 @@ export const Tanda: FC = () => {
               <WinDataRowContainer>
                 <TextBlock>{t('Your prize money is')}</TextBlock>
                 <span>
-                  <TextValue>0.0399 BTC</TextValue>
+                  <TextValue>0.0399 {tokenSymbol}</TextValue>
                 </span>
               </WinDataRowContainer>
               <TextBlock>
@@ -205,7 +199,7 @@ export const Tanda: FC = () => {
               </WonButtonsContainer>
             </WonContainer>
           </SectionRightColumn>
-        )}
+        )} */}
       </ResponsiveContainer>
     </TandaContainer>
   );
