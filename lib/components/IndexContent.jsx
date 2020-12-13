@@ -26,6 +26,8 @@ const demoPools = {
   ropsten : {chainId: 3,  assets: ['dai', 'usdc', 'usdt']},
   rinkeby : {chainId: 4,  assets: ['dai', 'usdc', 'usdt']},
   kovan   : {chainId: 42, assets: ['dai', 'usdc', 'usdt']},
+  rsktestnet   : {chainId: 31, assets: ['dai']},
+  rskmainnet   : {chainId: 30, assets: ['dai', 'usdc', 'usdt']},
 }
 
 export const IndexContent = (
@@ -34,7 +36,7 @@ export const IndexContent = (
   const walletContext = useContext(WalletContext)
   const walletNetwork = walletContext._onboard.getState().network
 
-  const [network, setNetwork] = useState('rinkeby')
+  const [network, setNetwork] = useState('rsktestnet')
   const [contractAddress, setContractAddress] = useState('')
 
   const demoNetworkName = findKey(demoPools, {chainId: walletNetwork})
@@ -45,7 +47,6 @@ export const IndexContent = (
   }
 
   let networkDemoPools = []
-  
   demoPool?.assets.forEach(assetType => {
     const address = getDemoPoolContractAddress(demoNetworkName, assetType)
 
