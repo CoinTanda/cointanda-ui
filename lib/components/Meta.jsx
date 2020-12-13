@@ -1,12 +1,12 @@
 import Head from 'next/head'
 
 export const Meta = ({ title }) => {
-  const defaultTitle = 'CoinTanda - Reference Pool Frontend'
+  const defaultTitle = 'Coin Tanda'
   title = title ? `${title} - ${defaultTitle}` : defaultTitle
 
-  const url = `https://reference.cointanda.com`
-  const description = `Deposit and withdraw to Pools with this UI`
-  const keywords = 'ethereum'
+  const url = `https://cointanda.com`
+  const description = `Coin Tanda risk-free crypto raffles. A no-loss lotterie powered by RSK.`
+  const keywords = 'coin, tanda, rsk, raffle, lotterie'
   const twitterHandle = '@CoinTanda_'
 
   return (
