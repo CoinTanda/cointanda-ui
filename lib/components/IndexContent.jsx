@@ -19,6 +19,7 @@ import ZrxSvg from 'assets/images/zrx-new-transparent.png'
 
 const demoAssetTypes = {
   dai  : {label: 'DAI',  logo: DaiSvg},
+  doc  : {label: 'DOC',  logo: BatSvg},
   usdc : {label: 'USDC', logo: UsdcSvg},
   usdt : {label: 'USDT', logo: UsdtSvg},
 }
@@ -26,7 +27,7 @@ const demoPools = {
   ropsten : {chainId: 3,  assets: ['dai', 'usdc', 'usdt']},
   rinkeby : {chainId: 4,  assets: ['dai', 'usdc', 'usdt']},
   kovan   : {chainId: 42, assets: ['dai', 'usdc', 'usdt']},
-  rsktestnet   : {chainId: 31, assets: ['dai']},
+  rsktestnet   : {chainId: 31, assets: ['dai', 'doc']},
   rskmainnet   : {chainId: 30, assets: ['dai', 'usdc', 'usdt']},
 }
 
@@ -57,7 +58,6 @@ export const IndexContent = (
       })
     }
   })
-  
 
   return <>
     <div
@@ -102,7 +102,6 @@ export const IndexContent = (
                 )
               })}
             </>}
-            
           </div>
 
           <hr/>
@@ -147,6 +146,14 @@ export const IndexContent = (
                 {
                   value: 'mainnet',
                   label: 'Mainnet'
+                },
+                {
+                  value: 'rsktestnet',
+                  label: 'RSK Testnet'
+                },
+                {
+                  value: 'rskmainnet',
+                  label: 'RSK Mainnet'
                 },
                 {
                   value: 'local',

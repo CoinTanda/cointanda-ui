@@ -7,3 +7,4 @@ export NEXT_JS_INFURA_KEY=<YOUR_INFURA_KEY>
 export NEXT_JS_DOMAIN_NAME=cointanda.com
 
 export NEXT_JS_PORTIS_API_KEY=<YOUR_PORTIS_API_KEY>
+export NEXT_JS_RPC_URL=https://public-node.testnet.rsk.co

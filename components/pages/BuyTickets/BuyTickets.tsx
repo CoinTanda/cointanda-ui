@@ -105,7 +105,7 @@ export const BuyTickets: FC = () => {
                 </FormRow>
                 <FormRow>
                   <LabelForm>
-                    {t('Total price')}: <span>0.03 {tokenSymbol}</span>
+                    {t('Total price')}: <span>{Number(pricePerTicket||1) * parseInt(amount)} {tokenSymbol}</span>
                   </LabelForm>
                 </FormRow>
               </FormColumn>
@@ -124,7 +124,7 @@ export const BuyTickets: FC = () => {
                 </Column>
               </FormColumn>
             </Content>
-            <ButtonBuy onClick={() => submit(amount)}>{t('BUY NOW')}</ButtonBuy>
+            <ButtonBuy onClick={() => submit((Number(pricePerTicket||1) * parseInt(amount)).toString())}>{t('BUY NOW')}</ButtonBuy>
           </>
         )}
       </BuyTicketsContainer>
