@@ -209,6 +209,7 @@ export interface TandaInfo extends RequestStatus {
   isRngRequested: boolean;
   depositsUnlocked: boolean;
   poolAddresses: any;
+  prizePoolType: any;
   assetType: string;
   pricePerTicket: number;
   type: TandaType;

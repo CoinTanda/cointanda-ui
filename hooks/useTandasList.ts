@@ -6,8 +6,10 @@ export function useTandasList(): TandaBasicInfo[] {
   let networkDemoPools: TandaBasicInfo[] = [];
 
   const tandaTypes: Record<string, TandaType> = {
-    // reference-app.pooltogether.com addresses:
+    // RSK Testnet Pools Addresses
     '0x05612fa804ce9a4345e76a46b339b6209da806e4': TandaType.Black,
+    '0x3095e12fe9e51b32943362d8f8ff6b1ff3028de8': TandaType.Silver,
+    // Rinkeby reference-app.pooltogether.com addresses:
     // '0xde5275536231eCa2Dd506B9ccD73C028e16a9a32': TandaType.Silver,
     // '0xDCB24C5C96D3D0677add5B688DCD144601410244': TandaType.Gold,
 

@@ -3,7 +3,7 @@ export function useSupportedNetworksList(): DemoTandas {
     ropsten: { chainId: 3, assets: ['dai', 'usdc', 'usdt'] },
     rinkeby: { chainId: 4, assets: ['dai', 'usdc', 'usdt'] },
     kovan: { chainId: 42, assets: ['dai', 'usdc', 'usdt'] },
-    rsktestnet: { chainId: 31, assets: ['dai', 'usdc', 'usdt'] },
+    rsktestnet: { chainId: 31, assets: ['dai', 'doc', 'usdc', 'usdt'] },
     rskmainnet: { chainId: 30, assets: ['dai', 'usdc', 'usdt'] }
   };
 }

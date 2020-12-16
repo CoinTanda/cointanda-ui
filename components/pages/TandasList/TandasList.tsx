@@ -10,7 +10,7 @@ import { useTandasList } from 'hooks/useTandasList';
 export const TandasList: FC = () => {
   const { t } = useTranslation();
   const tandas = useTandasList();
-console.log('tandas',tandas)
+
   return (
     <TandasListContainer>
       <Column>

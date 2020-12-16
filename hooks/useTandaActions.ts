@@ -3,6 +3,8 @@ import { sendTx } from 'lib/utils/sendTx';
 // @ts-ignore
 import CompoundPrizePoolAbi from '@pooltogether/pooltogether-contracts/abis/CompoundPrizePool';
 // @ts-ignore
+import { SovrynPrizePoolAbi } from 'lib/abis/SovrynPrizePoolAbi';
+// @ts-ignore
 import SingleRandomWinnerAbi from '@pooltogether/pooltogether-contracts/abis/SingleRandomWinner';
 // @ts-ignore
 import IERC20Abi from '@pooltogether/pooltogether-contracts/abis/IERC20';
@@ -14,7 +16,7 @@ import { ExitFee } from './useMaxExitFee';
 import { BigNumber } from 'ethers/utils';
 
 export function useTandaActions(tandaInfo: Partial<TandaInfo>): TandaActions {
-  const { tokenDecimals, poolAddresses } = tandaInfo;
+  const { tokenDecimals, poolAddresses, prizePoolType } = tandaInfo;
 
   const walletContext = useContext(WalletContext);
   const provider = walletContext.state.provider as Web3Provider;
