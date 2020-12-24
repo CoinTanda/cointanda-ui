@@ -21,6 +21,8 @@ interface ThemeColors {
   text4: string;
   text5: string;
   text6: string;
+  text7: string;
+  text8: string;
   textMobileTitle: string;
   buttonText1: string;
   buttonText2: string;
