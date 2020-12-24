@@ -4,7 +4,6 @@ import {
   AboutContainer,
   ButtonConnectWallet,
   IconTanda,
-  Opacity,
   ProjectDescriptionContainer,
   TandaType,
   TandaTypesContainer,
@@ -58,19 +57,19 @@ export const About: FC = () => {
         <TandaType>
           <IconTanda src={tandaIconSilver} />
           <TextBlock>
-            <span>{t('Silver')}:</span> {t('each ticket is')} <span>0.01 {t('Bitcoin')}</span>
+            <span>{t('Silver')}:</span> {t('each ticket is')} <span>10 {t('DOC')}</span>
           </TextBlock>
         </TandaType>
         <TandaType>
           <IconTanda src={tandaIconGold} />
           <TextBlock>
-            <span>{t('Gold')}:</span> {t('each ticket is')} <span>0.1 {t('Bitcoin')}</span>
+            <span>{t('Gold')}:</span> {t('each ticket is')} <span>100 {t('DOC')}</span>
           </TextBlock>
         </TandaType>
         <TandaType>
           <IconTanda src={tandaIconBlack} />
           <TextBlock>
-            <span>{t('Black')}:</span> {t('each ticket is')} <span>1 {t('Bitcoin')}</span>
+            <span>{t('Black')}:</span> {t('each ticket is')} <span>1000 {t('DOC')}</span>
           </TextBlock>
         </TandaType>
         <TextBlock>{t('The bigger the Tanda')}</TextBlock>
