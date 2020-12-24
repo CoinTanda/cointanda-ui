@@ -31,7 +31,7 @@ export const Faq: FC = () => {
             <TextBlock>
               {t('You need some')} <span>{t('cryptocoins')}</span>, {t('for this first version')}:{' '}
               <span>{t('Bitcoins')}</span>. {t('You also need a')} <span>{t('DeFi wallet')}</span>{' '}
-              {t('such as Nifty')}. {t('You will need this wallet')}, {t('Under')} <span>9</span>{' '}
+              {t('such as Nifty')}. {t('You will need this wallet')}. {t('Under')} <span>9</span>{' '}
               {t('and')} <span>10</span> {t('we will explain')}.
             </TextBlock>
           </FaqItem>
