@@ -2,7 +2,11 @@ import { ButtonProps } from '@material-ui/core/Button';
 import React, { FC } from 'react';
 import { ButtonContainer, ButtonStyled } from './styles.Button';
 
-export const Button: FC<ButtonProps> = props => {
+export interface PropsButton extends ButtonProps {
+  highlighted?: boolean;
+}
+
+export const Button: FC<PropsButton> = props => {
   return (
     <ButtonContainer className={props.className}>
       <ButtonStyled variant="contained" {...props}>

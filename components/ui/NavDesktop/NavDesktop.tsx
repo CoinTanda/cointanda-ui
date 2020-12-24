@@ -7,26 +7,51 @@ import { ButtonNavDesktop, NavContainerDesktop } from './styles.NavDesktop';
 export const NavDesktop: FC = () => {
   const theme = useTheme();
   const { t } = useTranslation();
+  const route = Router.pathname.split('/')[1];
 
   return (
     <ResponsiveContainer hideIn={theme.screenSizes.tabletXL}>
       <NavContainerDesktop>
-        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/about')}>
+        <ButtonNavDesktop
+          variant="outlined"
+          highlighted={route === 'about'}
+          onClick={() => Router.push('/about')}
+        >
           {t('About')}{' '}
         </ButtonNavDesktop>
-        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/tandas')}>
+        <ButtonNavDesktop
+          variant="outlined"
+          highlighted={route === 'tandas'}
+          onClick={() => Router.push('/tandas')}
+        >
           {t('Tandas')}
         </ButtonNavDesktop>
-        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/ourtoken')}>
+        <ButtonNavDesktop
+          variant="outlined"
+          highlighted={route === 'ourtoken'}
+          onClick={() => Router.push('/ourtoken')}
+        >
           {t('Our Token')}
         </ButtonNavDesktop>
-        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/faq')}>
+        <ButtonNavDesktop
+          variant="outlined"
+          highlighted={route === 'faq'}
+          onClick={() => Router.push('/faq')}
+        >
           {t('FAQ')}
         </ButtonNavDesktop>
-        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/contact')}>
+        <ButtonNavDesktop
+          variant="outlined"
+          highlighted={route === 'contact'}
+          onClick={() => Router.push('/contact')}
+        >
           {t('Contact us')}
         </ButtonNavDesktop>
-        <ButtonNavDesktop variant="outlined" onClick={() => Router.push('/profile')}>
+        <ButtonNavDesktop
+          variant="outlined"
+          highlighted={route === 'profile'}
+          onClick={() => Router.push('/profile')}
+        >
           {t('My Profile')}
         </ButtonNavDesktop>
       </NavContainerDesktop>
