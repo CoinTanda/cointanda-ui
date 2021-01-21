@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "cointanda",
     "public": "out",
     "ignore": [
       "firebase.json",

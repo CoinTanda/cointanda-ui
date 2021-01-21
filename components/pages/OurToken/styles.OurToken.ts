@@ -22,5 +22,5 @@ export const ButtonContainer = styled(Row)`
 `;
 
 export const ButtonOk = styled(Button)`
-  width: 150px;
+  min-width: 150px;
 `;
