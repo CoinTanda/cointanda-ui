@@ -11,7 +11,7 @@ import tandaIconGold from '../../../../assets/tanda_gold_40.png';
 import tandaIconBlack from '../../../../assets/Black_Tanda_40.png';
 import { useTandaInfo } from '../../../../hooks/useTandaInfo';
 import { Link } from '../../Link/Link';
-import { displayAmountInEther } from 'lib/utils/displayAmountInEther';
+import { displayAmountInEther, displayCurrentDatePlusSeconds } from 'lib/utils/displayAmountInEther';
 import { TandaType } from 'hooks/useTandasList';
 
 interface PropsTandaPreviewItem {
@@ -31,6 +31,7 @@ export const TandaBasicPreviewItem: FC<PropsTandaPreviewItem> = ({
     ticketTotalSupply,
     tokenDecimals,
     tokenSymbol,
+    tokenName,
     sponsorshipName,
     prizePeriodRemainingSeconds,
   } = useTandaInfo(address);
@@ -53,9 +54,9 @@ export const TandaBasicPreviewItem: FC<PropsTandaPreviewItem> = ({
           {ticketName}
         </Link>
       </NameCell>
-      <TableCell align="right">{sponsorshipName}</TableCell>
+      <TableCell align="right">{tokenName}</TableCell>
       <TableCell align="right">
-        {displayAmountInEther(prizeEstimate, { precision: 2, decimals: tokenDecimals })} {tokenSymbol}
+        {displayAmountInEther(prizeEstimate, { precision: 4, decimals: tokenDecimals })} {tokenSymbol}
       </TableCell>
       <TableCellDesktopOnly align="right">
         {displayAmountInEther(ticketTotalSupply, {
@@ -65,7 +66,7 @@ export const TandaBasicPreviewItem: FC<PropsTandaPreviewItem> = ({
         {tokenSymbol}
       </TableCellDesktopOnly>
       <TableCell align="right">
-        {prizePeriodRemainingSeconds != null ? prizePeriodRemainingSeconds.toString() : ''}
+        {displayCurrentDatePlusSeconds(prizePeriodRemainingSeconds)}
       </TableCell>
     </ContainerTandaBasicPreviewItem>
   );

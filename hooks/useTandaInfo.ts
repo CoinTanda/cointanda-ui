@@ -10,6 +10,7 @@ import { Web3Provider } from 'ethers/providers';
 import { poolToast } from 'lib/utils/poolToast';
 import { BigNumber } from 'ethers/utils';
 import { TandaType, useTandasList } from './useTandasList';
+import { displayAmountInEther } from 'lib/utils/displayAmountInEther';
 
 export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
   const walletContext = useContext(WalletContext);
@@ -25,8 +26,9 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
 
   const [genericChainValues, setGenericChainValues] = useState<Partial<TandaInfo>>({
     loading: true,
-    tokenSymbol: 'TOKEN',
-    poolTotalSupply: '1234',
+    tokenSymbol: '-',
+    tokenName: '-',
+    poolTotalSupply: '0',
   });
 
   const [usersChainValues, setUsersChainValues] = useState<UsersChainValues>({
@@ -67,11 +69,13 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
     maxExitFeeMantissa,
     tokenDecimals,
     tokenSymbol,
+    tokenName,
     isRngRequested,
   } = (genericChainValues as unknown) as Partial<TandaInfo>;
 
   tokenDecimals = tokenDecimals || DEFAULT_TOKEN_PRECISION;
-  tokenSymbol = genericChainValues.tokenSymbol || 'TOKEN';
+  tokenSymbol = genericChainValues.tokenSymbol || 'TKN';
+  tokenName = genericChainValues.tokenName || 'TOKEN';
 
   const [mountedAt, setMountedAt] = useState(0);
   const [secondsToPrizeAtMount, setSecondsToPrizeAtMount] = useState(0);
@@ -110,9 +114,8 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
 */
 
   let soldTickets = '--';
-
-  if (prizeEstimate?.gt(0)) {
-    soldTickets = (ticketTotalSupply?.div(prizeEstimate) ?? '--').toString();
+  if (!!pricePerTicket && pricePerTicket > 0 && !!ticketTotalSupply) {
+    soldTickets = ticketTotalSupply.div(ethers.utils.parseEther(pricePerTicket.toString())).toString()
   }
 
   const renderErrorMessage = (address: string, type: string, message?: string) => {
@@ -172,6 +175,7 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
     tokenDecimals,
     soldTickets,
     tokenSymbol,
+    tokenName,
     prizeEstimate,
     usersChainValues,
     poolAddresses,
@@ -204,6 +208,7 @@ export interface TandaInfo extends RequestStatus {
   tokenDecimals: number;
   soldTickets: string;
   tokenSymbol: string;
+  tokenName: string;
   prizeEstimate: BigNumber;
   usersChainValues: UsersChainValues;
   isRngRequested: boolean;
