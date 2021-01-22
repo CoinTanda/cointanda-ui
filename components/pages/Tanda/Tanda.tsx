@@ -22,7 +22,7 @@ import {
 import tandaThumbSilver from 'assets/Silver_Tanda_200.png';
 import tandaThumbGold from 'assets/Gold_Tanda_200.png';
 import tandaThumbBlack from 'assets/Black_Tanda_200.png';
-import { displayAmountInEther } from 'lib/utils/displayAmountInEther';
+import { displayAmountInEther, displayCurrentDatePlusSeconds } from 'lib/utils/displayAmountInEther';
 import { Row } from 'components/ui/Row/Row';
 import { useTandaInfo } from 'hooks/useTandaInfo';
 import { DepositedContainer } from './styles.Tanda';
@@ -47,6 +47,7 @@ export const Tanda: FC = () => {
     sponsorshipName,
     tokenDecimals,
     tokenSymbol,
+    tokenName,
     prizeEstimate,
     soldTickets,
     usersChainValues,
@@ -86,12 +87,12 @@ export const Tanda: FC = () => {
               <DataRowContainer>
                 <TextKey>{t('Next raffle')}:</TextKey>
                 <TextValue>
-                  {prizePeriodRemainingSeconds != null ? prizePeriodRemainingSeconds.toString() : ''}
+                  {displayCurrentDatePlusSeconds(prizePeriodRemainingSeconds)}
                 </TextValue>
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Cryptocoin')}:</TextKey>
-                <TextValue>{sponsorshipName}</TextValue>
+                <TextValue>{tokenName}</TextValue>
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Deposit per ticket')}:</TextKey>
@@ -120,7 +121,7 @@ export const Tanda: FC = () => {
               <DataRowContainer>
                 <TextKey>{t('Estimated prize')}:</TextKey>
                 <TextValue>
-                  {displayAmountInEther(prizeEstimate, { precision: 2, decimals: tokenDecimals })}{' '}
+                  {displayAmountInEther(prizeEstimate, { precision: 4, decimals: tokenDecimals })}{' '}
                   {tokenSymbol}
                 </TextValue>
               </DataRowContainer>

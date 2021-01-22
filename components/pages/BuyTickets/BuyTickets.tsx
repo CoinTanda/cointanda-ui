@@ -18,6 +18,7 @@ import {
 } from './styles.BuyTickets';
 import { TitleLink } from 'components/ui/TitleLink/styles.TitleLink';
 import { useTandaActions } from 'hooks/useTandaActions';
+import { displayCurrentDatePlusSeconds } from 'lib/utils/displayAmountInEther';
 
 export const BuyTickets: FC = () => {
   const [amount, setAmount] = useState('3');
@@ -35,6 +36,7 @@ export const BuyTickets: FC = () => {
     depositsUnlocked,
     tokenSymbol,
     pricePerTicket,
+    prizePeriodRemainingSeconds
   } = tandaInfo;
 
   if (loading || actionStatus.operationPending) {
@@ -112,7 +114,9 @@ export const BuyTickets: FC = () => {
               <FormColumn>
                 <FormRow>
                   <LabelForm>
-                    {t('Next raffle')}: <span>13 Nov 2020</span>
+                    {t('Next raffle')}: <span>
+                      {displayCurrentDatePlusSeconds(prizePeriodRemainingSeconds)}
+                    </span>
                   </LabelForm>
                 </FormRow>
                 <Column>
