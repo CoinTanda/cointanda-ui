@@ -34,6 +34,8 @@ interface ThemeColors {
   scrollbar: string;
   scrollbarThumb: string;
   borderColor1: string;
+  borderColor2: string;
+  borderColor3: string;
 }
 
 interface ThemeShadows {
@@ -44,6 +46,7 @@ interface ThemeFonts {
   font1: string;
   size1: string;
   weight1: string;
+  weight2: string;
   letterSpacing1: string;
   lineHeight1: string;
 }
