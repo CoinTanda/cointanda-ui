@@ -46,7 +46,7 @@ export const LanguageMenuStyled = styled(LanguageMenu)`
     background-color: ${props => props.theme.colors.buttonBackground4};
 
     span.MuiButton-label {
-      font-weight: 400;
+      font-weight: ${props => props.theme.fonts.weight1};
     }
   }
 `;

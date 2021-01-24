@@ -18,7 +18,7 @@ export const defaultTheme: Theme = {
     buttonText1: 'white',
     buttonText2: '#5654D4',
     buttonBackground1: 'white',
-    buttonBackground2: '#3433CD',
+    buttonBackground2: '#3333CC',
     buttonBackground3: '#FF9934',
     buttonBackground4: '#9A99FF',
     buttonBackground5: '#7776ca',
@@ -27,6 +27,8 @@ export const defaultTheme: Theme = {
     scrollbar: '#FFFFFF',
     scrollbarThumb: '#565656',
     borderColor1: '#FFFFFF',
+    borderColor2: '#CCCCCC',
+    borderColor3: '#FFFFFF',
   },
   shadows: {
     elevation1: '1px 10px 0px 0px #00000024;',
@@ -34,7 +36,8 @@ export const defaultTheme: Theme = {
   fonts: {
     font1: '"Lato", sans-serif',
     size1: '20px',
-    weight1: '600',
+    weight1: '400',
+    weight2: '700',
     letterSpacing1: '-0.26px',
     lineHeight1: '21px',
   },

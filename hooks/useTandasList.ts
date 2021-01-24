@@ -1,6 +1,26 @@
 import { getDemoPoolContractAddress } from 'lib/utils/getDemoPoolContractAddress';
 import { useCurrentNetworkInfo } from './useCurrentNetworkInfo';
 
+export interface TandaBasicInfo {
+  assetType: string;
+  address: string;
+  pricePerTicket: number;
+  type: TandaType;
+  networkName: string;
+}
+
+export enum TandaType {
+  Black = 'Black',
+  Silver = 'Silver',
+  Gold = 'Gold',
+}
+
+export const pricePerTicketType: Record<TandaType, number> = {
+  [TandaType.Black]: 1000,
+  [TandaType.Gold]: 100,
+  [TandaType.Silver]: 10,
+};
+
 export function useTandasList(): TandaBasicInfo[] {
   const [demoNetworkName, demoPool] = useCurrentNetworkInfo();
   let networkDemoPools: TandaBasicInfo[] = [];
@@ -19,11 +39,6 @@ export function useTandasList(): TandaBasicInfo[] {
     // '0xCd36B1B0D81499f455C5DF6893d5030D284E22aD': TandaType.Gold,
   };
 
-  const pricePerTicketType: Record<TandaType, number> = {
-    [TandaType.Black]: 1,
-    [TandaType.Gold]: 0.1,
-    [TandaType.Silver]: 0.01,
-  };
   demoPool?.assets.forEach(assetType => {
     const address: string = getDemoPoolContractAddress(demoNetworkName, assetType);
     const type: TandaType = tandaTypes[address];
@@ -39,18 +54,4 @@ export function useTandasList(): TandaBasicInfo[] {
   });
 
   return networkDemoPools;
-}
-
-export interface TandaBasicInfo {
-  assetType: string;
-  address: string;
-  pricePerTicket: number;
-  type: TandaType;
-  networkName: string;
-}
-
-export enum TandaType {
-  Black = 'Black',
-  Silver = 'Silver',
-  Gold = 'Gold',
 }

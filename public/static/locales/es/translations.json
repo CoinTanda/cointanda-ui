@@ -201,6 +201,7 @@
   "I have": "Yo tengo",
   "Invite Friends": "Invitar amigos",
   "ADD TANDA": "AGREGAR TANDA",
+  "You haven't joined a tanda yet": "No te has unido a ninguna tanda todavia",
   "My E-Mail Address": "Mi direccion de E-Mail",
   "SAVE": "GUARDAR",
   "I want to be informed": "Quiero ser informado por email si gano",
@@ -217,5 +218,7 @@
   "COPY": "COPIAR",
 
   "Join!": "Unete!",
-  "waiting for awards": "esperando premiacion"
+  "waiting for awards": "esperando premiacion",
+  "DOC": "DOC",
+  "Dollar on Chain": "Dollar on Chain"
 }

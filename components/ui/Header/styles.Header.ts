@@ -33,7 +33,7 @@ export const LogoTextImg = styled('img')`
 export const TextBusinessDescription = styled('div')`
   margin: 12px 26px;
   font-style: italic;
-  font-size: 37px;
+  font-size: 35px;
   letter-spacing: -0.028em;
   word-spacing: 0.1em;
   white-space: nowrap;

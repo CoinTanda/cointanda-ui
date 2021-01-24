@@ -7,7 +7,6 @@ export const ButtonStyled = styled(Button)`
   &.MuiButton-root {
     min-width: unset;
     min-height: unset;
-    border-radius: ${props => props.theme.borders.borderRadius1};
     padding: 0 32px;
 
     .MuiButton-label {
@@ -17,7 +16,8 @@ export const ButtonStyled = styled(Button)`
     .MuiButton-label {
       font-family: ${props => props.theme.fonts.font1};
       font-size: 20px;
-      font-weight: 600;
+      color: ${props => props.theme.colors.buttonText2};
+      font-weight: ${props => props.theme.fonts.weight1};
       letter-spacing: 0.01em;
       white-space: nowrap;
     }
@@ -66,22 +66,48 @@ export const ButtonStyled = styled(Button)`
     background-color: ${props => props.theme.colors.buttonBackground2};
     box-shadow: none;
 
+    .MuiButton-outlined {
+      border: none;
+    }
+
     .MuiButton-label {
       color: ${props => props.theme.colors.buttonText1};
+      font-weight: ${props => props.theme.fonts.weight2};
     }
   }
 
   &.MuiButton-root:active {
     box-shadow: none;
     background-color: ${props => props.theme.colors.buttonBackground3};
+
+    .MuiButton-outlined {
+      border: none;
+    }
+
+    .MuiButton-label {
+      color: ${props => props.theme.colors.buttonText1};
+      font-weight: ${props => props.theme.fonts.weight2};
+    }
+  }
+
+  &.selected {
+    box-shadow: none;
+    background-color: ${props => props.theme.colors.buttonBackground4};
+
+    .MuiButton-label {
+      color: ${props => props.theme.colors.buttonText1};
+      font-weight: ${props => props.theme.fonts.weight2};
+    }
   }
 
   &.MuiButton-outlined {
     text-transform: none;
-
+    border: 1px solid ${props => props.theme.colors.borderColor2};
+  }
+  &.MuiButton-contained {
     .MuiButton-label {
-      color: ${props => props.theme.colors.buttonText2};
-      font-weight: 600;
+      color: ${props => props.theme.colors.buttonText1};
+      font-weight: ${props => props.theme.fonts.weight2};
     }
   }
 `;

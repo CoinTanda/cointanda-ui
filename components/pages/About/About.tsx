@@ -15,6 +15,7 @@ import { WalletContext } from 'lib/components/WalletContextProvider';
 import tandaIconSilver from '../../../assets/Silver_Tanda_80.png';
 import tandaIconGold from '../../../assets/Gold_Tanda_80.png';
 import tandaIconBlack from '../../../assets/Black_Tanda_80.png';
+import * as tandas from 'hooks/useTandasList';
 
 export const About: FC = () => {
   const { t } = useTranslation();
@@ -58,19 +59,19 @@ export const About: FC = () => {
         <TandaType>
           <IconTanda src={tandaIconSilver} />
           <TextBlock>
-            <span>{t('Silver')}:</span> {t('each ticket is')} <span>0.01 {t('Bitcoin')}</span>
+            <span>{t('Silver')}:</span> {t('each ticket is')} <span>{tandas.pricePerTicketType[tandas.TandaType.Silver] +  ' ' + t('DOC')}</span>
           </TextBlock>
         </TandaType>
         <TandaType>
           <IconTanda src={tandaIconGold} />
           <TextBlock>
-            <span>{t('Gold')}:</span> {t('each ticket is')} <span>0.1 {t('Bitcoin')}</span>
+            <span>{t('Gold')}:</span> {t('each ticket is')} <span>{tandas.pricePerTicketType[tandas.TandaType.Gold] +  ' ' + t('DOC')}</span>
           </TextBlock>
         </TandaType>
         <TandaType>
           <IconTanda src={tandaIconBlack} />
           <TextBlock>
-            <span>{t('Black')}:</span> {t('each ticket is')} <span>1 {t('Bitcoin')}</span>
+            <span>{t('Black')}:</span> {t('each ticket is')} <span>{tandas.pricePerTicketType[tandas.TandaType.Gold] +  ' ' + t('DOC')}</span>
           </TextBlock>
         </TandaType>
         <TextBlock>{t('The bigger the Tanda')}</TextBlock>

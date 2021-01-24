@@ -1,7 +1,8 @@
 import React, { FC, useCallback, useState } from 'react';
-import { useTranslation } from 'i18n';
+import { Router, useTranslation } from 'i18n';
 import { TitleText } from 'components/ui/TitleText/TitleText';
 import {
+  ButtonAddTanda,
   ButtonLeave,
   ButtonSave,
   FormColumn,
@@ -30,8 +31,9 @@ export const Profile: FC = () => {
     <ProfileContainer>
       <TitleText>{t('My Profile')}</TitleText>
       <FormContainer>
-        <TandasColumn style={{ width: tandaListEmpty ? 0 : '100%' }}>
-          {!tandaListEmpty && <TitleText medium>{t('My Tandas')}</TitleText>}
+        <TandasColumn style={{ width: '100%' }}>
+          <TitleText medium>{t('My Tandas')}</TitleText>
+          {tandaListEmpty && <div>{t("You haven't joined a tanda yet")}</div>}
           {tandas.map(tandaInfo => (
             <TandaInProfile
               prizePoolAddress={tandaInfo.address}
@@ -39,7 +41,9 @@ export const Profile: FC = () => {
               key={tandaInfo.address}
             />
           ))}
-          {/* <ButtonAddTanda>{t('ADD TANDA')}</ButtonAddTanda> */}
+        <ButtonAddTanda onClick={() => Router.push('/tandas')}>
+          {t('ADD TANDA')}
+        </ButtonAddTanda>
         </TandasColumn>
         <FormColumn>
           <TitleText medium>{t('My E-Mail Address')}</TitleText>

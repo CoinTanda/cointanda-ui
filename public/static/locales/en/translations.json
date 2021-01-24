@@ -201,6 +201,7 @@
   "I have": "I have",
   "Invite Friends": "Invite Friends",
   "ADD TANDA": "ADD TANDA",
+  "You haven't joined a tanda yet": "You haven't joined a tanda yet",
   "My E-Mail Address": "My E-Mail Address",
   "SAVE": "SAVE",
   "I want to be informed": "I want to be informed by email if I win",
@@ -217,5 +218,7 @@
   "COPY": "COPY",
 
   "Join!": "Join!",
-  "waiting for awards": "waiting for awards"
+  "waiting for awards": "waiting for awards",
+  "DOC": "DOC",
+  "Dollar on Chain": "Dollar on Chain"
 }
