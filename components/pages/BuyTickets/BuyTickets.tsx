@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { useTranslation } from 'i18n';
 import { FormControl, MenuItem, Select } from '@material-ui/core';
 import { Input } from 'components/ui/Input/styles.Input';
@@ -27,6 +27,7 @@ export const BuyTickets: FC = () => {
   const address = router.query['networkName'] as string;
 
   const tandaInfo = useTandaInfo(address);
+
   const { actionStatus, unlock, submit, complete } = useTandaActions(tandaInfo);
   const {
     loading,

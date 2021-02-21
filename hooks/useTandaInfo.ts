@@ -16,8 +16,8 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
   const walletContext = useContext(WalletContext);
   const usersAddress = walletContext._onboard.getState().address;
   const provider = walletContext.state.provider as Web3Provider;
-  const [demoNetworkName] = useCurrentNetworkInfo();
-  const { assetType, type, pricePerTicket, networkName } =
+  const [networkName] = useCurrentNetworkInfo();
+  const { assetType, type, pricePerTicket} =
     useTandasList().find(t => t.address === prizePoolAddress) ?? {};
 
   const [poolAddresses, setPoolAddresses] = useState<RequestStatus & { prizePool: string }>({
@@ -44,7 +44,7 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
     }
 
     fetchChainData(
-      demoNetworkName,
+      networkName,
       usersAddress,
       poolAddresses,
       setPoolAddresses,

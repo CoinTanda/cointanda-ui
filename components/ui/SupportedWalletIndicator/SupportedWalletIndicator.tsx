@@ -18,7 +18,7 @@ export const SupportedWalletIndicator = ({}) => {
 
   const networkSupported = SUPPORTED_NETWORKS.includes(chainId);
 
-  let networkWords = 'mainnet (or unknown network) 🥵';
+  let networkWords = 'network not supported 🥵';
   if (networkSupported) {
     networkWords = `the ${networkName} testnet 👍`;
   }
