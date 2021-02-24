@@ -1,6 +1,5 @@
-import { getDemoPoolContractAddress } from 'lib/utils/getDemoPoolContractAddress';
 import { useCurrentNetworkInfo } from './useCurrentNetworkInfo';
-import loadFirebase  from '../firebase.config';
+import { fetchTanda, fetchTandas } from 'lib/utils/fetchChainData';
 import { useEffect, useState } from 'react';
 
 export interface TandaBasicInfo {
@@ -23,33 +22,43 @@ export const pricePerTicketType: Record<TandaType, number> = {
   [TandaType.Silver]: 10,
 };
 
-const getKeyValue = (obj: Record<string, any>) => (key: string) => obj[key];
+// export const getKeyValue = (obj: Record<string, any>) => (key: string) => obj[key];
+
+
+
+export function useTanda(networkName: string, chainId : string, poolAddress: string): TandaBasicInfo | undefined {
+  const [tanda, setTanda] = useState<Record<string, any> | null | undefined>();
+  useEffect(() => {
+    fetchTanda(chainId, poolAddress)?.then(setTanda);
+  }, [chainId, poolAddress]);
+
+  let tandaInfo: TandaBasicInfo|undefined;
+  if(tanda) {
+    tandaInfo = {
+      assetType: tanda.token.symbol,
+      address: poolAddress,
+      type: tanda.tandaType,
+      pricePerTicket: pricePerTicketType[<TandaType>tanda.tandaType],
+      networkName: networkName,
+    }
+  }
+  return tandaInfo;
+}
 
 export function useTandasList(): TandaBasicInfo[] {
-
-  const [networkName ] = useCurrentNetworkInfo();
-  const [tandasList, setTandasList] = useState<Object|null>();
+  const [networkName, chainId] = useCurrentNetworkInfo();
+  const [tandasList, setTandasList] = useState<Record<string, any> | null | undefined>();
   useEffect(() => {
-    const fetchTandas = async () => {
-      try {
-        const fire = await loadFirebase()
-        const snapshot = await fire.database().ref(`31/tandas`).once("value")
-        console.log(snapshot)
-        return snapshot.toJSON()
-      } catch(err) {
-        console.log(err)
-      }
-    }
-    fetchTandas().then(setTandasList)
-  }, [networkName]);
+    fetchTandas(chainId)?.then(setTandasList);
+  }, [chainId]);
 
   let networkDemoPools: TandaBasicInfo[] = [];
 
   for (const address in tandasList) {
     if (address) {
-      const tanda = getKeyValue(tandasList)(address);
+      const tanda = tandasList[address];
       networkDemoPools.push({
-        assetType: tanda.underlying.symbol,
+        assetType: tanda.token.symbol,
         address,
         type: tanda.tandaType,
         pricePerTicket: pricePerTicketType[<TandaType>tanda.tandaType],

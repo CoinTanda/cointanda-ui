@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState } from 'react';
 import { useTranslation } from 'i18n';
 import { FormControl, MenuItem, Select } from '@material-ui/core';
 import { Input } from 'components/ui/Input/styles.Input';

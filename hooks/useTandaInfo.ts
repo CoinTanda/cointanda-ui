@@ -4,21 +4,20 @@ import { ethers } from 'ethers';
 import { WalletContext } from 'lib/components/WalletContextProvider';
 import { calculateEstimatedPoolPrize } from 'lib/utils/calculateEstimatedPoolPrize';
 import { DEFAULT_TOKEN_PRECISION } from 'lib/constants';
-import { useInterval } from 'lib/hooks/useInterval';
+//import { useInterval } from 'lib/hooks/useInterval';
 import { useCurrentNetworkInfo } from './useCurrentNetworkInfo';
 import { Web3Provider } from 'ethers/providers';
 import { poolToast } from 'lib/utils/poolToast';
 import { BigNumber } from 'ethers/utils';
-import { TandaType, useTandasList } from './useTandasList';
-import { displayAmountInEther } from 'lib/utils/displayAmountInEther';
+import { TandaType, useTanda } from './useTandasList';
+//import { displayAmountInEther } from 'lib/utils/displayAmountInEther';
 
 export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
   const walletContext = useContext(WalletContext);
   const usersAddress = walletContext._onboard.getState().address;
   const provider = walletContext.state.provider as Web3Provider;
-  const [networkName] = useCurrentNetworkInfo();
-  const { assetType, type, pricePerTicket} =
-    useTandasList().find(t => t.address === prizePoolAddress) ?? {};
+  const [networkName, chainId] = useCurrentNetworkInfo();
+  const { assetType, type, pricePerTicket} = useTanda(networkName, chainId, prizePoolAddress) ?? {};
 
   const [poolAddresses, setPoolAddresses] = useState<RequestStatus & { prizePool: string }>({
     prizePool: prizePoolAddress,

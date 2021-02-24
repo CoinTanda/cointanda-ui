@@ -6,7 +6,7 @@ export const ContactContainer = styled('div')`
   max-width: 470px;
 `;
 
-export const FormContainer = styled('div')`
+export const FormContainer = styled('form')`
   margin-bottom: 50px;
 `;
 
