@@ -14,9 +14,9 @@ import {
   TextKey,
   TextValue,
   ThumbImage,
-  WinDataRowContainer,
-  WonButtonsContainer,
-  WonContainer,
+  // WinDataRowContainer,
+  // WonButtonsContainer,
+  // WonContainer,
   ResponsiveContainer,
 } from './styles.Tanda';
 import tandaThumbSilver from 'assets/Silver_Tanda_200.png';
@@ -30,8 +30,8 @@ import { Link } from '../../ui/Link/Link';
 import { Column } from 'components/ui/Column/Column';
 import { ButtonRed } from 'components/ui/ButtonRed/styles.ButtonRed';
 import { Button } from 'components/ui/Button/Button';
-import { TitleText } from 'components/ui/TitleText/TitleText';
-import { TextBlock } from 'components/ui/TextBlock/styles.TextBlock';
+// import { TitleText } from 'components/ui/TitleText/TitleText';
+// import { TextBlock } from 'components/ui/TextBlock/styles.TextBlock';
 import { TandaType } from 'hooks/useTandasList';
 
 export const Tanda: FC = () => {

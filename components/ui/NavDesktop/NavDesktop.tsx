@@ -15,7 +15,7 @@ export const NavDesktop: FC = () => {
   const profilePath = '/profile'
 
   const selected = (path: string) => {
-    return Router.pathname == path ? 'selected' : ''
+    return Router.pathname.includes(path) ? 'selected' : ''
   }
 
   return (

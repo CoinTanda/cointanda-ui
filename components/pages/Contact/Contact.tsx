@@ -37,7 +37,7 @@ export const Contact: FC = () => {
   return (
     <ContactContainer>
       <TitleText>{t('Contact us')}</TitleText>
-      <FormContainer>
+      <FormContainer onSubmit={submitContactForm}>
         <InputContainer>
           <TitleText medium>{t('Your name')}</TitleText>
           <Input variant="outlined"
@@ -67,7 +67,6 @@ export const Contact: FC = () => {
         <ButtonContainer>
           <ButtonSend
             type="submit"
-            onClick={submitContactForm}
             disabled={formButtonDisabled}>
               {formButtonText}
           </ButtonSend>

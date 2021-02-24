@@ -46,7 +46,7 @@ export const OurToken: FC = () => {
         {t('As an early owner')}.
       </TextBlock>
       <TextBlock>{t('If you want to be informed')}.</TextBlock>
-      <FormContainer>
+      <FormContainer onSubmit={submitContactForm}>
         <InputContainer>
           <TitleText medium>{t('Your name')}</TitleText>
           <Input variant="outlined"
@@ -67,7 +67,6 @@ export const OurToken: FC = () => {
         <ButtonContainer>
           <ButtonOk
             type="submit"
-            onClick={submitContactForm}
             disabled={formButtonDisabled}>
               {formButtonText}
           </ButtonOk>

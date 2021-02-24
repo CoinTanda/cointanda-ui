@@ -72,7 +72,10 @@ export const ButtonStyled = styled(Button)`
 
     .MuiButton-label {
       color: ${props => props.theme.colors.buttonText1};
-      font-weight: ${props => props.theme.fonts.weight2};
+      font-weight: ${props => props.theme.fonts.weight1};
+    }
+    &.MuiButton-contained {
+      background-color: ${props => props.theme.colors.buttonBackground4};
     }
   }
 
@@ -86,7 +89,7 @@ export const ButtonStyled = styled(Button)`
 
     .MuiButton-label {
       color: ${props => props.theme.colors.buttonText1};
-      font-weight: ${props => props.theme.fonts.weight2};
+      font-weight: ${props => props.theme.fonts.weight1};
     }
   }
 
@@ -96,7 +99,7 @@ export const ButtonStyled = styled(Button)`
 
     .MuiButton-label {
       color: ${props => props.theme.colors.buttonText1};
-      font-weight: ${props => props.theme.fonts.weight2};
+      font-weight: ${props => props.theme.fonts.weight1};
     }
   }
 
@@ -107,7 +110,7 @@ export const ButtonStyled = styled(Button)`
   &.MuiButton-contained {
     .MuiButton-label {
       color: ${props => props.theme.colors.buttonText1};
-      font-weight: ${props => props.theme.fonts.weight2};
+      font-weight: ${props => props.theme.fonts.weight1};
     }
   }
 `;

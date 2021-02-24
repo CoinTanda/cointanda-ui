@@ -27,6 +27,7 @@ export const BuyTickets: FC = () => {
   const address = router.query['networkName'] as string;
 
   const tandaInfo = useTandaInfo(address);
+
   const { actionStatus, unlock, submit, complete } = useTandaActions(tandaInfo);
   const {
     loading,

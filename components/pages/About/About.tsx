@@ -19,7 +19,8 @@ import * as tandas from 'hooks/useTandasList';
 
 export const About: FC = () => {
   const { t } = useTranslation();
-  const walletContext = useContext(WalletContext);
+  const walletContext = useContext(WalletContext)
+  const usersAddress = walletContext._onboard.getState().address
 
   return (
     <AboutContainer>
@@ -50,9 +51,12 @@ export const About: FC = () => {
           {t('You can buy as many')} <span>{t('tickets')}</span> {t('as you like per Tanda')}{' '}
           <span>{t('chances')}</span> {t('to win the raffle')}.
         </TextBlock>
-        <ButtonConnectWallet onClick={() => walletContext.handleConnectWallet()}>
-          {t('Connect wallet')}
-        </ButtonConnectWallet>
+        { !usersAddress ?
+          <ButtonConnectWallet onClick={() => walletContext.handleConnectWallet()}>
+            {t('Connect wallet')}
+          </ButtonConnectWallet>
+          : ''
+        }
       </ProjectDescriptionContainer>
       <TandaTypesContainer>
         <TitleText>{t('Tanda Types')}</TitleText>

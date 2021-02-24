@@ -10,12 +10,6 @@ export const Nav = (props) => {
   const walletContext = useContext(WalletContext)
   const usersAddress = walletContext._onboard.getState().address
 
-  const handleConnect = (e) => {
-    e.preventDefault()
-
-    walletContext.handleConnectWallet()
-  }
-
   return <>
     <div className='nav-and-footer-container'>
       <nav
@@ -59,7 +53,7 @@ export const Nav = (props) => {
               /> :
               <button
                 className='font-bold rounded-full text-green border-2 sm:border-4 border-green-300 hover:text-white hover:bg-lightPurple-1000 text-xxs sm:text-base pt-2 pb-2 px-3 sm:px-6 trans'
-                onClick={handleConnect}
+                onClick={walletContext.handleConnectWallet()}
               >
                 Connect Wallet
               </button>

@@ -6,7 +6,7 @@ export const OurTokenContainer = styled('div')`
   max-width: 900px;
 `;
 
-export const FormContainer = styled('div')`
+export const FormContainer = styled('form')`
   max-width: 500px;
   margin-bottom: 50px;
 `;

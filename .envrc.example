@@ -15,3 +15,12 @@ export NEXT_JS_SMTP_USER=<YOUR_SMTP_USER>
 export NEXT_JS_SMTP_PASS=<YOUR_SMTP_PASS>
 export NEXT_JS_EMAIL_SENDER=<YOUR_EMAIL_TO_SEND>
 export NEXT_JS_EMAIL_RECEIVE=<YOUR_EMAIL_TO_RECEIVE>
+
+export NEXT_JS_FIREBASE_API_KEY= /*your api key*/
+export NEXT_JS_FIREBASE_AUTH_DOMAIN= /*your api key*/
+export NEXT_JS_FIREBASE_DATABASE= /*your database*/
+export NEXT_JS_FIREBASE_PROJECT_ID= /*your project id*/
+export NEXT_JS_FIREBASE_STORAGE_BUCKET= /*your storage bucket*/
+export NEXT_JS_FIREBASE_SENDER_ID= /*your sender id*/
+export NEXT_JS_FIREBASE_APP_ID= /*your app id*/
+export NEXT_JS_FIREBASE_MESURAMENT_ID=/*your mesurament id*/

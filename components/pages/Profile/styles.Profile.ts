@@ -5,7 +5,7 @@ import { Button } from '../../ui/Button/Button';
 
 export const ProfileContainer = styled('div')``;
 
-export const FormContainer = styled('div')`
+export const FormContainer = styled('form')`
   display: flex;
   flex-direction: row;
   position: relative;

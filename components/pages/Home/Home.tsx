@@ -19,7 +19,9 @@ import { TitleText } from 'components/ui/TitleText/TitleText';
 import { Link } from '../../ui/Link/Link';
 
 export const Home: FC = () => {
-  const walletContext = useContext(WalletContext);
+  const walletContext = useContext(WalletContext)
+  const usersAddress = walletContext._onboard.getState().address
+
   const { t } = useTranslation();
   const theme = useTheme();
   const router = useRouter();
@@ -73,9 +75,12 @@ export const Home: FC = () => {
           <IconTriangle />
           <Link href={''}>{t('More info')}</Link>
         </MoreInfoContainer>
-        <ButtonConnectWallet onClick={() => walletContext.handleConnectWallet()}>
-          {t('Connect wallet')}
-        </ButtonConnectWallet>
+        { !usersAddress ?
+          <ButtonConnectWallet onClick={() => walletContext.handleConnectWallet()}>
+            {t('Connect wallet')}
+          </ButtonConnectWallet>
+          : ''
+        }
       </Column>
     </HomeContainer>
   );
