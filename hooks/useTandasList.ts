@@ -11,9 +11,9 @@ export interface TandaBasicInfo {
 }
 
 export enum TandaType {
-  Black = 'Black',
-  Silver = 'Silver',
-  Gold = 'Gold',
+  Black = 'black',
+  Silver = 'silver',
+  Gold = 'gold',
 }
 
 export const pricePerTicketType: Record<TandaType, number> = {
