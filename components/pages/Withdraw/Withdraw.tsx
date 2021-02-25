@@ -28,8 +28,11 @@ export const Withdraw: FC = () => {
   const { loading, ticketName, tokenSymbol } = tandaInfo;
   const { exitFees } = useMaxExitFee(amount, tandaInfo);
 
-  if (loading || actionStatus.operationPending) {
+  if (loading) {
     return <>{t('Loading...')}</>;
+  }
+  if (actionStatus.operationPending) {
+    return <>{t('Waiting for transaction to be mined...')}</>;
   }
 
   return (

@@ -67,7 +67,7 @@ export const DepositForm = (props) => {
         <>
           <div
           >
-            Unlock deposits by first approving the pool's ticket contract to have a DAI allowance.
+            {`Unlock deposits by first approving the pool's ticket contract to have a ${tokenSymbol} allowance.`}
           </div>
 
           <div

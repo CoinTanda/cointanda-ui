@@ -60,7 +60,7 @@ export const Tanda: FC = () => {
   const { usersTicketBalance } = usersChainValues || {};
 
   if (loading) {
-    return <>Loading...</>;
+    return <>{t('Loading...')}</>;
   }
 
   return (
