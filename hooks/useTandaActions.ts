@@ -142,7 +142,7 @@ const handleDepositSubmit = async (
     ticketAddress,
     referrer,
     {
-      gasLimit: 600000,
+      gasLimit: 600_000,
     },
   ];
 

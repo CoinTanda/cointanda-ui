@@ -40,8 +40,11 @@ export const BuyTickets: FC = () => {
     prizePeriodRemainingSeconds
   } = tandaInfo;
 
-  if (loading || actionStatus.operationPending) {
+  if (loading) {
     return <>{t('Loading...')}</>;
+  }
+  if (actionStatus.operationPending) {
+    return <>{t('Waiting for transaction to be mined...')}</>;
   }
 
   return (
@@ -69,9 +72,7 @@ export const BuyTickets: FC = () => {
         {!isRngRequested && !depositsUnlocked && (
           <>
             <LabelForm>
-              {t(
-                "Unlock deposits by first approving the pool's ticket contract to have a DAI allowance"
-              )}
+              {`Unlock deposits by first approving the pool's ticket contract to have a ${tokenSymbol} allowance`}
               .
             </LabelForm>
             <ButtonBuy onClick={unlock}>{t('UNLOCK')}</ButtonBuy>

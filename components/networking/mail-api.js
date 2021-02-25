@@ -13,9 +13,9 @@ export const sendContactMail = async (senderMail, name, recipientMail, content, 
     try {
         const res = await axios({
             method: "post",
-            url: "/api/contact",
+            url: "https://formspree.io/f/xbjpvjan",
             headers: {
-                "Content-Type": "application/json"
+                "Accept": "application/json"
             },
             data
         })
