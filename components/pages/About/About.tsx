@@ -75,7 +75,7 @@ export const About: FC = () => {
         <TandaType>
           <IconTanda src={tandaIconBlack} />
           <TextBlock>
-            <span>{t('Black')}:</span> {t('each ticket is')} <span>{tandas.pricePerTicketType[tandas.TandaType.Gold] +  ' ' + t('DOC')}</span>
+            <span>{t('Black')}:</span> {t('each ticket is')} <span>{tandas.pricePerTicketType[tandas.TandaType.Black] +  ' ' + t('DOC')}</span>
           </TextBlock>
         </TandaType>
         <TextBlock>{t('The bigger the Tanda')}</TextBlock>
