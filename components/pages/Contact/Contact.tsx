@@ -1,5 +1,6 @@
 import { useTranslation } from 'i18n';
 import { TitleText } from 'components/ui/TitleText/TitleText';
+import { TextBlock } from 'components/ui/TextBlock/styles.TextBlock';
 import React, { FC, useState } from 'react';
 import {
   ButtonContainer,
@@ -36,6 +37,22 @@ export const Contact: FC = () => {
 
   return (
     <ContactContainer>
+      <TextBlock>
+        <span>{t('We are currently in beta mode')}</span>. {t('If you want to take part in our beta test, please fill in this form')} :{' '} <a href="https://bit.ly/cointanda" target="_blank">https://bit.ly/cointanda</a>
+      </TextBlock>
+      <TextBlock>
+        <span>{t('You can receive free DOCs here')}</span> :{' '} <a href="https://faucet.cointanda.com" target="_blank">https://faucet.cointanda.com</a>
+      </TextBlock>
+      <TextBlock>
+        <span>{t('Find the beta test guide here')}</span> :{' '} <a href="http://bit.ly/CTbtgen" target="_blank">bit.ly/CTbtgen</a>
+      </TextBlock>
+      <TextBlock>
+        <span>{t('Please fill in this short survey')}</span> :{' '} <a href="https://bit.ly/CTBen" target="_blank">bit.ly/CTBen</a>
+      </TextBlock>
+      <hr/>
+      <TextBlock>
+        <span>{t('If you have more things you want to tell us, please use this form')}</span>
+      </TextBlock>
       <TitleText>{t('Contact us')}</TitleText>
       <FormContainer onSubmit={submitContactForm}>
         <InputContainer>
