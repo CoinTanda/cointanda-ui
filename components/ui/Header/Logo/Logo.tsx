@@ -4,7 +4,7 @@ import { LogoContainer, LogoImg, Logotype } from './styles.Logo';
 import Icon from 'assets/CT_icon.png';
 import IconHover from 'assets/CT_icon_hi.png';
 import IconClicked from 'assets/CT_icon_act.png';
-import BrandName from 'assets/CT_logotype.png';
+import BrandName from 'assets/cointanda_logotype.png';
 // import LogoIdle from 'assets/full_logo.png';
 // import LogoHover from 'assets/full_logo_hover.png';
 // import LogoClick from 'assets/full_logo_click.png';
