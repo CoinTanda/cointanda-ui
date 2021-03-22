@@ -15,7 +15,7 @@ export const Header: FC = ({ children }) => {
   return (
     <HeaderContainer>
       <BrandingContainer>
-        <Logo />
+      <a href="contact"><Logo /></a>
         <HeaderContentContainer>
           <TextBusinessDescription>{t('Risk-free Crypto Raffles')}</TextBusinessDescription>
         </HeaderContentContainer>
