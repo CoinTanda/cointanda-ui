@@ -6,7 +6,7 @@ interface MetaProps {
 }
 
 export const Meta: FC<MetaProps> = ({ title }) => {
-  const defaultTitle = 'CoinTanda - Reference Pool Frontend';
+  const defaultTitle = 'CoinTanda - Risk-free Crypto Raffles';
   title = title ? `${title} - ${defaultTitle}` : defaultTitle;
 
   const url = `https://reference.cointanda.com`;

@@ -16,6 +16,7 @@ export const TandasList: FC = () => {
       <Column>
         <TitlesContainer>
           <TitleText>{t('Welcome to CoinTanda!')}</TitleText>
+          <TitleText small>{t('We are currently in beta mode')}. <a href="contact">{t('Please take part in our beta test')}</a></TitleText>
           <TitleText small>{t('You may join any of these Tandas')}</TitleText>
         </TitlesContainer>
         <TandaBasicPreview>

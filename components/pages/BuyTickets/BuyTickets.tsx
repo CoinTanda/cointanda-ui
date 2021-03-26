@@ -46,6 +46,9 @@ export const BuyTickets: FC = () => {
   if (actionStatus.operationPending) {
     return <>{t('Waiting for transaction to be mined...')}</>;
   }
+  if(actionStatus.sent) {
+    return <>{router.push(`/tandas/${address}`)}</>;
+  }
 
   return (
     <Column>
