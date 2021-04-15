@@ -51,7 +51,7 @@ export const Contact: FC = () => {
       </TextBlock>
       <hr/>
       <TextBlock>
-        <span>{t('If you have more things you want to tell us, please use this form')}</span>
+       {t('If you have more things you want to tell us, please use this form')}
       </TextBlock>
       <TitleText>{t('Contact us')}</TitleText>
       <FormContainer onSubmit={submitContactForm}>
