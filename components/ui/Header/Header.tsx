@@ -8,14 +8,25 @@ import {
   HeaderContentContainer,
   TextBusinessDescription,
 } from './styles.Header';
+import { useRouter } from 'next/router'
+
+
 
 export const Header: FC = ({ children }) => {
+  const router = useRouter()
+
   const { t } = useTranslation();
 
+  const handleClick = (e: { preventDefault: () => void; }) => {
+    e.preventDefault()
+    router.push("/contact")
+  }
   return (
     <HeaderContainer>
       <BrandingContainer>
-      <a href="contact"><Logo /></a>
+        <a href={"#"} onClick={handleClick} >
+          <Logo />
+        </a>
         <HeaderContentContainer>
           <TextBusinessDescription>{t('Risk-free Crypto Raffles')}</TextBusinessDescription>
         </HeaderContentContainer>
