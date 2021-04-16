@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { useTranslation } from 'i18n';
+import { useTranslation, Router } from 'i18n';
 import { FormControl, MenuItem, Select } from '@material-ui/core';
 import { Input } from 'components/ui/Input/styles.Input';
 import { useTandaInfo } from 'hooks/useTandaInfo';
@@ -47,7 +47,7 @@ export const BuyTickets: FC = () => {
     return <>{t('Waiting for transaction to be mined...')}</>;
   }
   if(actionStatus.sent) {
-    return <>{router.push(`/tandas/${address}`)}</>;
+    return <>{Router.push(`/tandas/${address}`)}</>;
   }
 
   return (
