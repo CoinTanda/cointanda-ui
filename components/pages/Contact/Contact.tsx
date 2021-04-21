@@ -44,10 +44,10 @@ export const Contact: FC = () => {
         <span>{t('You can receive free DOCs here')}</span> :{' '} <a href="https://faucet.cointanda.com" target="_blank">https://faucet.cointanda.com</a>
       </TextBlock>
       <TextBlock>
-        <span>{t('Find the beta test guide here')}</span> :{' '} <a href="http://bit.ly/CTbtgen" target="_blank">bit.ly/CTbtgen</a>
+        <span>{t('Find the beta test guide here')}</span> :{' '} <a href={'http://bit.ly/'+t('CTbtgen')} target="_blank">bit.ly/{t('CTbtgen')}</a>
       </TextBlock>
       <TextBlock>
-        <span>{t('Please fill in this short survey')}</span> :{' '} <a href="https://bit.ly/CTBen" target="_blank">bit.ly/CTBen</a>
+        <span>{t('Please fill in this short survey')}</span> :{' '} <a href={'https://bit.ly/'+t('CTBen')} target="_blank">bit.ly/{t('CTBen')}</a>
       </TextBlock>
       <hr/>
       <TextBlock>
