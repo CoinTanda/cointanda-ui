@@ -258,5 +258,10 @@
   "For the Betatest of CoinTanda, you will get DOCs on Testnet for free. Please fill in this form if you want to participate": "For the Betatest of CoinTanda, you will get DOCs on Testnet for free. Please fill in this form if you want to participate",
   "You can receive free DOCs for testing here": "You can receive free DOCs for testing here",
   "If you need more, you can get Smart Bitcoins here": "If you need more, you can get Smart Bitcoins here",
-  "and mint new DOCs here": "and mint new DOCs here"
+  "and mint new DOCs here": "and mint new DOCs here",
+
+  "The Tanda is ready to start awarding the prize": "The Tanda is ready to start awarding the prize",
+  "The Tanda is currently being awarded and until awarding is complete can not accept deposits": "The Tanda is currently being awarded and until awarding is complete can not accept deposits",
+  "COMPLETE AWARD":"COMPLETE AWARD",
+  "START AWARD":"START AWARD"
 }
