@@ -64,7 +64,11 @@ export function useTandaActions(tandaInfo: Partial<TandaInfo>): TandaActions {
     );
   };
 
-  return { actionStatus: { ...tx, operationPending: txInFlight }, unlock, submit, complete, withdraw };
+  const startAward = () => {
+    handleStartAwardSubmit(setTx, provider, poolAddresses.prizeStrategy);
+  };
+
+  return { actionStatus: { ...tx, operationPending: txInFlight }, unlock, submit, complete, withdraw, startAward };
 }
 
 export interface TandaActions {
@@ -73,6 +77,7 @@ export interface TandaActions {
   submit: (amount: string) => void;
   complete: () => void;
   withdraw: (amount: string, maxExitFee?: ExitFee | null, type?: 'scheduled' | 'instant') => void;
+  startAward: () => void;
 }
 
 export interface TandaActionResponse {
@@ -177,3 +182,25 @@ const handleWithdrawSubmit = async (
 
   await sendTx(setTx, provider, contractAddress, CompoundPrizePoolAbi, method, params, 'Withdraw');
 };
+
+const handleStartAwardSubmit = async (
+  setTx: ({}) => void,
+  provider: ethers.providers.Web3Provider,
+  contractAddress: string
+) => {
+  const params = [
+    {
+      gasLimit: 500000
+    }
+  ]
+
+  await sendTx(
+    setTx,
+    provider,
+    contractAddress,
+    SingleRandomWinnerAbi,
+    'startAward',
+    params,
+    'Start Award',
+  )
+}

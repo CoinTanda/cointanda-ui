@@ -56,6 +56,7 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
     awardBalance,
     prizePeriodRemainingSeconds,
     canCompleteAward,
+    canStartAward,
     poolTotalSupply,
     supplyRatePerBlock,
     ticketTotalSupply,
@@ -161,6 +162,7 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
     awardBalance,
     prizePeriodRemainingSeconds,
     canCompleteAward,
+    canStartAward,
     poolTotalSupply,
     supplyRatePerBlock,
     ticketTotalSupply,
@@ -194,6 +196,7 @@ export interface TandaInfo extends RequestStatus {
   awardBalance: string;
   prizePeriodRemainingSeconds: number;
   canCompleteAward: boolean;
+  canStartAward: boolean;
   poolTotalSupply: string;
   supplyRatePerBlock: number;
   ticketTotalSupply: BigNumber;
