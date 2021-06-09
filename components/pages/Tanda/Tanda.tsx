@@ -143,7 +143,7 @@ export const Tanda: FC = () => {
                   {displayAmountInEther(usersTicketBalance, { decimals: tokenDecimals })} {tokenSymbol}
                 </TextValue>
               </DataRowContainer>
-              <DataRowContainer>
+              {/* <DataRowContainer>
                 <TextKey>{t('Chance of winning')}:</TextKey>
                 <TextValue>
                   {usersTicketBalance &&
@@ -151,7 +151,7 @@ export const Tanda: FC = () => {
                     usersTicketBalance?.div(ticketTotalSupply).mul('100').toString()}
                   {'% '}
                 </TextValue>
-              </DataRowContainer>
+              </DataRowContainer> */}
               <DataRowContainer>
                 <Column>
                   <TextKey>{t('Rice your chances to win by')}</TextKey>

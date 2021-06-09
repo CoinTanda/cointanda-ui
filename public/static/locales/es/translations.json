@@ -224,9 +224,9 @@
   "If you want to take part in our beta test, please fill in this form": "Si quiere participar en nuestro beta test, por favor rellene este formulario",
   "You can receive free DOCs here": "Aqui recibirá 100 DOCs",
   "Find the beta test guide here": "En esta guía encontrará todo lo que necesita saber",
-  "bit.ly/CTbtgen": "bit.ly/CTbtges",
+  "CTbtgen": "CTbtges",
   "Please fill in this short survey": "Por favor, rellene esta encuesta",
-  "bit.ly/CTBen": "bit.ly/CTBes",
+  "CTBen": "CTBes",
   "If you have more things you want to tell us, please use this form": "Si quiere decirnos algo más, por favor utilice este formulario",
 
   "My Tandas": "Mis Tandas",
@@ -259,5 +259,11 @@
   "For the Betatest of CoinTanda, you will get DOCs on Testnet for free. Please fill in this form if you want to participate": "Para el Betatest de CoinTanda, usted recibirá DOCs del Testnet de manera gratuita. Por favor rellene este formulario para participar",
   "You can receive free DOCs for testing here": "Después recibirá DOCs aquí",
   "If you need more, you can get Smart Bitcoins here": "Si necesita más, puede recibir Smart Bitcoins aquí",
-  "and mint new DOCs here": "y usarlos para acuñar DOCs aquí"
+  "and mint new DOCs here": "y usarlos para acuñar DOCs aquí",
+  
+  "The Tanda is ready to start awarding the prize":"La tanda está lista para iniciar el sorteo",
+  "The Tanda is currently being awarded and until awarding is complete can not accept deposits": "La Tanda actualmente se está otorgando y hasta que no se complete la adjudicación no se pueden efectuar depósitos.",
+  "COMPLETE AWARD":"COMPLETAR ADJUDICACION",
+  "START AWARD":"COMENZAR RIFA"
+  
 }

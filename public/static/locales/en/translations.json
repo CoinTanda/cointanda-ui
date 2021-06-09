@@ -223,9 +223,9 @@
   "If you want to take part in our beta test, please fill in this form": "If you want to take part in our beta test, please fill in this form",
   "You can receive free DOCs here": "You can receive free DOCs here",
   "Find the beta test guide here": "Find the beta test guide here",
-  "bit.ly/CTbtgen": "bit.ly/CTbtgen",
+  "CTbtgen": "CTbtgen",
   "Please fill in this short survey": "Please fill in this short survey",
-  "bit.ly/CTBen": "bit.ly/CTBen",
+  "CTBen": "CTBen",
   "If you have more things you want to tell us, please use this form": "If you have more things you want to tell us, please use this form",
 
   "My Tandas": "My Tandas",
@@ -258,5 +258,10 @@
   "For the Betatest of CoinTanda, you will get DOCs on Testnet for free. Please fill in this form if you want to participate": "For the Betatest of CoinTanda, you will get DOCs on Testnet for free. Please fill in this form if you want to participate",
   "You can receive free DOCs for testing here": "You can receive free DOCs for testing here",
   "If you need more, you can get Smart Bitcoins here": "If you need more, you can get Smart Bitcoins here",
-  "and mint new DOCs here": "and mint new DOCs here"
+  "and mint new DOCs here": "and mint new DOCs here",
+
+  "The Tanda is ready to start awarding the prize": "The Tanda is ready to start awarding the prize",
+  "The Tanda is currently being awarded and until awarding is complete can not accept deposits": "The Tanda is currently being awarded and until awarding is complete can not accept deposits",
+  "COMPLETE AWARD":"COMPLETE AWARD",
+  "START AWARD":"START AWARD"
 }

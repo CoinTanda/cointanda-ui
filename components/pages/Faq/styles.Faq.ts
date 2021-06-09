@@ -28,7 +28,9 @@ export const RightColumnContainer = styled(Column)`
   }
 `;
 
-export const FaqItem = styled(Column)``;
+export const FaqItem = styled(Column)`
+  margin-bottom: 20px !important;
+`;
 
 export const IsolatedAreaContainer = styled('div')`
   padding-top: 20px;

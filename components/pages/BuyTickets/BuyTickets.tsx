@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { useTranslation } from 'i18n';
+import { useTranslation, Router } from 'i18n';
 import { FormControl, MenuItem, Select } from '@material-ui/core';
 import { Input } from 'components/ui/Input/styles.Input';
 import { useTandaInfo } from 'hooks/useTandaInfo';
@@ -28,7 +28,7 @@ export const BuyTickets: FC = () => {
 
   const tandaInfo = useTandaInfo(address);
 
-  const { actionStatus, unlock, submit, complete } = useTandaActions(tandaInfo);
+  const { actionStatus, unlock, submit, complete, startAward } = useTandaActions(tandaInfo);
   const {
     loading,
     ticketName,
@@ -37,17 +37,18 @@ export const BuyTickets: FC = () => {
     depositsUnlocked,
     tokenSymbol,
     pricePerTicket,
-    prizePeriodRemainingSeconds
+    prizePeriodRemainingSeconds,
+    canStartAward
   } = tandaInfo;
 
   if (loading) {
     return <>{t('Loading...')}</>;
   }
   if (actionStatus.operationPending) {
-    return <>{t('Waiting for transaction to be mined...')}</>;
+    return <>{t('Waiting for transaction to be confirmed...')}</>;
   }
-  if(actionStatus.sent) {
-    return <>{router.push(`/tandas/${address}`)}</>;
+  if (actionStatus.sent) {
+    return <>{Router.push(`/tandas/${address}`)}</>;
   }
 
   return (
@@ -56,14 +57,14 @@ export const BuyTickets: FC = () => {
         {t('Buy Tickets for Tanda')} <TitleLink href={`/tandas/${address}`}>{ticketName}</TitleLink>
       </TitleText>
       <BuyTicketsContainer>
-        {isRngRequested && !canCompleteAward && (
+        {!canStartAward && isRngRequested && !canCompleteAward && (
           <LabelForm>{t('Random number being calculated! Please wait')} ...</LabelForm>
         )}
-        {isRngRequested && canCompleteAward && !actionStatus.operationPending && (
+        {!canStartAward && isRngRequested && canCompleteAward && !actionStatus.operationPending && (
           <>
             <LabelForm>
               {t(
-                'The Pool is currently being awarded and until awarding is complete can not accept deposits'
+                'The Tanda is currently being awarded and until awarding is complete can not accept deposits'
               )}
               .
             </LabelForm>
@@ -72,7 +73,20 @@ export const BuyTickets: FC = () => {
             )}
           </>
         )}
-        {!isRngRequested && !depositsUnlocked && (
+        {canStartAward && !actionStatus.operationPending && (
+          <>
+            <LabelForm>
+              {t(
+                'The Tanda is ready to start awarding the prize'
+              )}
+              .
+            </LabelForm>
+            {!actionStatus.operationPending && (
+              <ButtonBuy onClick={startAward}>{t('START AWARD')}</ButtonBuy>
+            )}
+          </>
+        )}
+        {!canStartAward && !isRngRequested && !depositsUnlocked && (
           <>
             <LabelForm>
               {`Unlock deposits by first approving the pool's ticket contract to have a ${tokenSymbol} allowance`}
@@ -81,7 +95,7 @@ export const BuyTickets: FC = () => {
             <ButtonBuy onClick={unlock}>{t('UNLOCK')}</ButtonBuy>
           </>
         )}
-        {depositsUnlocked && !isRngRequested && (
+        {!canStartAward && depositsUnlocked && !isRngRequested && (
           <>
             <Content>
               <FormColumn>
@@ -112,7 +126,7 @@ export const BuyTickets: FC = () => {
                 </FormRow>
                 <FormRow>
                   <LabelForm>
-                    {t('Total price')}: <span>{Number(pricePerTicket||1) * parseInt(amount)} {tokenSymbol}</span>
+                    {t('Total price')}: <span>{Number(pricePerTicket || 1) * parseInt(amount)} {tokenSymbol}</span>
                   </LabelForm>
                 </FormRow>
               </FormColumn>
@@ -133,7 +147,7 @@ export const BuyTickets: FC = () => {
                 </Column>
               </FormColumn>
             </Content>
-            <ButtonBuy onClick={() => submit((Number(pricePerTicket||1) * parseInt(amount)).toString())}>{t('BUY NOW')}</ButtonBuy>
+            <ButtonBuy onClick={() => submit((Number(pricePerTicket || 1) * parseInt(amount)).toString())}>{t('BUY NOW')}</ButtonBuy>
           </>
         )}
       </BuyTicketsContainer>
