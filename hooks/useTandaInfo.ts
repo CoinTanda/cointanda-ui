@@ -118,6 +118,11 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
     soldTickets = ticketTotalSupply.div(ethers.utils.parseEther(pricePerTicket.toString())).toString()
   }
 
+  let soldPoolTicket = '--';
+  if (!!pricePerTicket && pricePerTicket > 0 && !!poolTotalSupply) {
+    soldPoolTicket = ethers.utils.bigNumberify(poolTotalSupply).div(ethers.utils.parseEther(pricePerTicket.toString())).toString()
+  }
+
   const renderErrorMessage = (address: string, type: string, message?: string) => {
     const errorMsg = `Error fetching ${type} for prize pool with address: ${address}: ${message}. (maybe wrong Ethereum network?)`;
 
@@ -175,6 +180,7 @@ export function useTandaInfo(prizePoolAddress: string): Partial<TandaInfo> {
     maxExitFeeMantissa,
     tokenDecimals,
     soldTickets,
+    soldPoolTicket,
     tokenSymbol,
     tokenName,
     prizeEstimate,
@@ -209,6 +215,7 @@ export interface TandaInfo extends RequestStatus {
   maxExitFeeMantissa: number;
   tokenDecimals: number;
   soldTickets: string;
+  soldPoolTicket: string;
   tokenSymbol: string;
   tokenName: string;
   prizeEstimate: BigNumber;

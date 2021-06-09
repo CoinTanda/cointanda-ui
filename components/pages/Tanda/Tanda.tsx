@@ -42,14 +42,13 @@ export const Tanda: FC = () => {
   const {
     loading,
     prizePeriodRemainingSeconds,
-    ticketTotalSupply,
+    poolTotalSupply,
     ticketName,
-    sponsorshipName,
     tokenDecimals,
     tokenSymbol,
     tokenName,
     prizeEstimate,
-    soldTickets,
+    soldPoolTicket,
     usersChainValues,
     pricePerTicket,
     type,
@@ -102,12 +101,12 @@ export const Tanda: FC = () => {
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Sold tickets')}:</TextKey>
-                <TextValue>{soldTickets}</TextValue>
+                <TextValue>{soldPoolTicket}</TextValue>
               </DataRowContainer>
               <DataRowContainer>
                 <TextKey>{t('Total deposit')}:</TextKey>
                 <TextValue>
-                  {displayAmountInEther(ticketTotalSupply, {
+                  {displayAmountInEther(poolTotalSupply, {
                     precision: 2,
                     decimals: tokenDecimals,
                   })}{' '}
