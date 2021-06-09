@@ -29,10 +29,10 @@ export const TandaBasicPreviewItem: FC<PropsTandaPreviewItem> = ({
     ticketName,
     prizeEstimate,
     ticketTotalSupply,
+    poolTotalSupply,
     tokenDecimals,
     tokenSymbol,
     tokenName,
-    sponsorshipName,
     prizePeriodRemainingSeconds,
   } = useTandaInfo(address);
 
@@ -59,7 +59,7 @@ export const TandaBasicPreviewItem: FC<PropsTandaPreviewItem> = ({
         {displayAmountInEther(prizeEstimate, { precision: 4, decimals: tokenDecimals })} {tokenSymbol}
       </TableCell>
       <TableCellDesktopOnly align="right">
-        {displayAmountInEther(ticketTotalSupply, {
+        {displayAmountInEther(poolTotalSupply, {
           precision: 2,
           decimals: tokenDecimals,
         })}{' '}
